@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=X\ Y
+comment0.target=Mono(int,\ int)
+comment0.text=Constructor\ de\ la\ clase,\ aqui\ se\ inicializan\ todas\ la\ variable,\ ademas\ se\ llama\ al\ constructor\ de\ la\ superclase\ para\ inicializar\ las\ coordenadas\ iniciales\ del\ objeto\r\n\ \ \ \ @param\ X\ Indica\ la\ coordenada\ inicial\ del\ objeto\ en\ el\ eje\ x.\r\n\ \ \ \ @param\ Y\ Indica\ la\ coordenada\ inicial\ del\ objeto\ en\ el\ eje\ y\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase,\ se\ realiza\ el\ cambio\ de\ disfraces,\ ademas\ de\ se\ verifica\ si\ se\ ha\ realizado\ un\ salto\ o\ si\ el\ jugador\ se\ agacha,\ nos\ muestra\ el\ personaje\ en\ pantalla\ y\ se\ detecta\ si\ el\ jugador\ a\ sido\ \r\natrapado\ por\ el\ enemigo.
+comment2.params=
+comment2.target=void\ retrocede()
+comment2.text=Metodo\ retrocede,\ reduce\ la\ posicion\ en\ x\ de\ el\ objeto\ cada\ vez\ que\ choca.
+numComments=3

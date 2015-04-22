@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=X\ Y
+comment0.target=Objeto(int,\ int)
+comment0.text=Constructor\ de\ la\ clase\ objeto\ recibe\ como\ parametro\ la\ coordenada\ en\ X\ y\ Y\ y\ se\ las\ asigna\ a\ las\ variables\ del\ objeto
+numComments=1

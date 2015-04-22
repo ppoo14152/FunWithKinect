@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=X\ Y\ ya
+comment0.target=BalaEnemigo(int,\ int,\ int)
+comment0.text=\ Constructor\ encargado\ de\ inicializar\ todas\ las\ variables.\r\n\ \ \ \ @param\ X\ contiene\ la\ posicion\ en\ el\ eje\ x\ en\ donde\ aparecera\ el\ objeto.\r\n\ \ \ \ @param\ Y\ contiene\ la\ posicion\ en\ el\ eje\ y\ en\ donde\ aparecera\ el\ objeto.\r\n\ \ \ \ @param\ ya\ contiene\ la\ posicion\ del\ arma\ ,\ es\ el\ limite\ a\ el\ que\ llegara\ la\ bala.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase,\ aqui\ se\ realiza\ el\ movimiento\ de\ el\ objeto\ y\ se\ muestra\ en\ pantalla.
+numComments=2

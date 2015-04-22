@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=X\ Y
+comment0.target=Portero(int,\ int)
+comment0.text=\ Constructor\ de\ la\ clase,\ aqui\ se\ inicializan\ todas\ las\ variables.\r\n\ \ \ \ @param\ X\ contiene\ la\ posicion\ en\ el\ eje\ x\ en\ donde\ aparecera\ el\ objeto.\r\n\ \ \ \ @param\ Y\ contiene\ la\ posicion\ en\ el\ eje\ y\ en\ donde\ aparecera\ el\ objeto.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase,\ se\ realiza\ el\ movimiento\ del\ objeto\ y\ se\ muestra\ en\ pantalla.
+numComments=2

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=X\ Y
+comment0.target=Porteria(int,\ int)
+comment0.text=Constructor\ de\ la\ clase\ aqui\ se\ inicializan\ todas\ las\ variables,\ ademas\ de\ mostrarse\ en\ pantalla
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase\ vacio\ por\ default.
+numComments=2

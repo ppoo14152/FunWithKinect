@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=JuegoLaberinto()
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=int\ botonP()
+comment3.params=
+comment3.target=void\ IncPun()
+comment4.params=
+comment4.target=int\ perder()
+comment5.params=
+comment5.target=void\ creaLaberinto()
+comment6.params=
+comment6.target=int\ getPicos()
+numComments=7

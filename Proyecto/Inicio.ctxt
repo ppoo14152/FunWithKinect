@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Inicio()
+comment0.text=Es\ el\ constructor\ de\ la\ clase\ se\ llama\ al\ constructor\ de\ la\ superclase,\ donde\ se\ crea\ una\ \r\n\ peque\u00F1a\ camara\ que\ es\ odnde\ se\ visualiza\ el\ jugador\ al\ inicio\ del\ juego\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=En\ el\ act\ se\ conecta\ al\ jugador\ con\ el\ juego\ y\ una\ ves\ que\ esta\ conectado\r\n\ se\ revisan\ \ los\ botones\ para\ poder\ crear\ un\ escenario\ en\ base\ al\ boton\ seleccionado\r\n
+comment2.params=
+comment2.target=void\ IncPun()
+comment2.text=Este\ metodo\ incrementa\ los\ puntos\ del\ jugador,\ el\ cual\ se\ encuentra\ contenido\ en\ los\ diferentes\ escenarios.\ \ \ \ \ \r\n
+comment3.params=
+comment3.target=void\ incMun()
+comment3.text=Este\ metodo\ solo\ se\ aplica\ cuando\ existe\ un\ escenario\ de\ tipo\ juegoGuerra\ ya\ que\ es\ \ \ \ \ \ *\ \r\n\ el\ unico\ que\ requiere\ municion.\r\n
+comment4.params=
+comment4.target=void\ da\u00F1a()
+comment4.text=Este\ metodo\ reduce\ la\ salud\ del\ jugador\ \ en\ juegoForest.\r\n
+comment5.params=
+comment5.target=void\ tropesar()
+comment5.text=Este\ metodo\ retrocede\ al\ jugador\ en\ el\ minujuego\ juegoForest.\r\n
+comment6.params=
+comment6.target=int\ getPicos()
+comment6.text=Este\ metodo\ permite\ saber\ el\ estado\ de\ el\ obstaculo\ picos\ en\ el\ juegoLaberinto\r\n\ depende\ de\ este\ para\ perder.\r\n
+comment7.params=
+comment7.target=void\ stopped()
+comment7.text=l\ metodo\ detiene\ la\ musica\ si\ es\ que\ se\ presiona\ el\ boton\ pause\ de\ greenfoot\r\n
+numComments=8

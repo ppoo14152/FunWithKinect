@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=BaraFuego()
+comment0.text=Constructor\ aqui\ se\ inicializan\ tadas\ las\ variables\ del\ objeto\ ademas\ se\ usa\ el\ metodo\ super\ que\ \r\n\ \ \ \ inicia\ las\ coordenadas\ iniciales\ del\ objeto\ en\ los\ ejes\ x\ e\ y.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ del\ objeto\ maraca\ las\ tranciciones\ de\ giro\ y\ reproduccion\ de\ sonido\ del\ objeto.
+numComments=2

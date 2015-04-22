@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=X\ Y
+comment0.target=Monstruo(int,\ int)
+comment0.text=Constructor\ de\ la\ clase\ Monstruo\ inicializa\ todas\ las\ variables.
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase,\ aqui\ se\ verifican\ las\ coliciones\ y\ se\ realiza\ el\ movimiento\ del\ objeto,\ ademas\ de\ actualizar\ las\ vanderas\ de\ puntos\ y\ da\u00F1o.
+numComments=2

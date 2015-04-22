@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=X\ Y
+comment0.target=Municion(int,\ int)
+comment0.text=Constructor\ que\ inicializa\ las\ variables,\ utiliza\ el\ constructor\ de\ la\r\n\ \ \ \ superclase\ para\ inicializar\ las\ coordenadas\ en\ x\ e\ y.\r\n\ \ \ \ @param\ X\ Indica\ la\ coordenada\ inicial\ del\ objeto\ en\ el\ eje\ x.\r\n\ \ \ \ @param\ Y\ Indica\ la\ coordenada\ inicial\ del\ objeto\ en\ el\ eje\ y.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase\ aqui\ se\ muestra\ la\ municion\ y\ se\ detecta\ si\ existe\ una\ colicion.
+numComments=2

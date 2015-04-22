@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=X\ Y\ Tipo
+comment0.target=Boton(int,\ int,\ int)
+comment0.text=\ Constructor\ inicializa\ las\ variables\ de\ la\ clase,\ utiliza\ el\ metodo\ super\ que\ inicializa\ las\ coordenadas\ iniciales\ del\ objeto..\ \r\n\ \ \ \ @param\ X\ cordenada\ inicial\ de\ el\ objeto\ en\ el\ eje\ x.\r\n\ \ \ \ @param\ Y\ cordenada\ inicial\ de\ el\ objeto\ en\ el\ eje\ y.\r\n@param\ Tipo\ indica\ el\ tipo\ de\ boton\ que\ se\ quiere\ crear.
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase\ muestra\ el\ boton\ en\ pantalla.
+comment2.params=
+comment2.target=int\ getTipo()
+comment2.text=Metodo\ getTipo\ nos\ permite\ conocer\ el\ tipo\ de\ boton.\r\n@return\ retorna\ el\ tipo\ de\ boton.
+numComments=3

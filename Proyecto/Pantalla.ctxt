@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=Fondo
+comment0.target=Pantalla(java.lang.String)
+comment1.params=Fondo\ X\ Y
+comment1.target=Pantalla(java.lang.String,\ int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=X\ Y
+comment3.target=void\ Scroll(int,\ int)
+numComments=4

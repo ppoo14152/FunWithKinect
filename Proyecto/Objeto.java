@@ -1,0 +1,20 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+/** 
+ *La clase objeto es la clase que contiene los diferentes objetos usados en el juego, asi como las variables comunes que heredan.
+@param x variable que contiene la coordenada en el eje x del objeto.
+@param y variable que contiene la coordenada en el eje y del objeto.
+ */
+
+public class Objeto extends Actor
+{
+    public int x;
+    public int y;
+
+    /** Constructor de la clase objeto recibe como parametro la coordenada en X y Y y se las asigna a las variables del objeto  */
+    public Objeto(int X, int Y)
+    {
+        x=X;
+        y=Y;
+    }
+
+}

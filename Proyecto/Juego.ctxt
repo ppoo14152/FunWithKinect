@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=P\ J\ M
+comment0.target=Juego(Pantalla,\ Jugador,\ Mira)
+comment1.params=
+comment1.target=int\ botonP()
+comment2.params=
+comment2.target=void\ IncPun()
+comment3.params=
+comment3.target=int\ perder()
+numComments=4

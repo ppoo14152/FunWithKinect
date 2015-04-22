@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=X\ Y\ Tipo
+comment0.target=Mira(int,\ int,\ int)
+comment0.text=Constructor\ de\ la\ clase\ mira,\ inicializa\ todas\ las\ variables.\r\n\ \ \ \ @param\ X\ contiene\ la\ posicion\ en\ el\ eje\ x\ en\ donde\ aparecera\ el\ objeto.\r\n\ \ \ \ @param\ Y\ contiene\ la\ posicion\ en\ el\ eje\ y\ en\ donde\ aparecera\ el\ objeto.\r\n\ \ \ \ @param\ Tipo\ contiene\ el\ tipo\ de\ mira\ que\ se\ quiere\ crear.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase\ mira\ desplaza\ la\ mira\ por\ la\ pantalla\ y\ verifica\ las\ coliciones\ que\ tiene\ con\ otros\ objetos
+comment2.params=
+comment2.target=int\ getBan()
+comment2.text=Metodo\ getBan\ detecta\ si\ se\ preciono\ un\ boton,\ reproduce\ el\ sonido\ de\ play.\r\n\ \ \ \ @return\ 0\ si\ no\ se\ preciono\ ningun\ boton\ y\ 1\ si\ se\ preciono.\r\n
+comment3.params=
+comment3.target=int\ SoldadoM()
+comment3.text=\ Metodo\ soldadoM\ \ detecta\ si\ la\ mira\ se\ encuentra\ sobre\ un\ Enemigo.\r\n@return\ 0\ si\ no\ se\ encuentra\ sobre\ un\ Enemigo\ y\ 1\ \ si\ lo\ esta.
+comment4.params=
+comment4.target=int\ ratonMuere()
+comment4.text=\ Metodo\ ratonMuere\ \ detecta\ si\ el\ raton\ se\ encuentra\ sobre\ un\ algun\ objeto.\r\n@return\ 0\ si\ no\ se\ encuentra\ \ y\ 1\ \ si\ lo\ esta.
+numComments=5

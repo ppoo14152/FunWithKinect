@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=text
+comment0.target=Label(java.lang.String)
+comment0.text=Constructor,\ que\ recibe\ una\ cadena\ la\ cual\ sera\ mostrada\ como\ una\ imagen\ en\ el\ juego
+comment1.params=text\ size
+comment1.target=Label(java.lang.String,\ int)
+comment1.text=Constructor,\ recibe\ una\ cadena\ y\ el\ tama\u00F1o\ de\ la\ misma
+comment2.params=text
+comment2.target=void\ setText(java.lang.String)
+comment2.text=Metodo,\ recibe\ una\ cadena\ la\ cual\ sera\ mostrada\ como\ una\ imagen\ de\ Greenfoot
+comment3.params=text\ size
+comment3.target=void\ setText(java.lang.String,\ int)
+comment3.text=Metodo,\ recibe\ una\ cadena\ y\ el\ tama\u00F1o\ de\ la\ misma
+comment4.params=
+comment4.target=void\ act()
+comment4.text=Metodo\ act\ de\ la\ classe
+numComments=5

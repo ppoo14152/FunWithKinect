@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=X\ Y\ ym
+comment0.target=Bala(int,\ int,\ int)
+comment0.text=\ Constructor\ de\ la\ clase\ Bala\ iniciasliza\ todas\ la\ variables\r\n\ \ \ \ @param\ X\ contiene\ la\ posicion\ en\ el\ eje\ x\ en\ donde\ aparecera\ el\ objeto.\r\n\ \ \ \ @param\ Y\ contiene\ la\ posicion\ en\ el\ eje\ y\ en\ donde\ aparecera\ el\ objeto.\r\n@param\ ym\ contiene\ la\ posicion\ de\ la\ mira,\ es\ el\ limite\ a\ el\ que\ llegara\ la\ bala.
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase\ Bala,\ realiza\ el\ movimieto\ de\ la\ bala\ y\ remuebe\ el\ objeto\ si\ se\ llega\ al\ limite
+numComments=2

@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=X\ Y
+comment0.target=Arma(int,\ int)
+comment0.text=Constructor\ de\ la\ clase,\ aqui\ se\ inicializan\ las\ variables\ del\ objeto.\r\n\ \ \ \ @param\ X\ contiene\ la\ posicion\ en\ el\ eje\ x\ en\ donde\ aparecera\ el\ objeto.\r\n\ \ \ \ @param\ Y\ contiene\ la\ posicion\ en\ el\ eje\ y\ en\ donde\ aparecera\ el\ objeto.\ \ \ \r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase,\ se\ realiza\ el\ movimiento\ de\ la\ mira\ y\ se\ muestra\ en\ pantalla,\ se\ detecta\ si\ el\ jugador\ a\ realizado\ un\ disparo\ y\r\nse\ detecta\ el\ da\u00F1o\ y\ la\ municion.
+comment2.params=x\ y\ alto
+comment2.target=void\ Disparo(int,\ int,\ int)
+comment2.text=Metodo\ Disparo,\ crea\ un\ objeto\ Bala\ y\ lo\ agrega\ al\ mundo.\r\n\ \ \ \ @param\ x\ indica\ la\ posicion\ inicial\ de\ la\ bala\ en\ el\ eje\ x.\r\n\ \ \ \ @param\ y\ indica\ la\ posicion\ inicial\ de\ la\ bala\ en\ el\ eje\ y.\r\n\ \ \ \ @param\ alto\ indica\ el\ limite\ al\ cual\ llegara\ la\ bala.\r\n
+comment3.params=cantidad
+comment3.target=void\ incBalas(int)
+comment3.text=Metodo\ incBalas,\ incrementa\ la\ cantidad\ de\ balas\ del\ jugador\ y\ actualiza\ en\ pantalla.\r\n\ @param\ cantidad\ Indica\ el\ numero\ de\ balas\ que\ se\ incrementara.\r\n
+comment4.params=
+comment4.target=greenfoot.Actor\ getCol()
+comment4.text=\ Metodo\ getCol\ Indica\ si\ se\ recibio\ un\ impacto.\r\n\ \ \ \ @return\ null\ si\ no\ coliciono\ y\ diferente\ de\ null\ si\ coliciono.\r\n
+numComments=5

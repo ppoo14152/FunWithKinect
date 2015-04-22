@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Picos()
+comment0.text=Constructor\ de\ la\ clase\ aqui\ se\ inicializan\ todas\ las\ variables\ del\ objeto\ ,\ utiliza\ el\ metodo\ super\ el\ cual\ \r\n\ \ \ \ inicializa\ las\ coordenadas\ iniciales\ del\ objeto\ en\ el\ eje\ x\ e\ y.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase\ aqui\ se\ realiza\ la\ transicion\ de\ disfraces\ cada\ cierto\ tiempo\ y\ se\ reproduce\ el\ sonido\ de\ activacion.
+comment2.params=
+comment2.target=int\ getPicos()
+comment2.text=\ Metodo\ getPicos\ nos\ permite\ conocer\ el\ valor\ del\ disfraz\ usado\ en\ el\ momento\ de\ su\ ejecucion.\r\n@return\ retorna\ el\ valor\ de\ c.
+numComments=3

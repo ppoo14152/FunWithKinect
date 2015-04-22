@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=X\ Y
+comment0.target=Sombra(int,\ int)
+comment0.text=Constructor\ de\ la\ clase,\ aqui\ se\ inicializan\ todas\ las\ variables\ del\ objeto.\r\n\ \ \ \ @param\ X\ contiene\ la\ posicion\ en\ el\ eje\ x\ en\ donde\ aparecera\ el\ objeto.\r\n\ \ \ \ @param\ Y\ contiene\ la\ posicion\ en\ el\ eje\ y\ en\ donde\ aparecera\ el\ objeto.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ de\ la\ clase,\ muestra\ el\ objeto\ en\ pantalla,\ ademas\ realiza\ el\ movimiento\ del\ mismo.
+numComments=2

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=X\ Y\ velocidad
+comment0.target=Balon(int,\ int,\ int)
+comment0.text=\r\n\ \ \ \ Constructor\ de\ la\ clase\ Balon\ aqui\ se\ inicializan\ las\ variable\ y\ se\ realiza\ el\ metodo\ super\ para\ inicializar\r\n\ \ \ \ las\ variable\ x\ y\ y\ heredadas\ de\ la\ superclase.\r\n\ \ \ \ @param\ X\ coordenada\ en\ el\ eje\ x\ en\ que\ se\ quiere\ comience\ el\ objeto.\r\n\ \ \ \ @param\ Y\ coordenada\ en\ el\ eje\ y\ en\ que\ se\ quiere\ comience\ el\ objeto.\r\n\ \ \ \ @param\ velocidad\ en\ que\ se\ quiere\ se\ mueva\ el\ objeto.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=Metodo\ act\ del\ objeto\ aqui\ se\ detecta\ si\ el\ jugador\ pateo\ el\ balon\ y\ genera\ el\ movimiento\ del\ mismo,\ ademas\ \r\nverificar\ y\ alterar\ la\ direccion\ del\ mismo\ detectando\ el\ movimiento\ de\ nuestra\ mano\ derecha
+comment2.params=
+comment2.target=void\ patada()
+comment2.text=Metodo\ patada\ actualiza\ la\ bandera\ de\ disparo\ y\ reproduce\ el\ sonido\ de\ patada
+comment3.params=direccionX\ direccionY
+comment3.target=void\ setDireccion(int,\ int)
+comment3.text=\ Metodo\ setDireccion\ permite\ actualizar\ las\ variables\ x1\ Y\ y1\ las\ cuales\ establecen\ la\ direccion\ del\ balon\ en\ el\ metodo\ act.\r\n\ \ \ \ @param\ direccionX\ coordenada\ x\ de\ la\ mano\ derecha.\r\n\ \ \ \ @param\ direccionY\ coordenada\ y\ de\ la\ mano\ derecha.\r\n
+numComments=4

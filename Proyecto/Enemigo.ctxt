@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=X\ Y\ tipo
+comment0.target=Enemigo(int,\ int,\ int)
+comment0.text=El\ constructor\ inicializa\ todas\ las\ variables\ y\ recibe\ coordenadas\ x,y\ y\ el\ tipo\ de\ enemigo\r\n\ aqui\ se\ llama\ al\ constructor\ de\ la\ superclase\ para\ inicializar\ las\ coordenadas.\r\n\ @param\ X\ posicion\ inicial\ en\ el\ eje\ x\ del\ enemigo.\r\n\ @param\ Y\ posicion\ inicial\ en\ el\ eje\ y\ del\ enemigo.\r\n\ @param\ tipo\ indica\ el\ tipo\ de\ enemigo\ que\ se\ quiere\ crear.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=El\ act\ de\ esta\ clase\ hace\ que\ el\ ennemigo\ camine,\ si\ es\ que\ debe\ caminar,\r\n\ tambien\ detecta\ cuando\ el\ enemigo\ muere\ y\ genera\ los\ puntos\ para\ el\ jugador\r\n
+comment2.params=x\ y\ yf
+comment2.target=void\ Dispara(int,\ int,\ int)
+comment2.text=Este\ metodo\ genera\ una\ nueva\ bala\ de\ tipo\ BalaEnemigo\ con\ las\ coordenadas\ del\ enemigo\ \r\n\ se\ reproduce\ un\ sonido\ y\ se\ la\ a\u00F1ade\ al\ mundo.\r\n
+numComments=3

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Salud()
+comment0.text=\ el\ constructor\ de\ salud\ inicializa\ las\ imagenes\ necesarias\ en\ una\ lista\ y\ coloca\ la\ primer\r\n\ imagen\ en\ pantalla\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=s
+comment2.target=void\ baja(int)
+comment2.text=este\ metodo\ decrementa\ la\ salud\ del\ jugador\ camba\ de\ imagen\r\n
+numComments=3
