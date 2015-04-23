@@ -17,6 +17,7 @@ public class Inicio extends KinectWorld
     private int ban=0; 
     private KinectFun mundo;
     private GreenfootSound musica;
+    private int puntuacion;
 
     /**Es el constructor de la clase se llama al constructor de la superclase, donde se crea una 
      * pequeña camara que es odnde se visualiza el jugador al inicio del juego
@@ -24,6 +25,7 @@ public class Inicio extends KinectWorld
     public Inicio ()
     {    
         super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, 1.0, false);
+        puntuacion=0;
         final int width = getWidth();
         final int height = getHeight();        
         mundo=new Principal(); 
@@ -60,6 +62,7 @@ public class Inicio extends KinectWorld
                 if((mundo).perder()== 1){
                     if(musica.isPlaying()==true)
                         musica.stop();
+                    puntuacion+=((Juego)mundo).getPuntos();
                     removeObjects(getObjects(null));
                     mundo=new GameOver();
                     addObject(mundo,0,0);
@@ -79,6 +82,8 @@ public class Inicio extends KinectWorld
                     musica.stop();
                 musica= new GreenfootSound("menuMusica.mp3");
                 musica.play();
+                if(mundo instanceof Juego)
+                    puntuacion+=((Juego)mundo).getPuntos();
                 removeObjects(getObjects(null));
                 mundo=new Principal(); 
                 addObject(mundo,0,0);
@@ -120,6 +125,23 @@ public class Inicio extends KinectWorld
                     musica.stop();
                 removeObjects(getObjects(null));
                 mundo= new JuegoGuerra();
+                addObject(mundo,0,0);
+                musica= new GreenfootSound("guerraSound.mp3");
+                musica.playLoop();
+                break;
+
+                case 8://records         
+                if(musica.isPlaying()==true)
+                    musica.stop();
+                removeObjects(getObjects(null));
+                mundo= new Record();
+                if (UserInfo.isStorageAvailable()) {
+                    UserInfo myInfo = UserInfo.getMyInfo();
+                    if (puntuacion > myInfo.getScore()) {
+                        myInfo.setScore(puntuacion);
+                        myInfo.store();  // write back to server
+                    }
+                }
                 addObject(mundo,0,0);
                 musica= new GreenfootSound("guerraSound.mp3");
                 musica.playLoop();

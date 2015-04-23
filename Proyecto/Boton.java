@@ -30,6 +30,8 @@ public class Boton extends Objeto
             break;
             case 7 : boton= new GreenfootImage("botonMundo5.png");
             break;
+            case 8 : boton= new GreenfootImage("botonSalir.png");
+            break;
         }
         x=X;
         y=Y;

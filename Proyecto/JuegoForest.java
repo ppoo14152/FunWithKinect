@@ -97,5 +97,8 @@ public class JuegoForest extends Juego
     {
         return perder;
     }
-
+    public int getPuntos()
+        {
+            return j.getPuntos();
+        }
 }

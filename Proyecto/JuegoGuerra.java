@@ -87,5 +87,9 @@
             return perder;
            
         }
+        public int getPuntos()
+        {
+            return j.getPuntos();
+        }
      
     }

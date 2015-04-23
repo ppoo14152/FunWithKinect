@@ -86,5 +86,9 @@ public class Jugador extends Personaje
         else
             return 0;
     }
+    
+    public int getPuntos(){
+    return puntos;
+    }
 
 }

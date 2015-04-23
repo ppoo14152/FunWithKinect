@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=void\ incMuni()
 comment5.params=
 comment5.target=int\ perder()
-numComments=6
+comment6.params=
+comment6.target=int\ getPuntos()
+numComments=7

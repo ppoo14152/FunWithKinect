@@ -10,6 +10,7 @@ public class Principal extends Menu
                 super(new Pantalla("inicio"),new Mira(0,0,1));
                 menu.add(new Boton(200,250,1));
                 menu.add(new Boton(500,250,3));
+                menu.add(new Boton(350,345,8));
                 ban=0;
                 tipo=0;
     }

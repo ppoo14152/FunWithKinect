@@ -13,5 +13,5 @@ abstract class KinectFun extends Actor
                                   }   
     abstract int botonP();
     abstract int perder();
-  
+    
 }

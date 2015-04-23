@@ -153,4 +153,9 @@ public class JuegoLaberinto extends Juego
     public int getPicos(){
         return picos.getPicos();
     }
+    
+    public int getPuntos()
+        {
+            return j.getPuntos();
+        }
 }
