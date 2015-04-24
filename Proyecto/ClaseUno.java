@@ -15,5 +15,8 @@ public class ClaseUno extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+    }  
+    public void metodo2(){
+        //agregado pr mi
+    }
 }
