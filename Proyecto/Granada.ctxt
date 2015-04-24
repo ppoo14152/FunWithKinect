@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=X
+comment0.target=Granada(int)
+comment0.text=\r\n\ constructor\ de\ la\ granada\ solo\ recibe\ coordenada\ en\ x\r\n\ inicializa\ las\ variables\ y\ llama\ al\ constructor\ de\ la\ superclase\ para\ inicializar\ algunas\ otras\r\n\ @param\ X\ coordenada\ en\ x\ de\ la\ granada\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ metodo\ act\ este\ metodo\ hace\ la\ animacion\ de\ la\ granada,\ cambia\ de\ sprites\ y\ \r\n\ genera\ sonido\ de\ explosion,\ aqui\ tambien\ se\ elimina\ a\ la\ instancia\ de\ granada\r\n
+comment2.params=
+comment2.target=int\ getExplosion()
+comment2.text=\r\n\ metodo\ getExplosion\ este\ metodo\ regresa\ la\ variable\ de\ explosion\ \r\n\ @return\ explosion\ variable\ que\ indica\ cuando\ ha\ explotado\ la\ granada\r\n
+numComments=3
