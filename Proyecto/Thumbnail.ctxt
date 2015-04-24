@@ -3,5 +3,5 @@ comment0.params=
 comment0.target=Thumbnail()
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Thumbnail\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ Act\ -en\ una\ serie\ de\ imagenes\ que\ se\ actualian\ periodicamente\ se\ guarda\ una\ fotografia\ del\ mundo\ exterior\r\n\ y\ al\ actualizar\ simula\ un\ video\r\n
 numComments=2

@@ -1,14 +1,20 @@
 #BlueJ class context
 comment0.params=
 comment0.target=JuegoGool()
+comment0.text=\r\n\ constructor\ de\ la\ clase,\ inicializa\ las\ variables\ que\ necesita\ la\ clase,\ llama\ al\ constructor\ de\ la\ superclase\r\n\ para\ iniciar\ algunas\ de\ estas\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ metodo\ act,\ eneste\ metodo\ se\ a\u00F1ade\ el\ balon\ el\ portero\ la\ porteria\ y\ la\ mira\ para\ seleccionar\ botones\ y\ maipular\r\n\ el\ balon\r\n\ \r\n
 comment2.params=
 comment2.target=int\ botonP()
+comment2.text=\r\n\ metodo\ botonP,\ regresa\ el\ tipo\ de\ boton\ presionado\r\n\ @return\ tipo\ variable\ que\ indica\ el\ tipo\ de\ boton\ presionado\r\n\ \r\n
 comment3.params=
 comment3.target=void\ IncPun()
+comment3.text=\r\n\ metodo\ que\ incrementa\ los\ puntos\ del\ jugador\ si\ es\ \ que\ ha\ anotado\ gol\r\n\ \r\n
 comment4.params=
 comment4.target=int\ perder()
+comment4.text=\r\n\ metodo\ que\ regresa\ la\ variable\ perder\ cuando\ se\ ha\ perdido\r\n\ @return\ perde\ variable\ que\ indica\ si\ se\ ha\ perdido\ el\ juego\r\n
 comment5.params=
 comment5.target=int\ getPuntos()
+comment5.text=\r\n\ metodo\ que\ permite\ recuperar\ los\ puntos\ del\ jugador\r\n\ @return\ gepuntos\ variable\ contiene\ los\ puntos\ del\ jugador\r\n
 numComments=6

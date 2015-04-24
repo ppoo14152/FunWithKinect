@@ -1,16 +1,23 @@
 #BlueJ class context
 comment0.params=
 comment0.target=JuegoGuerra()
+comment0.text=\r\n\ constructor\ de\ la\ clase\ inicializa\ las\ variables\ que\ se\ usan\ tambien\ inicializa\ algunas\ en\ el\ constructor\ de\ la\r\n\ superclase\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ metodo\ act,\ anade\ al\ mundo\ los\ elementos\ una\ sola\ vez\ y\ algunos\ otros\ cada\ cierto\ tiempo\r\n
 comment2.params=
 comment2.target=int\ botonP()
+comment2.text=\r\n\ metodo\ botonP\ regresa\ el\ tipo\ del\ boon\ presionado\r\n\ @return\ tipo\ variable\ con\ el\ tipo\ de\ boton\ presionado\r\n
 comment3.params=
 comment3.target=void\ IncPun()
+comment3.text=\r\n\ metodo\ incPun\ este\ metodo\ incrementa\ los\ puntos\ del\ jugador\r\n
 comment4.params=
 comment4.target=void\ incMuni()
+comment4.text=\r\n\ metodo\ incMuni\ este\ metodo\ incrementa\ la\ municion\ del\ arma\ del\ jugador\r\n
 comment5.params=
 comment5.target=int\ perder()
+comment5.text=\r\n\ metodo\ perder\ este\ metodo\ regresa\ una\ varible\ que\ indica\ si\ ha\ perdido\ o\ no\r\n\ @return\ perder\ variable\ que\ indica\ si\ se\ ha\ perdido\ o\ no\r\n
 comment6.params=
 comment6.target=int\ getPuntos()
+comment6.text=\r\n\ metodo\ getPuntos\ este\ metodo\ regresa\ los\ puntos\ del\ jugador\r\n\ @return\ puntos\ varibale\ con\ los\ puntos\ del\ jugador\r\n
 numComments=7

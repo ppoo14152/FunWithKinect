@@ -11,8 +11,10 @@ public class Personaje extends Actor
     public int y;
     public int salud;
 
-    /**
-    El ocnstructor inicializa las coordenadas y la salud, recibe como parametro estas variables
+    /**el ocnstructor inicializa las coordenadas y la salud, recibe como parametro estas variables
+     * @param X coordenada en x que se le coloca al crear instancias de esta clase
+     * @param Y coordenada en y que se le coloca al crear instancias de esta clase
+     * @param S salud del personaje se le coloca al crear instancias de esta clase
      */
     public Personaje(int X, int Y, int S){
         x=X;

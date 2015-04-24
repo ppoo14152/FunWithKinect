@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.params=X\ Y\ S
 comment0.target=Jugador(int,\ int,\ int)
-comment0.text=\ El\ constructor\ de\ la\ clase\ inicializa\ las\ variables\ del\ jugaodr\ recibiendo\ parametros\r\n\ como\ coordenadas\ x,y\ y\ salud,\ las\ coordenadas\ se\ inicializan\ en\ el\ constructor\ de\ l\ a\ superclase\r\n\ \r\n
+comment0.text=\ el\ constructor\ de\ la\ clase\ inicializa\ las\ variables\ del\ jugaodr\ recibiendo\ parametros\r\n\ como\ coordenadas\ x,y\ y\ salud,\ las\ coordenadas\ se\ inicializan\ en\ el\ constructor\ de\ l\ a\ superclase\r\n\ @param\ X\ coordenada\ en\ x\ del\ jugador\r\n\ @param\ Y\ coordenada\ en\ y\ del\ jugador\r\n\ @param\ S\ salud\ del\ jugador\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\ \r\n\ El\ metodo\ act\ solo\ a\u00F1ade\ los\ puntos\ y\ la\ salud\ al\ mundo.\r\n
+comment1.text=\ \r\n\ El\ metodo\ act\ solo\ anade\ los\ puntos\ y\ la\ salud\ al\ mundo.\r\n
 comment2.params=cantidad
 comment2.target=void\ IncPuntos(int)
-comment2.text=\ \r\n\ El\ metodo\ IncPuntos\ aumenta\ la\ puntuacion\ del\ jugador,\ retira\ y\ los\ muestra\ en\ pantalla.\r\n
+comment2.text=\ \r\n\r\n\ \ \ \ /**\r\n\ este\ metodo\ incrementa\ los\ puntos\ del\ jugador\ recibiendo\ el\ incremento\ como\ parametro\r\n\ @param\ cantidad\ Cantidad\ de\ puntos\ que\ se\ incrementaran\r\n
 comment3.params=
 comment3.target=void\ da\u00F1a()
 comment3.text=\ \r\n\ El\ metodo\ da\u00F1a\ decrementa\ la\ vida\ del\ jugador,\ reproduce\ el\ sonido\ de\ da\u00F1o\ y\ muestra\ en\ \r\n\ pantalla\ la\ vida\ restante.\r\n
@@ -16,4 +16,5 @@ comment4.target=int\ muerto()
 comment4.text=\ \r\n\ El\ metodo\ muerto\ indica\ si\ el\ jugador\ ha\ perdido\ y\ \ reproduce\ el\ sonido\ de\ perder.\r\n\ @return\ retorna\ 0\ \ si\ el\ jugador\ no\ a\ perdido\ o\ 1\ si\ el\ jugador\ ha\ perdido.\ \r\n
 comment5.params=
 comment5.target=int\ getPuntos()
+comment5.text=\r\neste\ metodo\ recupera\ los\ puntos\ del\ jugador\ para\ despues\ crear\ los\ records\r\n@return\ puntos\ puntos\ que\ tiene\ el\ jugador\r\n
 numComments=6

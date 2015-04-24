@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.params=X\ Y\ S
 comment0.target=Personaje(int,\ int,\ int)
-comment0.text=\r\n\ \ \ \ El\ ocnstructor\ inicializa\ las\ coordenadas\ y\ la\ salud,\ recibe\ como\ parametro\ estas\ variables\r\n
+comment0.text=el\ ocnstructor\ inicializa\ las\ coordenadas\ y\ la\ salud,\ recibe\ como\ parametro\ estas\ variables\r\n\ @param\ X\ coordenada\ en\ x\ que\ se\ le\ coloca\ al\ crear\ instancias\ de\ esta\ clase\r\n\ @param\ Y\ coordenada\ en\ y\ que\ se\ le\ coloca\ al\ crear\ instancias\ de\ esta\ clase\r\n\ @param\ S\ salud\ del\ personaje\ se\ le\ coloca\ al\ crear\ instancias\ de\ esta\ clase\r\n
 numComments=1

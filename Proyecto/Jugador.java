@@ -20,9 +20,11 @@ public class Jugador extends Personaje
     private GreenfootSound pierde;
     private GreenfootSound daño;      
 
-    /** El constructor de la clase inicializa las variables del jugaodr recibiendo parametros
+    /** el constructor de la clase inicializa las variables del jugaodr recibiendo parametros
      * como coordenadas x,y y salud, las coordenadas se inicializan en el constructor de l a superclase
-     * 
+     * @param X coordenada en x del jugador
+     * @param Y coordenada en y del jugador
+     * @param S salud del jugador
      */
     public Jugador( int X, int Y , int S )
     {  
@@ -37,7 +39,7 @@ public class Jugador extends Personaje
     }
 
     /** 
-     * El metodo act solo añade los puntos y la salud al mundo.
+     * El metodo act solo anade los puntos y la salud al mundo.
      */
     public void act(){
         if(ban==0){
@@ -48,8 +50,11 @@ public class Jugador extends Personaje
     }
 
     /** 
-     * El metodo IncPuntos aumenta la puntuacion del jugador, retira y los muestra en pantalla.
-     */
+
+    /**
+     * este metodo incrementa los puntos del jugador recibiendo el incremento como parametro
+     * @param cantidad Cantidad de puntos que se incrementaran
+     */ 
     public void IncPuntos(int cantidad)
     {
         puntos+=cantidad;
@@ -86,9 +91,13 @@ public class Jugador extends Personaje
         else
             return 0;
     }
-    
+
+    /**
+     *este metodo recupera los puntos del jugador para despues crear los records
+     *@return puntos puntos que tiene el jugador
+     */
     public int getPuntos(){
-    return puntos;
+        return puntos;
     }
 
 }

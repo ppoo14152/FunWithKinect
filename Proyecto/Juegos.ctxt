@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Juegos()
+comment0.text=\r\n\ constructor\ de\ la\ clase,\ inicializa\ los\ botones\ y\ banderas.\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ metodo\ Act,\ este\ metodo\ a\u00F1ade\ al\ mundo\ los\ botones\ una\ sola\ vez\ con\ ayuda\ de\ la\ bandera\ ban,\ tambien\ verifica\ que\ boton\ se\ ha\ presionado.\r\n
 comment2.params=
 comment2.target=int\ botonP()
+comment2.text=\r\n\ metodo\ botonP,\ este\ metodo\ regresa\ el\ tipo\ de\ boton\ que\ se\ ha\ presionado\r\n@return\ tipo\ Variable\ que\ indica\ tipo\ de\ boton.\r\n
 numComments=3

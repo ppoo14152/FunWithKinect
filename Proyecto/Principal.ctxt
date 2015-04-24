@@ -1,8 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Principal()
+comment0.text=\r\n\ constructor\ de\ la\ clase\ principal,inicializa\ la\ pantalla\ con\ una\ nueva\ mira,a\u00F1ade\ los\ botones\ tambien.\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ metodo\ act\ de\ la\ clase\ principal,\ a\u00F1ade\ los\ botones,\ y\ verifica\ si\ la\ mira\ esta\ seleccionando\ alguno.\r\n
 comment2.params=
 comment2.target=int\ botonP()
+comment2.text=\r\n\ metodo\ botonP,\ este\ metodo\ regresa\ el\ tipo\ del\ boton\ que\ se\ a\ presionado\ para\ saber\ que\ instruccion\ ejecutar.\r\n\ @return\ tipo\ variable\ entera\ que\ indica\ tipo\ de\ boton.\r\n\ \r\n
 numComments=3

@@ -1,18 +1,26 @@
 #BlueJ class context
 comment0.params=
 comment0.target=JuegoForest()
+comment0.text=\r\n\ constructor\ de\ la\ clase\ inicializa\ las\ variables\ tambien\ inicializa\ algunas\ en\ el\ constructor\ de\ la\ superclas\r\n\ \r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ metodo\ act\ en\ este\ metodo\ se\ generan\ varios\ elementos\ del\ juego\ cada\ cierto\ tiempo\ y\ se\ anaden\ al\ munddo\r\n\ tambien\ se\ genera\ el\ scroll\ de\ la\ pantalla\r\n
 comment2.params=
 comment2.target=int\ botonP()
+comment2.text=\r\n\ metodo\ botonP\ este\ metodo\ regresa\ el\ tipo\ de\ boton\ presonado\r\n\ @return\ tipo\ tipo\ de\ boton\ que\ se\ ha\ presionado\r\n\ \r\n
 comment3.params=
 comment3.target=void\ IncPun()
+comment3.text=\r\n\ metodo\ incPun\ este\ metodo\ aumenta\ los\ puntos\ del\ jugador\r\n
 comment4.params=
 comment4.target=void\ da\u00F1a()
+comment4.text=\r\n\ metodo\ da\u00F1a\ este\ metodo\ reduce\ la\ cantidad\ de\ vida\ actual\ el\ jugador\r\n
 comment5.params=
 comment5.target=void\ retrocede()
+comment5.text=\r\n\ metodo\ retrocede\ este\ metodo\ hace\ que\ el\ enemigo\ retroceda\ en\ pantalla\r\n
 comment6.params=
 comment6.target=int\ perder()
+comment6.text=\r\n\ metodo\ perder\ este\ metodo\ indica\ cuando\ ha\ perdido\ o\ no\r\n\ @return\ perder\ variable\ que\ indica\ cuando\ se\ ha\ perdido\ o\ no\r\n
 comment7.params=
 comment7.target=int\ getPuntos()
+comment7.text=\r\n\ metodo\ getPuntos\ este\ metodo\ regresa\ los\ puntos\ del\ jugador\r\n\ @return\ puntos\ variable\ que\ contiene\ los\ puntos\ del\ jugador\r\n
 numComments=8

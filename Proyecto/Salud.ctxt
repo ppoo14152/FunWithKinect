@@ -6,5 +6,5 @@ comment1.params=
 comment1.target=void\ act()
 comment2.params=s
 comment2.target=void\ baja(int)
-comment2.text=este\ metodo\ decrementa\ la\ salud\ del\ jugador\ camba\ de\ imagen\r\n
+comment2.text=este\ metodo\ decrementa\ la\ salud\ del\ jugador,\ cambia\ de\ imagen\ dpendiendo\ de\ una\ variable.\r\n\ @param\ s\ Varable\ que\ permite\ controlar\ y\ sincronizar\ la\ vida\ del\ jugador\ con\ las\ imagenes\ de\ vida.\r\n
 numComments=3
