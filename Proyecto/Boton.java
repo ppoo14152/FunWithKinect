@@ -6,6 +6,7 @@ import java.util.LinkedList;
 public class Boton extends Objeto
 {
     private LinkedList<GreenfootImage> boton;
+    private GreenfootSound seleccion;
     private int tipo;
     private int c;
     /** Constructor inicializa las variables de la clase, utiliza el metodo super que inicializa las coordenadas iniciales del objeto.. 
@@ -16,6 +17,7 @@ public class Boton extends Objeto
         super(X,Y);
         tipo=Tipo;
         c=0;
+        seleccion=new GreenfootSound("selec.wav");
         boton=new LinkedList<GreenfootImage>();
         switch(tipo){
 
@@ -63,8 +65,11 @@ public class Boton extends Objeto
             boton.get(1).scale(100,50);
         }
         coli = getOneIntersectingObject(Mira.class);
-        if(coli != null)
+        if(coli != null){
+            if(c==0)
+            seleccion.play();
             c=1;
+        }
         else
             c=0;
         setImage(boton.get(c));
