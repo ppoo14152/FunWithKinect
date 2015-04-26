@@ -75,9 +75,9 @@ public class JuegoForest extends Juego
                 }
                 else{
                     if(r.nextFloat() > .5f)
-                        getWorld().addObject(new Obstaculo(640,450,"carro",18),640,450);
+                        getWorld().addObject(new Obstaculo(640,450,"carro",20),640,450);
                     else
-                        getWorld().addObject(new Obstaculo(640,450,"bote",18),640,450);
+                        getWorld().addObject(new Obstaculo(640,450,"bote",20),640,450);
                 }
                 o=0;}
             else

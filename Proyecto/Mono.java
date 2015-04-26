@@ -96,6 +96,7 @@ public class Mono extends Objeto
 
                 if(correr.isPlaying()==true)
                     correr.stop();
+                    x+=1;
                 if(c>1)
                     y=y+50;
                 else
