@@ -1,11 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.LinkedList;
 /**Clase Boton nos permite crear objetos de tipo menu con los cuales el jugador podra seleccionar las diferentes opciones del juego.
 @param boton guarda la imagen de el boton. 
 @param tipo  selecciona la imagen que se va a utilizar. */
 public class Boton extends Objeto
 {
-    private GreenfootImage boton;
+    private LinkedList<GreenfootImage> boton;
     private int tipo;
+    private int c;
     /** Constructor inicializa las variables de la clase, utiliza el metodo super que inicializa las coordenadas iniciales del objeto.. 
     @param X cordenada inicial de el objeto en el eje x.
     @param Y cordenada inicial de el objeto en el eje y.
@@ -13,24 +15,33 @@ public class Boton extends Objeto
     public  Boton(int X, int Y,int Tipo){
         super(X,Y);
         tipo=Tipo;
-
+        c=0;
+        boton=new LinkedList<GreenfootImage>();
         switch(tipo){
 
-            case 1: boton= new GreenfootImage("BotonJuegos.png");
+            case 1: boton.add( new GreenfootImage("BotonJuegos.png"));
+                    boton.add( new GreenfootImage("BotonJuegos1.png"));
             break;
-            case 2: boton= new GreenfootImage("botonRegreso.png");
+            case 2: boton.add( new GreenfootImage("botonRegreso.png"));
+                    boton.add( new GreenfootImage("botonRegreso.png"));
             break;
-            case 3: boton= new GreenfootImage("BotonAyuda.png");
+            case 3: boton.add( new GreenfootImage("BotonAyuda.png"));
+                    boton.add( new GreenfootImage("BotonAyuda1.png"));
             break;
-            case 4: boton= new GreenfootImage("BotonLaberinto.png");
+            case 4: boton.add( new GreenfootImage("BotonLaberinto.png"));
+                    boton.add( new GreenfootImage("BotonLaberinto1.png"));
             break;
-            case 5: boton= new GreenfootImage("BotonForest.png");
+            case 5: boton.add( new GreenfootImage("BotonForest.png"));
+                    boton.add( new GreenfootImage("BotonForest1.png"));
             break;
-            case 6: boton= new GreenfootImage("BotonGool.png");
+            case 6: boton.add( new GreenfootImage("BotonGool.png"));
+                    boton.add( new GreenfootImage("BotonGool1.png"));
             break;
-            case 7 : boton= new GreenfootImage("BotonGuerra.png");
-            break;
-            case 8 : boton= new GreenfootImage("BotonRecords.png");
+            case 7 : boton.add(new GreenfootImage("BotonGuerra.png"));
+                     boton.add(new GreenfootImage("BotonGuerra1.png"));
+            break; 
+            case 8 : boton.add( new GreenfootImage("BotonRecords.png"));
+                     boton.add( new GreenfootImage("BotonRecords1.png"));
             break;
         }
         x=X;
@@ -40,13 +51,23 @@ public class Boton extends Objeto
     /** Metodo act de la clase muestra el boton en pantalla.*/
     public void act() 
     {
-
+        Actor coli;
         setLocation(x,y); 
-        if(tipo!=2)
-        boton.scale(250,70);
+        
+        if(tipo!=2){
+        boton.get(0).scale(250,70);
+        boton.get(1).scale(250,70);
+                   }
+        else{
+        boton.get(0).scale(100,50);
+        boton.get(1).scale(100,50);
+                   }
+         coli = getOneIntersectingObject(Mira.class);
+        if(coli != null)
+        c=1;
         else
-        boton.scale(100,50);
-        setImage(boton);
+        c=0;
+        setImage(boton.get(c));
 
     }
 
@@ -59,5 +80,6 @@ public class Boton extends Objeto
             return tipo;
         else
             return 0;
+
     }
 }
