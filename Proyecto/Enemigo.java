@@ -67,7 +67,12 @@ public class Enemigo extends Objeto
             muere.play();
             baM=1;  
 
-        }  
+        }
+        if((getObjectsInRange(300,Granada.class).size()!=0)&& (((Inicio)getWorld()).explota()==1)){
+            setImage(enemigo.get(1));
+            muere.play();
+            baM=1;
+        }
         if(  System.currentTimeMillis()- seg   >= 500){          
             if(banDis == 3){
                 this.Dispara(x,y,400);

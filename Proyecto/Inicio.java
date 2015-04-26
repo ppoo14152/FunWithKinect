@@ -190,5 +190,13 @@ public class Inicio extends KinectWorld
     public void stopped(){
         if(musica.isPlaying()==true)
             musica.stop();
-    }        
+    }  
+
+    /**
+     * este metodo determina si una granada ha explotado
+     * @return explosion variable que se pone en 1 si una granada explota
+     */
+    public int explota(){
+        return ((JuegoGuerra)mundo).getExplosion();
+    }
 }

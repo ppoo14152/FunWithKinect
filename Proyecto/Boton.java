@@ -20,28 +20,28 @@ public class Boton extends Objeto
         switch(tipo){
 
             case 1: boton.add( new GreenfootImage("BotonJuegos.png"));
-                    boton.add( new GreenfootImage("BotonJuegos1.png"));
+            boton.add( new GreenfootImage("BotonJuegos1.png"));
             break;
             case 2: boton.add( new GreenfootImage("botonRegreso.png"));
-                    boton.add( new GreenfootImage("botonRegreso.png"));
+            boton.add( new GreenfootImage("botonRegreso.png"));
             break;
             case 3: boton.add( new GreenfootImage("BotonAyuda.png"));
-                    boton.add( new GreenfootImage("BotonAyuda1.png"));
+            boton.add( new GreenfootImage("BotonAyuda1.png"));
             break;
             case 4: boton.add( new GreenfootImage("BotonLaberinto.png"));
-                    boton.add( new GreenfootImage("BotonLaberinto1.png"));
+            boton.add( new GreenfootImage("BotonLaberinto1.png"));
             break;
             case 5: boton.add( new GreenfootImage("BotonForest.png"));
-                    boton.add( new GreenfootImage("BotonForest1.png"));
+            boton.add( new GreenfootImage("BotonForest1.png"));
             break;
             case 6: boton.add( new GreenfootImage("BotonGool.png"));
-                    boton.add( new GreenfootImage("BotonGool1.png"));
+            boton.add( new GreenfootImage("BotonGool1.png"));
             break;
             case 7 : boton.add(new GreenfootImage("BotonGuerra.png"));
-                     boton.add(new GreenfootImage("BotonGuerra1.png"));
+            boton.add(new GreenfootImage("BotonGuerra1.png"));
             break; 
             case 8 : boton.add( new GreenfootImage("BotonRecords.png"));
-                     boton.add( new GreenfootImage("BotonRecords1.png"));
+            boton.add( new GreenfootImage("BotonRecords1.png"));
             break;
         }
         x=X;
@@ -53,20 +53,20 @@ public class Boton extends Objeto
     {
         Actor coli;
         setLocation(x,y); 
-        
+
         if(tipo!=2){
-        boton.get(0).scale(250,70);
-        boton.get(1).scale(250,70);
-                   }
+            boton.get(0).scale(250,70);
+            boton.get(1).scale(250,70);
+        }
         else{
-        boton.get(0).scale(100,50);
-        boton.get(1).scale(100,50);
-                   }
-         coli = getOneIntersectingObject(Mira.class);
+            boton.get(0).scale(100,50);
+            boton.get(1).scale(100,50);
+        }
+        coli = getOneIntersectingObject(Mira.class);
         if(coli != null)
-        c=1;
+            c=1;
         else
-        c=0;
+            c=0;
         setImage(boton.get(c));
 
     }

@@ -18,7 +18,9 @@ import java.util.*;
 public class Arma extends Objeto
 {   
     private int ban;
+    private  Granada granada;
     private int banCam;
+   
     private int c;
     private int x2;
     private int banMuere;
@@ -29,6 +31,9 @@ public class Arma extends Objeto
     private  LinkedList <GreenfootImage> arma;
     private Label b;
     private long seg;
+    private long segG;
+    private int banGra;
+    private int granadas;
     private GreenfootSound camina;
 
     /**Constructor de la clase, aqui se inicializan las variables del objeto.
@@ -38,6 +43,9 @@ public class Arma extends Objeto
     public Arma(int X,int Y){
         super(X,Y);
         ban=1;
+        banGra=0;
+        granadas=5;
+        segG=System.currentTimeMillis(); 
         banCam=0;
         camina=new GreenfootSound("caminasoldado.mp3");
         banBal=0;
@@ -82,6 +90,14 @@ public class Arma extends Objeto
             setLocation(x+50,410);
             if( banCam==0)
                 x2=x;
+            if ((i.getJoint(Joint.RIGHT_HAND).getX()>= i.getJoint(Joint.LEFT_HAND).getX()-3) && (i.getJoint(Joint.RIGHT_HAND).getX()<= i.getJoint(Joint.LEFT_HAND).getX()+3)  && granadas > 0 && banGra==0){
+                banGra=1;
+                this.lanzaGranda(x);   
+                segG=System.currentTimeMillis(); 
+            }else if(  System.currentTimeMillis()- segG   >= 800){ 
+                segG=System.currentTimeMillis(); 
+                banGra=0;
+                }
             if (i.getJoint(Joint.LEFT_HAND).getY() > y && ban==0 && balas > 0)
             {    
                 this.Disparo(x,300,y);
@@ -105,6 +121,16 @@ public class Arma extends Objeto
         getWorld().removeObject(b);
         getWorld().addObject(b,x+40,340);
 
+    }
+
+    /**
+     * metodo lanzaGranada este metodo crea una nueva granada y la anade el mundo
+     * decremetna tambien el numero de granadas del jugador
+     */
+    public void lanzaGranda(int x){
+        granada = new Granada(x-100);
+        getWorld().addObject(granada,x-100,440);
+        granadas --;
     }
 
     /**Metodo Disparo, crea un objeto Bala y lo agrega al mundo.
@@ -134,6 +160,14 @@ public class Arma extends Objeto
      */ 
     public Actor getCol(){
         return  getOneIntersectingObject(BalaEnemigo.class); 
+    }
+
+    /**
+     * metodo getExplosion este metodo regresa una bandera que indica
+     * si la granada ha explotado
+     */
+    public int getExplosion(){
+        return granada.getExplosion();
     }
 
 }

@@ -20,8 +20,10 @@ public class Granada extends Objeto
     private int explosion;
     private int largo;
     private int con;
+    private int con2;
     private int banSonido;
     private GreenfootSound explota;
+     private GreenfootSound seguro;
    /**
     * constructor de la granada solo recibe coordenada en x
     * inicializa las variables y llama al constructor de la superclase para inicializar algunas otras
@@ -31,8 +33,10 @@ public class Granada extends Objeto
     public Granada(int X){
         super(X,440);
         con=0;
+        con2=2;
         explosion=0;
         explota= new GreenfootSound("explosion.mp3");
+        seguro= new GreenfootSound("seguroGranada.mp3");
         alto=50;
         banSonido=0;
         largo=40;
@@ -49,6 +53,7 @@ public class Granada extends Objeto
         granada.get(4).scale(210,220);
         setImage(granada.get(1));       
         setLocation(x,y);
+        seguro.play();
     }
     /**
      * metodo act este metodo hace la animacion de la granada, cambia de sprites y 
@@ -72,12 +77,13 @@ public class Granada extends Objeto
                 explota.play();
                 explosion=1;
             }               
-                setImage(granada.get(con-3));              
+                setImage(granada.get(con2));      
+                con2++;
             }
             con++;
         }
          
-        if(con>=8)
+        if(con2==5)
              getWorld().removeObject(this);
            
     }   

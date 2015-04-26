@@ -19,12 +19,13 @@ public class JuegoGuerra extends Juego
     private LinkedList<Boton> menu;
     private Arma arma;        
     private int ban; 
+    private int conEnem;
     private int tipo;
     private int perder;
     //private int cM;        
     private long seg, seg1,seg2;
     private Actor banA;
-
+    private int cantEnem;
     /**
      * constructor de la clase inicializa las variables que se usan tambien inicializa algunas en el constructor de la
      * superclase
@@ -32,11 +33,13 @@ public class JuegoGuerra extends Juego
     public JuegoGuerra(){
         super(new Pantalla("guerra"),new Jugador(50,50,100),new Mira(0,0,2));
         arma= new Arma(50,50);
+        conEnem=0;
         menu=new LinkedList<Boton>(); 
         menu.add(new Boton(580,450,2));
         ban=0;
         tipo=0;
         perder=0;
+        cantEnem=1;
         //cM=0;
         seg=System.currentTimeMillis();
         seg1=System.currentTimeMillis();
@@ -63,10 +66,15 @@ public class JuegoGuerra extends Juego
         }                   
 
         if(System.currentTimeMillis()- seg > 5000){
-            Enemigo e = new Enemigo(x,200,Greenfoot.getRandomNumber(2));
-            seg = System.currentTimeMillis();
-            getWorld().addObject(e,x,0);
-        }
+            for(int c=0;c<cantEnem;c++){Enemigo e = new Enemigo(x,200,Greenfoot.getRandomNumber(2));
+                seg = System.currentTimeMillis();
+                getWorld().addObject(e,x,0);
+                conEnem++;
+
+            }
+            if(conEnem>=15)
+                cantEnem++;
+            }
 
         if(System.currentTimeMillis()- seg1 > 10000){
             seg1 = System.currentTimeMillis();
@@ -79,7 +87,6 @@ public class JuegoGuerra extends Juego
         if(banA!=null )
             j.daña(); 
 
-               
         if(m.getBan()== 1){
             for(Boton b: menu)
 
@@ -131,4 +138,13 @@ public class JuegoGuerra extends Juego
         return j.getPuntos();
     }
 
+    /**
+     * este metodo regresa un abandera de tipo entero que indica cuando ha explotado
+     * una granada en el juego
+     * @return explosion variable que indica explosion de una granada
+     * 
+     */
+    public int getExplosion(){
+        return arma.getExplosion();
+    }
 }

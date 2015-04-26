@@ -97,7 +97,7 @@ public class Mira extends Objeto
 
         }
         else
-        c=0;
+            c=0;
         if(tipo==1)
             setImage(puntero.get(c));
         else 
