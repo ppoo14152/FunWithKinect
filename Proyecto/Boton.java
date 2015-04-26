@@ -16,21 +16,21 @@ public class Boton extends Objeto
 
         switch(tipo){
 
-            case 1: boton= new GreenfootImage("botonJugar.png");
+            case 1: boton= new GreenfootImage("BotonJuegos.png");
             break;
-            case 2: boton= new GreenfootImage("botonSalir.png");
+            case 2: boton= new GreenfootImage("botonRegreso.png");
             break;
-            case 3: boton= new GreenfootImage("botonAyuda.png");
+            case 3: boton= new GreenfootImage("BotonAyuda.png");
             break;
-            case 4: boton= new GreenfootImage("botonMundo1.png");
+            case 4: boton= new GreenfootImage("BotonLaberinto.png");
             break;
-            case 5: boton= new GreenfootImage("botonMundo2.png");
+            case 5: boton= new GreenfootImage("BotonForest.png");
             break;
-            case 6: boton= new GreenfootImage("botonMundo3.png");
+            case 6: boton= new GreenfootImage("BotonGool.png");
             break;
-            case 7 : boton= new GreenfootImage("botonMundo5.png");
+            case 7 : boton= new GreenfootImage("BotonGuerra.png");
             break;
-            case 8 : boton= new GreenfootImage("botonSalir.png");
+            case 8 : boton= new GreenfootImage("BotonRecords.png");
             break;
         }
         x=X;
@@ -41,7 +41,11 @@ public class Boton extends Objeto
     public void act() 
     {
 
-        setLocation(x,y);  
+        setLocation(x,y); 
+        if(tipo!=2)
+        boton.scale(250,70);
+        else
+        boton.scale(100,50);
         setImage(boton);
 
     }

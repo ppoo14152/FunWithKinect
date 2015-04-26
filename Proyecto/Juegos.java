@@ -12,12 +12,12 @@ public class Juegos extends Menu
      * constructor de la clase, inicializa los botones y banderas.
      */
     public Juegos(){
-        super(new Pantalla("inicio2"),new Mira(0,0,1));
-        menu.add(new Boton(550,450,2));
-        menu.add(new Boton(121,113, 4 ));
-        menu.add(new Boton(121,338,5));
-        menu.add(new Boton(397,122,6 ));
-        menu.add(new Boton(397,338,7));
+        super(new Pantalla("Juegos"),new Mira(0,0,1));
+        menu.add(new Boton(565,433,2));
+        menu.add(new Boton(160,160, 4 ));
+        menu.add(new Boton(160,240,5));
+        menu.add(new Boton(160,320,6 ));
+        menu.add(new Boton(160,400,7));
         ban=0;
         tipo=0;
     }

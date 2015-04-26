@@ -14,7 +14,7 @@ public class GameOver extends Menu
      */
     public GameOver(){
         super(new Pantalla("perder"),new Mira(0,0,1));
-        menu.add(new Boton(300,300,2));
+        menu.add(new Boton(567,430,2));
         ban=0;
         tipo=0;
     }
@@ -29,6 +29,7 @@ public class GameOver extends Menu
         {
             getWorld().addObject(p,0,0);
             for(Boton b : menu){
+               
                 getWorld().addObject(b,0,0);
             }
             getWorld().addObject(m,0,0);  

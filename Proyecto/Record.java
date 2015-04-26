@@ -15,7 +15,7 @@ public class Record extends Menu
     public Record()
     {
         super(new Pantalla("record"),new Mira(0,0,1));
-        menu.add(new Boton(500,400,2));
+        menu.add(new Boton(567,430,2));
       
         ban=0;
         tipo=0;

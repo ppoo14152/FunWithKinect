@@ -17,9 +17,10 @@ public class Principal extends Menu
      */ 
     public Principal(){
         super(new Pantalla("inicio"),new Mira(0,0,1));
-        menu.add(new Boton(200,250,1));
-        menu.add(new Boton(500,250,3));
-        menu.add(new Boton(350,345,8));
+        menu.add(new Boton(156,169,1));
+        menu.add(new Boton(156,270,3));
+        menu.add(new Boton(156,370,8));
+     
         ban=0;
         tipo=0;
     }
@@ -35,7 +36,8 @@ public class Principal extends Menu
             for(Boton b : menu){
                 getWorld().addObject(b,0,0);
             }
-            getWorld().addObject(m,0,0);  
+            getWorld().addObject(m,0,0);
+            getWorld().addObject( new Mono(536,384) ,536,384);
             ban=1;
         }
 
@@ -44,6 +46,8 @@ public class Principal extends Menu
                 if(b.getTipo()!=0)
                     tipo = b.getTipo();
         }
+           
+       
     }    
 
     /**
