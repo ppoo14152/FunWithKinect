@@ -45,7 +45,7 @@ public class Jugador extends Personaje
         if(ban==0){
             ban=1;
             getWorld().addObject(puntuacion,50,20);
-            getWorld().addObject(salud,110,60);
+            getWorld().addObject(salud,225,20);
         }
     }
 

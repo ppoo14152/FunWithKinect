@@ -55,7 +55,7 @@ public class Mira extends Objeto
             case 3: 
 
             puntero.add(new GreenfootImage("raton2.png"));
-            puntero.get(0).scale(30,20);
+            puntero.get(0).scale(20,10);
             break;
             case 4: puntero.add(new GreenfootImage("miraEstandar.png"));
             break;
@@ -145,7 +145,7 @@ public class Mira extends Objeto
         a = getOneIntersectingObject(Pared.class);
         a1 = getOneIntersectingObject(Picos.class);
         a2 = getOneIntersectingObject(BaraFuego.class);
-        if(a!=null || a1 !=null  || ((a2!=null) && ((Inicio)getWorld()).getPicos()==1))
+        if(a!=null || a1 !=null  || (a2!=null && ((Inicio)getWorld()).getPicos()==1))
             return 1;
         else
             return 0;

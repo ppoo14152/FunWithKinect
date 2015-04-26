@@ -28,7 +28,10 @@ public class JuegoLaberinto extends Juego
     private Picos picos;
     private int inicia;
     private long seg;
+    private long segVida;
     private int gana;
+    private int banMuere;
+    private Quesito queso;
 
     /**
      * constructor de la clase, se inicializan las variables usadas y se utiliza el constructor de la superclase
@@ -39,9 +42,12 @@ public class JuegoLaberinto extends Juego
         super(new Pantalla("Laberinto"),new Jugador(50,50,100),new Mira(0,0,3 ));
         menu.add(new Boton(580,450,2));
         picos=new Picos();
-        b=new Label("inicia en la zona azul y llega a la verde",40);        
+
+        banMuere=0;
+        b=new Label("inicia en la zona azul y llega a la cueva",40);        
         ban=0;
         seg=System.currentTimeMillis();
+        segVida=System.currentTimeMillis();
         rata= new GreenfootSound("rata.mp3");
         perder=0;
         bara=new BaraFuego();
@@ -56,8 +62,9 @@ public class JuegoLaberinto extends Juego
     public void act() 
     {
         if(ban==0){
-
-            //getWorld().addObject(j,0,0);
+            
+            getWorld().addObject(j,0,0);
+            getWorld().addObject(j,0,0);
             getWorld().addObject(p,0,0);
             getWorld().addObject(m,0,0);
             /*for(Boton b : menu){
@@ -66,32 +73,51 @@ public class JuegoLaberinto extends Juego
             ban=1;
             creaLaberinto();  
             getWorld().addObject(b,320,220);
-            getWorld().addObject(bara,572,200);
-            getWorld().addObject(picos,260,288);
+            getWorld().addObject(bara,560,75);
+            getWorld().addObject(picos,300,371);
+            
         }
         if(  System.currentTimeMillis()- seg   >= 4000){    
             rata.play();
             seg=System.currentTimeMillis();
         }
-        if(m.getX()<640&&m.getX()>600 &&m.getY()>0 &&m.getY()<60 && inicia==0){
+
+        if(m.getX()<640&&m.getX()>540 &&m.getY()>0 &&m.getY()<80 && inicia==1){
+            gana=1;                       
+        }
+
+        if(m.getX()<120&&m.getX()>58 &&m.getY()>420 &&m.getY()<480 && inicia==0){
             inicia=1;
-            getWorld().removeObject(b);
+            this.ponQueso();
+            getWorld().removeObject(b);            
         }
-        if(m.getBan()== 1){
-            for(Boton b: menu)
+        if(gana==0){
+            if(m.getBan()== 1){
+                for(Boton b: menu)
 
-                if(b.getTipo()!=0)
-                    tipo=b.getTipo(); 
+                    if(b.getTipo()!=0)
+                        tipo=b.getTipo(); 
+            }
         }
-
+        else 
+            tipo=2;
         if(inicia==1){
             if(m.ratonMuere()==1){        
                 System.out.println(perder);
-                perder=1;
+                banMuere=1;
+                //segVida=System.currentTimeMillis();
+
             }
         }
-
+        perder=j.muerto();        
+        if(  System.currentTimeMillis()- segVida   >= 500 && banMuere==1){    
+            banMuere=0;
+            j.daña();
+            segVida=System.currentTimeMillis();
+        }
+        banMuere=0;
     }
+
     /**
      * metodo botonP, este metodo permite saber el boton que se ha presionado en este juego
      * @return tipo Tipo de boton presionado
@@ -123,68 +149,35 @@ public class JuegoLaberinto extends Juego
     public void creaLaberinto(){
 
         //paredes del laberinto//      
-        pared=new Pared(1,80); 
-        getWorld().addObject(pared,40,86); 
+        pared=new Pared(2,400); 
+        getWorld().addObject(pared,56,280); 
 
-        pared=new Pared(2,40);
-        getWorld().addObject(pared,79,67);
-
-        pared=new Pared(1,480);
-        getWorld().addObject(pared,319,38);
-
-        pared=new Pared(1,490);
-        getWorld().addObject(pared,395,77);
-
-        pared=new Pared(2,50);
-        getWorld().addObject(pared,150,103);
-
-        pared=new Pared(1,120);
-        getWorld().addObject(pared,91,127);
-
-        pared=new Pared(2,40);
-        getWorld().addObject(pared,32,147);
-
-        pared=new Pared(1,40);
-        getWorld().addObject(pared,52,165);
-
-        pared=new Pared(2,40);
-        getWorld().addObject(pared,71,186);
-
-        pared=new Pared(1,40);
-        getWorld().addObject(pared,51,204);
-
-        pared=new Pared(1,400);
-        getWorld().addObject(pared,195,230);
-
-        /* pared=new Pared(2,540);
-        getWorld().addObject(pared,370,254);*/
-
-        pared=new Pared(2,80);
-        getWorld().addObject(pared,101,294);
+        pared=new Pared(2,370);
+        getWorld().addObject(pared,118,290);
 
         pared=new Pared(1,300);
-        getWorld().addObject(pared,252,334);
+        getWorld().addObject(pared,207,69);
 
-        pared=new Pared(1,500);
-        getWorld().addObject(pared,250,375);
+        pared=new Pared(1,200);
+        getWorld().addObject(pared,218,104);
 
-        pared=new Pared(2,50);
-        getWorld().addObject(pared,400,309);
+        pared=new Pared(2,70);
+        getWorld().addObject(pared,356,120);
 
-        pared=new Pared(1,150);
-        getWorld().addObject(pared,475,283);
+        pared=new Pared(2,250);
+        getWorld().addObject(pared,235,268);
 
-        pared=new Pared(2,200);
-        getWorld().addObject(pared,550,383);
+        pared=new Pared(2,150);
+        getWorld().addObject(pared,365,405);
 
-        pared=new Pared(2,60);
-        getWorld().addObject(pared,498,345);
+        pared=new Pared(1,200);
+        getWorld().addObject(pared,463,330);
 
-        pared=new Pared(1,20);
-        getWorld().addObject(pared,509,315);
+        pared=new Pared(2,150);
+        getWorld().addObject(pared,430,255);
 
-        pared=new Pared(2,120);
-        getWorld().addObject(pared,517,376);
+        pared=new Pared(2,70);
+        getWorld().addObject(pared,355,36);
 
     }
 
@@ -194,6 +187,17 @@ public class JuegoLaberinto extends Juego
      */
     public int getPicos(){
         return picos.getPicos();
+    }
+
+    private void ponQueso(){
+        queso= new Quesito();
+        getWorld().addObject(queso,88,129);
+        queso= new Quesito();
+        getWorld().addObject(queso,412,379);
+        queso= new Quesito();
+        getWorld().addObject(queso,412,453);
+        queso= new Quesito();
+        getWorld().addObject(queso,512,15);
     }
 
     /**
