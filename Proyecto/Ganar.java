@@ -1,0 +1,58 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+/**
+ * clase Ganar, esta clase crea una pantalla de ganar para todos los juegos
+ * @param ban Variable que permite añadir al mundo los botones.
+ * @param tipo Variable entera que indica el tipo de boton que se ha presionado.
+ */
+
+public class Ganar extends Menu
+{
+    private int ban;
+    private int tipo;
+    private Label puntos;
+    /**
+     * constructor de la clase, se inicializan todas las variables que se ocupan
+     */
+    public Ganar(int p){
+        super(new Pantalla("ganar"),new Mira(0,0,1));
+        puntos= new Label(Integer.toString(p),60);
+        menu.add(new Boton(567,430,2));
+        ban=0;
+        tipo=0;
+    }
+
+    /**
+     * metodo Act, este metodo añade una sola vez los botones y la mira, tambien verifica el tipo de boton presionado.
+     *
+     */
+    public void act() 
+    {
+        if (ban==0)
+        {
+            getWorld().addObject(p,0,0);
+            for(Boton b : menu){
+               
+                getWorld().addObject(b,0,0);
+            }
+            getWorld().addObject(m,0,0);  
+            getWorld().addObject(puntos,320,260);
+            ban=1;
+        }
+
+        if(m.getBan()== 1){
+            for(Boton b: menu)
+                if(b.getTipo()!=0)
+                    tipo = b.getTipo();
+        }
+    }    
+
+    /**
+     * Metodo botonP, este metodo retorna el tipo de boton presionado.
+     * @return tipo Variable entera que indica el tipo del boton presionado.
+     */ 
+    public int botonP(){
+        return tipo;
+    }
+
+}
+

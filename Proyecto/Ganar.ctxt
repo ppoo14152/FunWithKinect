@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=p
+comment0.target=Ganar(int)
+comment0.text=\r\n\ constructor\ de\ la\ clase,\ se\ inicializan\ todas\ las\ variables\ que\ se\ ocupan\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ metodo\ Act,\ este\ metodo\ a\u00F1ade\ una\ sola\ vez\ los\ botones\ y\ la\ mira,\ tambien\ verifica\ el\ tipo\ de\ boton\ presionado.\r\n\r\n
+comment2.params=
+comment2.target=int\ botonP()
+comment2.text=\r\n\ Metodo\ botonP,\ este\ metodo\ retorna\ el\ tipo\ de\ boton\ presionado.\r\n\ @return\ tipo\ Variable\ entera\ que\ indica\ el\ tipo\ del\ boton\ presionado.\r\n
+numComments=3
