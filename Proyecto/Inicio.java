@@ -26,6 +26,7 @@ public class Inicio extends KinectWorld
     {    
         super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, 1.0, false);
         puntuacion=0;
+        setActOrder(Pantalla.class,Boton.class,Mira.class,Mono.class );
         final int width = getWidth();
         final int height = getHeight();        
         mundo=new Principal(); 
@@ -52,11 +53,12 @@ public class Inicio extends KinectWorld
         {
             ban=1;
             musica= new GreenfootSound("menuMusica.mp3");
+            musica.setVolume(50);
             musica.play();
             addObject(mundo,0,0);
         }
         else{
-
+            musica.setVolume(50);
             switch(mundo.botonP()){
                 case 0:
                 if((mundo).perder()== 1){

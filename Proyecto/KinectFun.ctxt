@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.params=P\ M
 comment0.target=KinectFun(Pantalla,\ Mira)
-comment1.params=
-comment1.target=int\ botonP()
+comment1.params=pa\ mi
+comment1.target=void\ nuevoNivel(Pantalla,\ Mira)
 comment2.params=
-comment2.target=int\ perder()
+comment2.target=int\ botonP()
 comment3.params=
-comment3.target=int\ ganar()
-numComments=4
+comment3.target=int\ perder()
+comment4.params=
+comment4.target=int\ ganar()
+numComments=5

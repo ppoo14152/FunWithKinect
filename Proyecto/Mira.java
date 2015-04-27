@@ -24,7 +24,7 @@ public class Mira extends Objeto
     private int yg;
     private LinkedList <GreenfootImage> puntero;
     private Actor colicion;
-    private Actor a,a1,a2;
+    private Actor a,a1,a2,a3;
     private GreenfootSound sel1;
 
     /**Constructor de la clase mira, inicializa todas las variables.
@@ -142,10 +142,12 @@ public class Mira extends Objeto
         a = null;
         a1=null;
         a2=null;
+        a3=null;
         a = getOneIntersectingObject(Pared.class);
         a1 = getOneIntersectingObject(Picos.class);
         a2 = getOneIntersectingObject(BaraFuego.class);
-        if(a!=null || a1 !=null  || (a2!=null && ((Inicio)getWorld()).getPicos()==1))
+        a3=getOneIntersectingObject(Ratonera.class);
+         if(a!=null || a1 !=null  ||  a3!= null ||(a2!=null && ((Inicio)getWorld()).getPicos()==1) )
             return 1;
         else
             return 0;

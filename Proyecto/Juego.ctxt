@@ -1,14 +1,16 @@
 #BlueJ class context
 comment0.params=P\ J\ M
 comment0.target=Juego(Pantalla,\ Jugador,\ Mira)
-comment1.params=
-comment1.target=int\ botonP()
+comment1.params=pa\ mi
+comment1.target=void\ nuevoNivel(Pantalla,\ Mira)
 comment2.params=
-comment2.target=void\ IncPun()
+comment2.target=int\ botonP()
 comment3.params=
-comment3.target=int\ perder()
+comment3.target=void\ IncPun()
 comment4.params=
-comment4.target=int\ getPuntos()
+comment4.target=int\ perder()
 comment5.params=
-comment5.target=int\ ganar()
-numComments=6
+comment5.target=int\ getPuntos()
+comment6.params=
+comment6.target=int\ ganar()
+numComments=7

@@ -19,9 +19,11 @@ import java.util.*;
 public class JuegoLaberinto extends Juego
 {
     private  Label b;
+    private int nivel;
     private  GreenfootSound rata;     
     private  int ban;
-    private int ganar;
+    private int ban2;
+    private Ratonera ratonera;
     private int tipo;
     private int perder;
     private BaraFuego bara;
@@ -33,7 +35,8 @@ public class JuegoLaberinto extends Juego
     private int gana;
     private int banMuere;
     private Quesito queso;
-
+    private int puntos;
+    private int ganar;
     /**
      * constructor de la clase, se inicializan las variables usadas y se utiliza el constructor de la superclase
      * para inicializar algunas de estas 
@@ -43,10 +46,12 @@ public class JuegoLaberinto extends Juego
         super(new Pantalla("Laberinto"),new Jugador(50,50,100),new Mira(0,0,3 ));
         menu.add(new Boton(580,450,2));
         picos=new Picos();
-        ganar=0;
+        nivel=1;
         banMuere=0;
+        puntos=0;
         b=new Label("inicia en la zona azul y llega a la cueva",40);        
         ban=0;
+        ban2=0;
         seg=System.currentTimeMillis();
         segVida=System.currentTimeMillis();
         rata= new GreenfootSound("rata.mp3");
@@ -54,6 +59,7 @@ public class JuegoLaberinto extends Juego
         bara=new BaraFuego();
         inicia=0;
         gana=0;
+        ganar=0;
     }
 
     /**
@@ -63,8 +69,7 @@ public class JuegoLaberinto extends Juego
     public void act() 
     {
         if(ban==0){
-            
-            getWorld().addObject(j,0,0);
+
             getWorld().addObject(j,0,0);
             getWorld().addObject(p,0,0);
             getWorld().addObject(m,0,0);
@@ -72,11 +77,12 @@ public class JuegoLaberinto extends Juego
             getWorld().addObject(b,0,0);
             }*/
             ban=1;
-            creaLaberinto();  
-            getWorld().addObject(b,320,220);
-            getWorld().addObject(bara,560,75);
-            getWorld().addObject(picos,300,371);
-            
+            if(nivel==1){
+                creaLaberinto();  
+                getWorld().addObject(b,320,220);
+                getWorld().addObject(bara,560,75);
+                getWorld().addObject(picos,300,371);
+            }
         }
         if(  System.currentTimeMillis()- seg   >= 4000){    
             rata.play();
@@ -84,13 +90,17 @@ public class JuegoLaberinto extends Juego
         }
 
         if(m.getX()<640&&m.getX()>540 &&m.getY()>0 &&m.getY()<80 && inicia==1){
-            gana=1;                       
+            gana=1;        
+
         }
 
         if(m.getX()<120&&m.getX()>58 &&m.getY()>420 &&m.getY()<480 && inicia==0){
-            inicia=1;
+            inicia=1;           
             this.ponQueso();
-            getWorld().removeObject(b);            
+            getWorld().removeObject(b);
+            if(nivel==2)
+            this.ponRatoneras();
+
         }
         if(gana==0){
             if(m.getBan()== 1){
@@ -100,9 +110,29 @@ public class JuegoLaberinto extends Juego
                         tipo=b.getTipo(); 
             }
         }
-        else 
-            tipo=2;
+        else{if(ban2==0){ 
+
+                getWorld().removeObjects(getWorld().getObjects(Quesito.class));
+                getWorld().removeObjects(getWorld().getObjects(Pared.class));
+                inicia=0;
+                ban2=1;
+                nivel=2;              
+                getWorld().removeObject(picos);
+                getWorld().removeObject(bara);
+                getWorld().removeObject(b);
+                puntos=j.getPuntos();
+                super.nuevoNivel(new Pantalla("lab2"),new Mira(0,0,3 ));           
+                getWorld().addObject(p,getWorld().getWidth() / 2,getWorld().getHeight()/2);
+                getWorld().addObject(m,10,10);                
+                b=new Label("inicia en la zona azul y llega al queso",40);      
+                getWorld().addObject(b,320,220);          
+                
+                this.ponQueso();
+
+            }
+        }
         if(inicia==1){
+            
             if(m.ratonMuere()==1){        
                 System.out.println(perder);
                 banMuere=1;
@@ -113,10 +143,12 @@ public class JuegoLaberinto extends Juego
         perder=j.muerto();        
         if(  System.currentTimeMillis()- segVida   >= 500 && banMuere==1){    
             banMuere=0;
+           if(nivel==2)
             j.daña();
             segVida=System.currentTimeMillis();
         }
         banMuere=0;
+
     }
 
     /**
@@ -141,10 +173,6 @@ public class JuegoLaberinto extends Juego
     public int perder()
     {
         return perder;
-    }
-     public int ganar()
-    {
-        return ganar;
     }
 
     /**
@@ -195,14 +223,54 @@ public class JuegoLaberinto extends Juego
     }
 
     private void ponQueso(){
-        queso= new Quesito();
-        getWorld().addObject(queso,88,129);
-        queso= new Quesito();
-        getWorld().addObject(queso,412,379);
-        queso= new Quesito();
-        getWorld().addObject(queso,412,453);
-        queso= new Quesito();
-        getWorld().addObject(queso,512,15);
+        if(nivel==1){ queso= new Quesito();
+            getWorld().addObject(queso,88,129);
+            queso= new Quesito();
+            getWorld().addObject(queso,412,379);
+            queso= new Quesito();
+            getWorld().addObject(queso,412,453);
+            queso= new Quesito();
+            getWorld().addObject(queso,512,15);}
+        else
+        {   queso= new Quesito();
+            getWorld().addObject(queso,32,229);
+            queso= new Quesito();
+            getWorld().addObject(queso,174,118);
+            queso= new Quesito();
+            getWorld().addObject(queso,180,64);
+            queso= new Quesito();
+            getWorld().addObject(queso,238,64);
+            queso= new Quesito();
+            getWorld().addObject(queso,296,64);
+            queso= new Quesito();
+            getWorld().addObject(queso,346,64);
+        }
+
+    }
+
+    private void ponRatoneras(){
+        ratonera= new Ratonera(1);
+        getWorld().addObject(ratonera,138,448);
+        ratonera= new Ratonera(1);
+        getWorld().addObject(ratonera,138,361);
+        ratonera= new Ratonera(2);
+        getWorld().addObject(ratonera,28,345);
+        ratonera= new Ratonera(1);
+        getWorld().addObject(ratonera,78,228);
+        ratonera= new Ratonera(2);
+        getWorld().addObject(ratonera,45,164);
+        ratonera= new Ratonera(1);
+        getWorld().addObject(ratonera,125,88);
+        ratonera= new Ratonera(2);
+        getWorld().addObject(ratonera,240,115);
+        ratonera= new Ratonera(2);
+        getWorld().addObject(ratonera,325,115);
+        ratonera= new Ratonera(1);
+        getWorld().addObject(ratonera,337,222);
+        ratonera= new Ratonera(2);
+        getWorld().addObject(ratonera,331,454);
+        ratonera= new Ratonera(2);
+        getWorld().addObject(ratonera,402,52);
     }
 
     /**
@@ -212,5 +280,10 @@ public class JuegoLaberinto extends Juego
     public int getPuntos()
     {
         return j.getPuntos();
+    }
+    
+    public int ganar()
+    {
+        return ganar;
     }
 }

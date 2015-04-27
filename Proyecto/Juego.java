@@ -11,6 +11,10 @@ public  Jugador j;
         super (P,M);
         j=J;
     } 
+    public void nuevoNivel(Pantalla pa, Mira mi){
+        
+        super.nuevoNivel(pa,mi);
+    }
     abstract int botonP();
     abstract void IncPun();
     abstract int perder();

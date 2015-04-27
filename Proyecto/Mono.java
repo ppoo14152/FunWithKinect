@@ -92,11 +92,12 @@ public class Mono extends Objeto
 
         if( System.currentTimeMillis()- seg   >=150){
             ban=0;
+            x+=1;
             if(ban2==1 && ban3==0){
 
                 if(correr.isPlaying()==true)
                     correr.stop();
-                    x+=1;
+                
                 if(c>1)
                     y=y+50;
                 else

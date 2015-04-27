@@ -10,7 +10,14 @@ abstract class KinectFun extends Actor
     public KinectFun(Pantalla P, Mira M  ){
          p=P;
          m=M;
-                                  }   
+                                  }
+      public void nuevoNivel(Pantalla pa, Mira mi){
+        getWorld().removeObject(p);
+        getWorld().removeObject(m);
+        p=pa;
+        m=mi;
+        
+    }
     abstract int botonP();
     abstract int perder();
     abstract int ganar();
