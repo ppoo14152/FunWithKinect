@@ -15,6 +15,7 @@ public  Jugador j;
     abstract void IncPun();
     abstract int perder();
     abstract int getPuntos();
+    abstract int ganar();
     
     
   }

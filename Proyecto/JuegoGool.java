@@ -16,6 +16,8 @@ import java.util.*;
 public class JuegoGool extends Juego
 {
     LinkedList<Boton> menu=new LinkedList<Boton>(); 
+    private int tiempo;
+    private long seg;
     private int ban;
     private int ban2;
     private int ban3;
@@ -26,6 +28,8 @@ public class JuegoGool extends Juego
     private Porteria port;
     private Balon balon;
     private Portero portero;
+    private Label b;
+    private int ganar;
 
     /**
      * constructor de la clase, inicializa las variables que necesita la clase, llama al constructor de la superclase
@@ -42,7 +46,11 @@ public class JuegoGool extends Juego
         ban2=0;
         ban3=0;
         tipo=0;
+        tiempo=30;
+        seg=System.currentTimeMillis();
         perder=0;
+        ganar=0;
+        b=new Label("Tiempo: "+Integer.toString(tiempo),40);
     }
 
     /**
@@ -65,7 +73,12 @@ public class JuegoGool extends Juego
             }
             ban=1;
         }                   
-
+        if(System.currentTimeMillis()- seg>1000 && tiempo>0){
+        seg=System.currentTimeMillis();
+        tiempo--;
+        getWorld().removeObject(b);
+        b=new Label("Tiempo: "+Integer.toString(tiempo),40);
+        }
         KinectWorld mundo =(KinectWorld)getWorld();
 
         UserData[] usuarios = mundo.getTrackedUsers();
@@ -95,7 +108,12 @@ public class JuegoGool extends Juego
                 if(b.getTipo()!=0)
                     tipo=b.getTipo(); 
         }
+       
+        if(tiempo==0)
+        ganar=1;
+        
         perder=j.muerto();
+        getWorld().addObject(b,100,420);
     }
 
     /**
@@ -125,10 +143,15 @@ public class JuegoGool extends Juego
         return perder;
 
     }
+    public int ganar()
+    {
+        return ganar;
+
+    }
 
     /**
      * metodo que permite recuperar los puntos del jugador
-     * @return gepuntos variable contiene los puntos del jugador
+     * @return getpuntos variable contiene los puntos del jugador
      */
     public int getPuntos()
     {

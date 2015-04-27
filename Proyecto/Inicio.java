@@ -66,7 +66,16 @@ public class Inicio extends KinectWorld
                     removeObjects(getObjects(null));
                     mundo=new GameOver();
                     addObject(mundo,0,0);
-                }
+                                         }
+                    else if((mundo).ganar()==1){
+                        if(musica.isPlaying()==true)
+                        musica.stop();
+                        puntuacion+=((Juego)mundo).getPuntos();
+                        removeObjects(getObjects(null));
+                        mundo=new Ganar(puntuacion);
+                        addObject(mundo,0,0);
+                    }
+                        
                 break;
                 case 1: //botonJugar.png, carga los botones de los distintos juegos 
                 if(musica.isPlaying()==true)

@@ -11,5 +11,9 @@ import java.util.*;
     {
         return(0);
     }
+     public int ganar()
+    {
+        return(0);
+    }
        
 }

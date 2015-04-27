@@ -22,7 +22,7 @@ public class JuegoGuerra extends Juego
     private int conEnem;
     private int tipo;
     private int perder;
-    //private int cM;        
+    private int ganar;        
     private long seg, seg1,seg2;
     private Actor banA;
     private int cantEnem;
@@ -40,7 +40,7 @@ public class JuegoGuerra extends Juego
         tipo=0;
         perder=0;
         cantEnem=1;
-        //cM=0;
+        ganar=0;
         seg=System.currentTimeMillis();
         seg1=System.currentTimeMillis();
         seg2=System.currentTimeMillis();
@@ -146,5 +146,9 @@ public class JuegoGuerra extends Juego
      */
     public int getExplosion(){
         return arma.getExplosion();
+    }
+    public int ganar()
+    {
+        return ganar;
     }
 }

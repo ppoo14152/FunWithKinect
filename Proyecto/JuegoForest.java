@@ -18,6 +18,7 @@ public class JuegoForest extends Juego
     private int perder;
     private int c;
     private int o;
+    private int ganar;
     private long seg;
     private long seg1;
     private Mono forest;
@@ -35,6 +36,7 @@ public class JuegoForest extends Juego
         menu.add(new Boton(580,450,2));
         ban=0;
         c=640;
+        ganar=0;
         o=0;
         seg=System.currentTimeMillis();
         seg1=System.currentTimeMillis();
@@ -132,6 +134,10 @@ public class JuegoForest extends Juego
     public int perder()
     {
         return perder;
+    }
+    public int ganar()
+    {
+        return ganar;
     }
 
     /**

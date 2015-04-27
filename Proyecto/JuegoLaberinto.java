@@ -21,6 +21,7 @@ public class JuegoLaberinto extends Juego
     private  Label b;
     private  GreenfootSound rata;     
     private  int ban;
+    private int ganar;
     private int tipo;
     private int perder;
     private BaraFuego bara;
@@ -42,7 +43,7 @@ public class JuegoLaberinto extends Juego
         super(new Pantalla("Laberinto"),new Jugador(50,50,100),new Mira(0,0,3 ));
         menu.add(new Boton(580,450,2));
         picos=new Picos();
-
+        ganar=0;
         banMuere=0;
         b=new Label("inicia en la zona azul y llega a la cueva",40);        
         ban=0;
@@ -140,6 +141,10 @@ public class JuegoLaberinto extends Juego
     public int perder()
     {
         return perder;
+    }
+     public int ganar()
+    {
+        return ganar;
     }
 
     /**
