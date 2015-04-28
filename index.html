@@ -3,97 +3,82 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
     <title>Funwithkinect by ppoo14152</title>
   </head>
 
   <body>
-    <a id="forkme_banner" href="https://github.com/ppoo14152/FunWithKinect">View on GitHub</a>
-    <div class="shell">
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Funwithkinect</h1>
-            <h2></h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+    <header>
+      <div class="container">
+        <h1>Funwithkinect</h1>
+        <h2></h2>
 
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/ppoo14152/FunWithKinect/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/ppoo14152/FunWithKinect/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
+        <section id="downloads">
+          <a href="https://github.com/ppoo14152/FunWithKinect/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/ppoo14152/FunWithKinect/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/ppoo14152/FunWithKinect" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
-
-      <span class="banner-fix"></span>
-
-
+    <div class="container">
       <section id="main_content">
         <h3>
 <a id="bienvenido-a-funwhitkinect-" class="anchor" href="#bienvenido-a-funwhitkinect-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bienvenido a FunWhitKinect !!!.</h3>
 
-<p>Aqui encontraras informacion acerca de nuestro videojuego Fun Whit Kinect, ademas podras realizar su descarga en linea.<br>
-Fun Whit K</p>
+<p>Aquí encontraras información acerca de nuestro vídeo juego FunWhitKinect, ademas podrás realizar su descarga en linea.   </p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<h3>
+<a id="descripción-de-proyecto" class="anchor" href="#descripci%C3%B3n-de-proyecto" aria-hidden="true"><span class="octicon octicon-link"></span></a>Descripción de proyecto</h3>
+
+<p>FunWhitKinect 
+Consiste en un vídeo juego para computadora manejado por kinect, se encuentra conformado por una serie de minijuegos, con los cuales podrás divertirte y ejercitarte.</p>
+
+<h3>
+<a id="descripción-de-interfaz" class="anchor" href="#descripci%C3%B3n-de-interfaz" aria-hidden="true"><span class="octicon octicon-link"></span></a>Descripción de Interfaz</h3>
+
+<h3>
+<a id="menus" class="anchor" href="#menus" aria-hidden="true"><span class="octicon octicon-link"></span></a>Menus</h3>
+
+<p>La pantalla principal del vídeo juego nos da 3 opciones:
+ 1-. Juegos: Despliega otro menú con la lista de minijuegos, los cuales podremos seleccionar.
+ 2-. Récords: Nos muestra las puntuaciones mas altas.
+ 3-. Ayuda: Nos explica como jugar los diferentes minijuegos (movimientos y objetivos) debido a que 
+     cada minijuego tiene una forma diferente de jugarse.</p>
+
+<p>###Cursor
+ Podrás desplazar el cursor por la pantalla solo moviendo tu mano derecha en la dirección que desees y situarlo sobre la
+ opción que quieres seleccionar. El cursor cargara automáticamente la opción.  </p>
+
+<p>### Requisitos para jugar
+ FunWhitKinect funciona en la plataforma de Windows(xp,8,7,vista), requiere la instalación de los  programas Geeenfoot<br>
+ kinect Server Y la librería OpenNI, los cuales pueden descargarse de los siguientes links:</p>
+
+<pre><code>                                    http://www.greenfoot.org/doc/kinect/windows.html
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Si usted requiere usarlo en alguna otra plataforma siga los pasos mencionados en el siguiente link:</p>
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<pre><code>                                    http://www.greenfoot.org/doc/kinect.
+</code></pre>
 
 <h3>
 <a id="autores-y-contribuciones" class="anchor" href="#autores-y-contribuciones" aria-hidden="true"><span class="octicon octicon-link"></span></a>Autores y contribuciones</h3>
 
-<p>Este proyecto se realizo en la materia de Programacion Orientada a Objetos en la Universidad Autonoma de San Luis Potosi, con la orientacion del Prof.Froylan Eloy ..... , por los estudiantes Juarez Monsivais Luis Alberto <a href="https://github.com/LuisJuarez" class="user-mention">@LuisJuarez</a> Y Sergio Arturo Torres Ramirez <a href="https://github.com/SergioArturoTorresRamirez" class="user-mention">@SergioArturoTorresRamirez</a>.
-Es importante mencinar que el proyecto se apoya de el trabajo ........ usando algunas de las clases ..........
-hechas por .............. consultar ............. para ver el trabajo de .................... para el manejo del kinect.</p>
+<p>Este proyecto se realizo en la materia de Programación Orientada a Objetos en la Universidad Autónoma de San Luis Potosí, con la orientación del Ing.Froylan Eloy Hernandez Castro, por los estudiantes Juarez Monsivais Luis Alberto <a href="https://github.com/LuisJuarez" class="user-mention">@LuisJuarez</a> Y Sergio Arturo Torres Ramirez <a href="https://github.com/SergioArturoTorresRamirez" class="user-mention">@SergioArturoTorresRamirez</a>.
+Es importante mencionar que el proyecto se apoya de el trabajo Greenfoot-kinectexamples tomado de la pagina <a href="http://www.greenfoot.org/doc/kinect/windows.html">http://www.greenfoot.org/doc/kinect/windows.html</a>,  usando algunas de las clases del ejemplo painting 
+hechas por el equipo de Greenfoot para ayudar a la programación en el kinect consultar <a href="http://www.greenfoot.org/doc/kinect/windows.html">http://www.greenfoot.org/doc/kinect/windows.html</a> para ver el trabajo de Greenfoot para el manejo del kinect.</p>
 
 <h3>
 <a id="soporte-y-contacto" class="anchor" href="#soporte-y-contacto" aria-hidden="true"><span class="octicon octicon-link"></span></a>Soporte y contacto</h3>
 
-<p>Para mayor informacion acerca del proyecto puede mandar un correo a <a href="mailto:Spartan.blue@hotmail.com">Spartan.blue@hotmail.com</a> o <a href="mailto:kito_park@hotmail.com">kito_park@hotmail.com</a>.</p>
+<p>Para mayor información acerca del proyecto puede mandar un correo a <a href="mailto:Spartan.blue@hotmail.com">Spartan.blue@hotmail.com</a> o <a href="mailto:kito_park@hotmail.com">kito_park@hotmail.com</a>.</p>
       </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/ppoo14152">ppoo14152</a> can be found on <a href="https://github.com/ppoo14152/FunWithKinect">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
-
     </div>
 
     
