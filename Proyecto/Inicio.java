@@ -18,7 +18,7 @@ public class Inicio extends KinectWorld
     private KinectFun mundo;
     private GreenfootSound musica;
     private int puntuacion;
-
+    private Records reco;
     /**Es el constructor de la clase se llama al constructor de la superclase, donde se crea una 
      * pequeña camara que es odnde se visualiza el jugador al inicio del juego
      */
@@ -28,7 +28,8 @@ public class Inicio extends KinectWorld
         puntuacion=0;
         setActOrder(Pantalla.class,Boton.class,Mira.class,Mono.class );
         final int width = getWidth();
-        final int height = getHeight();        
+        final int height = getHeight();      
+        reco= new Records();
         mundo=new Principal(); 
         musica= new GreenfootSound("menuMusica.mp3");
         addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
@@ -201,6 +202,7 @@ public class Inicio extends KinectWorld
     public void stopped(){
         if(musica.isPlaying()==true)
             musica.stop();
+       reco.escribeRecords(reco.leeRecords(),0);
     }  
 
     /**
