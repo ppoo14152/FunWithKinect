@@ -9,6 +9,7 @@ public class Municion extends Objeto
 {
     private GreenfootImage municion;
     private Actor c;
+    private long seg;
     private GreenfootSound muni;
     /**Constructor que inicializa las variables, utiliza el constructor de la
     superclase para inicializar las coordenadas en x e y.
@@ -18,6 +19,7 @@ public class Municion extends Objeto
     public  Municion ( int X , int Y )
     {
         super(X,Y);
+        seg=System.currentTimeMillis();
         municion=new GreenfootImage("municion.png");
         municion.scale(50,50);
         muni= new GreenfootSound("municion.mp3");
@@ -32,6 +34,7 @@ public class Municion extends Objeto
         if(getOneIntersectingObject(Mira.class )!=null){
             muni.play();
             ((Inicio)getWorld()).incMun();
+            if( System.currentTimeMillis()-seg>500)
             getWorld().removeObject(this);  
         }
     }

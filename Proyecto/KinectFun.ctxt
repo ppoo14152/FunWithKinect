@@ -1,12 +1,17 @@
 #BlueJ class context
 comment0.params=P\ M
 comment0.target=KinectFun(Pantalla,\ Mira)
+comment0.text=Constructor\ de\ la\ clase\ recibe\ una\ pantalla\ y\ una\ mira\ y\ la\ inicializa.
 comment1.params=pa\ mi
 comment1.target=void\ nuevoNivel(Pantalla,\ Mira)
+comment1.text=Metodo\ nuevoNivel\ usado\ en\ juegoLaberinto\ crea\ una\ nueva\ pantalla\ y\ una\ mira\ y\ remueve\ los\ anteriores
 comment2.params=
 comment2.target=int\ botonP()
+comment2.text=Metodo\ abstracto\ se\ define\ en\ las\ subclases.
 comment3.params=
 comment3.target=int\ perder()
+comment3.text=Metodo\ abstracto\ se\ define\ en\ las\ subclases.
 comment4.params=
 comment4.target=int\ ganar()
+comment4.text=Metodo\ abstracto\ se\ define\ en\ las\ subclases.
 numComments=5

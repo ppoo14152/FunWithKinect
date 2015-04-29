@@ -2,33 +2,35 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
 /**
- * esta clase permite generar un nuevo juego de guerra en el cual se anadiran sus elementos
- * @param menu lista de botones que estan en el mundo
- * @param arma arma del jugador tiene balas y granadas
- * @param ban variable que permite anadir al mundo los elementos solo una vez
- * @param tipo tipo de boton preisonado
- * @param perder variable que indica que ha perdido
- * @param seg variable que permite contar el tiempo en milisegundos
- * @param seg1 variable que permite contar el tiempo en milisegundos segundo contador
- * @param seg2 variable que permite contar el tiempo en milisegundos tercer contador
- * @param banA variable que permite detectar coliciones entre los elementos del juego
+ * Esta clase permite generar un nuevo juego de guerra en el cual se anadiran sus elementos.
+ * @param menu lista de botones que estan en el mundo.
+ * @param arma arma del jugador tiene balas y granadas.
+ * @param ban variable que permite anadir al mundo los elementos solo una vez.
+ * @param tipo tipo de boton preisonado.
+ * @param perder variable que indica que ha perdido.
+ * @param seg variable que permite contar el tiempo en milisegundos.
+ * @param seg1 variable que permite contar el tiempo en milisegundos segundo contador.
+ * @param seg2 variable que permite contar el tiempo en milisegundos tercer contador.
+ * @param banA variable que permite detectar coliciones entre los elementos del juego.
  */
 
 public class JuegoGuerra extends Juego
 {
     private LinkedList<Boton> menu;
+    private int tiempo;
     private Arma arma;        
     private int ban; 
     private int conEnem;
     private int tipo;
     private int perder;
     private int ganar;        
-    private long seg, seg1,seg2;
+    private long seg, seg1,seg2,seg3;
     private Actor banA;
+    private Label b;
     private int cantEnem;
     /**
-     * constructor de la clase inicializa las variables que se usan tambien inicializa algunas en el constructor de la
-     * superclase
+     * Constructor de la clase inicializa las variables que se usan tambien inicializa algunas en el constructor de la
+     * superclase.
      */
     public JuegoGuerra(){
         super(new Pantalla("guerra"),new Jugador(50,50,100),new Mira(0,0,2));
@@ -40,10 +42,12 @@ public class JuegoGuerra extends Juego
         tipo=0;
         perder=0;
         cantEnem=1;
+        tiempo=30;
         ganar=0;
         seg=System.currentTimeMillis();
         seg1=System.currentTimeMillis();
         seg2=System.currentTimeMillis();
+        seg3=System.currentTimeMillis();
     }
 
     /**
@@ -63,7 +67,14 @@ public class JuegoGuerra extends Juego
                 getWorld().addObject(b,0,0);
             }
             ban=1;
-        }                   
+        }  
+         
+       if(System.currentTimeMillis()- seg3 > 1000 && tiempo>0){
+        seg3=System.currentTimeMillis();
+        tiempo--;
+        getWorld().removeObject(b);
+        b=new Label("Tiempo: "+Integer.toString(tiempo),40);
+        }
 
         if(System.currentTimeMillis()- seg > 5000){
             for(int c=0;c<cantEnem;c++){Enemigo e = new Enemigo(x,200,Greenfoot.getRandomNumber(2));
@@ -94,10 +105,11 @@ public class JuegoGuerra extends Juego
                     tipo=b.getTipo(); 
         }
         perder=j.muerto();
+         getWorld().addObject(b,100,420);
     }
 
     /**
-     * metodo botonP regresa el tipo del boon presionado
+     * Metodo botonP regresa el tipo del boon presionado
      * @return tipo variable con el tipo de boton presionado
      */
     public int botonP()
@@ -106,21 +118,21 @@ public class JuegoGuerra extends Juego
     }
 
     /**
-     * metodo incPun este metodo incrementa los puntos del jugador
+     * Metodo incPun este metodo incrementa los puntos del jugador
      */
     public void IncPun(){
         j.IncPuntos(10);
     }
 
     /**
-     * metodo incMuni este metodo incrementa la municion del arma del jugador
+     * Metodo incMuni este metodo incrementa la municion del arma del jugador
      */
     public void incMuni(){
         arma.incBalas(10);
     }
 
     /**
-     * metodo perder este metodo regresa una varible que indica si ha perdido o no
+     * Metodo perder este metodo regresa una varible que indica si ha perdido o no
      * @return perder variable que indica si se ha perdido o no
      */
     public int perder()
@@ -130,7 +142,7 @@ public class JuegoGuerra extends Juego
     }
 
     /**
-     * metodo getPuntos este metodo regresa los puntos del jugador
+     * Metodo getPuntos este metodo regresa los puntos del jugador
      * @return puntos varibale con los puntos del jugador
      */
     public int getPuntos()
@@ -139,7 +151,7 @@ public class JuegoGuerra extends Juego
     }
 
     /**
-     * este metodo regresa un abandera de tipo entero que indica cuando ha explotado
+     * Este metodo regresa un abandera de tipo entero que indica cuando ha explotado
      * una granada en el juego
      * @return explosion variable que indica explosion de una granada
      * 
@@ -147,6 +159,10 @@ public class JuegoGuerra extends Juego
     public int getExplosion(){
         return arma.getExplosion();
     }
+    
+    /**Este metodo retorna el valor de la variable ganar que indica si se a completado el juego.
+       @return ganar 0 si no se ha ganado, 1 si se gano.
+    */
     public int ganar()
     {
         return ganar;

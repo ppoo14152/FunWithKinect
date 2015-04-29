@@ -92,7 +92,7 @@ public class Mono extends Objeto
 
         if( System.currentTimeMillis()- seg   >=150){
             ban=0;
-            x+=1;
+            x+=2;
             if(ban2==1 && ban3==0){
 
                 if(correr.isPlaying()==true)

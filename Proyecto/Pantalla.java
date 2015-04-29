@@ -13,8 +13,8 @@ public class Pantalla extends Actor
     private int ban;
     private int x, y;
     /**
-     * constructor de la clase, resibe una cadena con el nombre del fondo ara crear un nuevo fondo con ese nombre
-     * inicializa todas las variables y coloca la imagen
+     * constructor de la clase, resibe una cadena con el nombre del fondo para crear un nuevo fondo con ese nombre
+     * inicializa todas las variables y coloca la imagen.
      * @param Fondo cadena con el nobre del fondo
      */
 

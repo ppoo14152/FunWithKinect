@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Quesito()
-comment0.text=constructor\ crea\ el\ queso\ y\ pone\ la\ imagen\ en\ pantalla\r\n\ \r\n
+comment0.text=\r\n\ Constructor,\ aqui\ se\ crea\ el\ queso\ y\ pone\ la\ imagen\ en\ pantalla\ \r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\ \r\n\ metodo\ act\ en\ este\ metodo\ se\ verifica\ si\ se\ a\ tomado\ el\ queso,\ si\ es\ asi\ se\ elimina\ y\ se\ aumentan\ puntos\r\n
+comment1.text=\ \r\n\ Metodo\ act\ en\ este\ metodo\ se\ verifica\ si\ se\ a\ tomado\ el\ queso,\ si\ es\ asi\ se\ elimina\ y\ se\ aumentan\ puntos\r\n
 numComments=2

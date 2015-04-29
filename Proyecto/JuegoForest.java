@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * clase JuegoForest esta clase permite crear un juego de forest
+ * Clase JuegoForest esta clase permite crear un juegoForest.
  * @param ban variable que permite anadir al mundo los elementos una sola vez
  * @param perder variable que indica si ha perdido o no
  * @param c variable cntador permite cambiar la posicion de la pantalla para simular scroll
@@ -24,8 +24,7 @@ public class JuegoForest extends Juego
     private Mono forest;
     private Sombra sombra;
     /**
-     * constructor de la clase inicializa las variables tambien inicializa algunas en el constructor de la superclas
-     * 
+     * Constructor de la clase inicializa las variables tambien inicializa algunas en el constructor de la superclase. 
      */
     public JuegoForest()
     {
@@ -44,7 +43,7 @@ public class JuegoForest extends Juego
     }
 
     /**
-     * metodo act en este metodo se generan varios elementos del juego cada cierto tiempo y se anaden al munddo
+     * Metodo act en este metodo se generan varios elementos del juego cada cierto tiempo y se anaden al munddo
      * tambien se genera el scroll de la pantalla
      */
     public void act() 
@@ -93,12 +92,16 @@ public class JuegoForest extends Juego
                 if(b.getTipo()!=0)
                     tipo=b.getTipo(); 
         }
+        
+        if(forest.getX()>getWorld().getWidth())
+        ganar=1;
+        
         perder=j.muerto();
     }
 
     /**
-     * metodo botonP este metodo regresa el tipo de boton presonado
-     * @return tipo tipo de boton que se ha presionado
+     * Metodo botonP este metodo regresa el tipo de boton presionado.
+     * @return tipo tipo de boton que se ha presionado.
      * 
      */
     public int botonP(){
@@ -106,14 +109,14 @@ public class JuegoForest extends Juego
     }
 
     /**
-     * metodo incPun este metodo aumenta los puntos del jugador
+     * Metodo incPun este metodo aumenta los puntos del jugador.
      */
     public void IncPun(){
         j.IncPuntos(10);
     }
 
     /**
-     * metodo daña este metodo reduce la cantidad de vida actual el jugador
+     * Metodo daña este metodo reduce la cantidad de vida actual el jugador.
      */
     public void daña()
     {
@@ -121,28 +124,32 @@ public class JuegoForest extends Juego
     }
 
     /**
-     * metodo retrocede este metodo hace que el enemigo retroceda en pantalla
+     * Metodo retrocede este metodo hace que el enemigo retroceda en pantalla.
      */
     public void retrocede(){
         forest.retrocede();
     }
 
     /**
-     * metodo perder este metodo indica cuando ha perdido o no
-     * @return perder variable que indica cuando se ha perdido o no
+     * Metodo perder este metodo indica cuando ha perdido o no.
+     * @return perder variable que indica cuando se ha perdido o no.
      */
     public int perder()
     {
         return perder;
     }
+    
+    /**Este metodo retorna el valor de la variable ganar que indica si se a completado el juego.
+       @return ganar 0 si no se ha ganado, 1 si se gano.
+    */
     public int ganar()
     {
         return ganar;
     }
 
     /**
-     * metodo getPuntos este metodo regresa los puntos del jugador
-     * @return puntos variable que contiene los puntos del jugador
+     * Metodo getPuntos este metodo regresa los puntos del jugador.
+     * @return puntos variable que contiene los puntos del jugador.
      */
     public int getPuntos()
     {

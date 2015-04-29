@@ -1,16 +1,23 @@
 #BlueJ class context
 comment0.params=P\ J\ M
 comment0.target=Juego(Pantalla,\ Jugador,\ Mira)
+comment0.text=Constructor\ inicializa\ las\ variables.\r\n\ \ \ \ @param\ P\ contiene\ la\ pantalla\ del\ juego.\r\n\ \ \ \ @param\ J\ contiene\ el\ jugador.\r\n\ \ \ \ @param\ M\ contiene\ la\ mira\ que\ se\ utilizara.\r\n
 comment1.params=pa\ mi
 comment1.target=void\ nuevoNivel(Pantalla,\ Mira)
+comment1.text=\ Metodo\ nuevoNivel\ usado\ en\ juegoLaberinto\ crea\ una\ nueva\ pantalla\ y\ una\ mira\ y\ remueve\ los\ anterio.\r\n\ \ \ \ @param\ pa\ contiene\ la\ nueva\ pantalla\ del\ juego.\r\n\ \ \ \ @param\ mi\ contiene\ la\ nueva\ mira.\r\n
 comment2.params=
 comment2.target=int\ botonP()
+comment2.text=Metodo\ abstracto\ se\ define\ en\ las\ subclases.
 comment3.params=
 comment3.target=void\ IncPun()
+comment3.text=Metodo\ abstracto\ se\ define\ en\ las\ subclases.
 comment4.params=
 comment4.target=int\ perder()
+comment4.text=Metodo\ abstracto\ se\ define\ en\ las\ subclases.
 comment5.params=
 comment5.target=int\ getPuntos()
+comment5.text=Metodo\ abstracto\ se\ define\ en\ las\ subclases.
 comment6.params=
 comment6.target=int\ ganar()
+comment6.text=Metodo\ abstracto\ se\ define\ en\ las\ subclases.
 numComments=7

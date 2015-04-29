@@ -3,14 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Clase ayuda, esta clase genera un apantalla de ayuda, en pantalla se mostrara como jugar.
  * @param tipo Variable que indica el tipo de boton que se presiono.
  * @param ban Variable que permite añadir los botones y la mira al mundo una sola vez.
-
  */
 
 public class Ayuda extends Menu
-{ private int tipo;
+{ 
+    private int tipo;
     private int ban;  
     /**
-     * constructor de la clase,inicializa todas las variables que se usan en esta clase.
+     * Constructor de la clase, inicializa todas las variables que se usan en esta clase.
      */
     public Ayuda(){
         super(new Pantalla("ayuda"),new Mira(0,0,1));
@@ -20,7 +20,7 @@ public class Ayuda extends Menu
     }
 
     /**
-     * metodo act, añade la mira y los botones una sola vez al mundo.
+     * Metodo act, añade la mira y los botones una sola vez al mundo.
      * tambien verificaq que tipo de boton se ha presionado.
      * 
      */
@@ -44,7 +44,7 @@ public class Ayuda extends Menu
     }    
 
     /**
-     * metodo botonP, en este metodo se retorna el tipo de boton que se ha presionado
+     * Metodo botonP, en este metodo se retorna el tipo de boton que se ha presionado.
      * @return tipo Variable entera que indica el tipo de boton prsionado.
      */ 
     public int botonP(){

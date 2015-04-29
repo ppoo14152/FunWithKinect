@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=Fondo
 comment0.target=Pantalla(java.lang.String)
-comment0.text=\r\n\ constructor\ de\ la\ clase,\ resibe\ una\ cadena\ con\ el\ nombre\ del\ fondo\ ara\ crear\ un\ nuevo\ fondo\ con\ ese\ nombre\r\n\ inicializa\ todas\ las\ variables\ y\ coloca\ la\ imagen\r\n\ @param\ Fondo\ cadena\ con\ el\ nobre\ del\ fondo\r\n
+comment0.text=\r\n\ constructor\ de\ la\ clase,\ resibe\ una\ cadena\ con\ el\ nombre\ del\ fondo\ para\ crear\ un\ nuevo\ fondo\ con\ ese\ nombre\r\n\ inicializa\ todas\ las\ variables\ y\ coloca\ la\ imagen.\r\n\ @param\ Fondo\ cadena\ con\ el\ nobre\ del\ fondo\r\n
 comment1.params=Fondo\ X\ Y
 comment1.target=Pantalla(java.lang.String,\ int,\ int)
 comment1.text=\r\n\ constructor\ de\ la\ clase\ que\ recibe\ el\ nombre\ del\ fondo\ y\ coordenadas\ en\ x\ y\ y\r\n\ @param\ Fondo\ nombre\ del\ fondo\ que\ se\ creara\r\n\ @param\ X\ coordenada\ en\ x\ del\ fondo\r\n\ @param\ Y\ coordenada\ en\ y\ dle\ fondo\r\n

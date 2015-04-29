@@ -2,17 +2,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
 /**
- * esta clase crea un juego de tipo laberinto y anade al mundo lo nescesario
- * @param b Etiqueta que da instrucciones iniciales
- * @param rata variable tipo GreenfootSound que reproduce el sonido de un raton
- * @param ban bandera que permite anadir al mundo los elementos un a sola vez
- * @param tipo Tipo de boton que se ha presionado
- * @param perder variable que indica cuando se ha perdido
- * @ param bara obstaculo del escenario
- * @param pared paredes del laberinto
- * @param picos obstaculo del escenario
- * @param inicia variable que indica que el juego a iniciado
- * @param seg variable que permite contar en milisegundos
+ * Esta clase crea un juego de tipo laberinto y anade al mundo lo necesario.
+ * @param b Etiqueta que da instrucciones iniciales.
+ * @param rata variable tipo GreenfootSound que reproduce el sonido de un raton.
+ * @param ban bandera que permite anadir al mundo los elementos un a sola vez.
+ * @param tipo Tipo de boton que se ha presionado.
+ * @param perder variable que indica cuando se ha perdido.
+ * @ param bara obstaculo del escenario.
+ * @param pared paredes del laberinto.
+ * @param picos obstaculo del escenario.
+ * @param inicia variable que indica que el juego a iniciado.
+ * @param seg variable que permite contar en milisegundos.
  * @param gana variable que indica que ha ganado.
  * 
  */
@@ -38,8 +38,8 @@ public class JuegoLaberinto extends Juego
     private int puntos;
     private int ganar;
     /**
-     * constructor de la clase, se inicializan las variables usadas y se utiliza el constructor de la superclase
-     * para inicializar algunas de estas 
+     * Constructor de la clase, se inicializan las variables usadas y se utiliza el constructor de la superclase
+     * para inicializar algunas de estas .
      */ 
     public JuegoLaberinto()
     {
@@ -63,8 +63,8 @@ public class JuegoLaberinto extends Juego
     }
 
     /**
-     * metodo act, aqui se genera todo el ambiente, se reproducen  sonidos y los obstaculos tieen movimiento,
-     * tambien se anaden los elementos una sola vez
+     * Metodo act, aqui se genera todo el ambiente, se reproducen  sonidos y los obstaculos tieen movimiento,
+     * tambien se anaden los elementos una sola vez.
      */
     public void act() 
     {
@@ -152,23 +152,23 @@ public class JuegoLaberinto extends Juego
     }
 
     /**
-     * metodo botonP, este metodo permite saber el boton que se ha presionado en este juego
-     * @return tipo Tipo de boton presionado
+     * Metodo botonP, este metodo permite saber el boton que se ha presionado en este juego
+     * @return tipo Tipo de boton presionado.
      */
     public int botonP(){
         return tipo;
     }
 
     /**
-     * metofo incPun, incrementa los puntos del jugador en una cantidad indicada
+     * Metodo incPun, incrementa los puntos del jugador en una cantidad indicada.
      */ 
     public void IncPun(){
         j.IncPuntos(10);
     }
 
     /**
-     * metodo perder, en este metodo se regresa la variable que indica si se ha perdido
-     * @return perder variable que indica cuando se ha perdido el juego
+     * Metodo perder, en este metodo se regresa la variable que indica si se ha perdido.
+     * @return perder variable que indica cuando se ha perdido el juego.
      */
     public int perder()
     {
@@ -176,8 +176,8 @@ public class JuegoLaberinto extends Juego
     }
 
     /**
-     * metodo creaLaberinto, este metodo crea las paredes del laberinto con lineas muy delgadas, solo se usa una variable
-     * que es pared para crear todo el laberinto
+     * Metodo creaLaberinto, este metodo crea las paredes del laberinto con lineas muy delgadas, solo se usa una variable
+     * que es pared para crear todo el laberinto.
      */
     public void creaLaberinto(){
 
@@ -215,13 +215,13 @@ public class JuegoLaberinto extends Juego
     }
 
     /**
-     * metodo getPicos este metodo indica cuando los picos pueden causar daño
-     * @return picoS  variable que indica cuando los picos estan por fuera y pueden causar daño
+     * Metodo getPicos este metodo indica cuando los picos pueden causar daño.
+     * @return picoS  variable que indica cuando los picos estan por fuera y pueden causar daño.
      */
     public int getPicos(){
         return picos.getPicos();
     }
-
+    /**Metodo ponQueso inserta los quesos en el mundo en cierta posicion.*/
     private void ponQueso(){
         if(nivel==1){ queso= new Quesito();
             getWorld().addObject(queso,88,129);
@@ -247,7 +247,8 @@ public class JuegoLaberinto extends Juego
         }
 
     }
-
+    
+    /**Metodo ponRatoneras, dependiendo el nivel inserta las ratoneras en el mundo en un lugar especifico.*/
     private void ponRatoneras(){
         ratonera= new Ratonera(1);
         getWorld().addObject(ratonera,138,448);
@@ -274,14 +275,17 @@ public class JuegoLaberinto extends Juego
     }
 
     /**
-     * metodo que permite obtener los puntos del jugador, 
-     * @return getpuntos puntos obtenidos por el jugador
+     * Metodo que permite obtener los puntos del jugador.
+     * @return getpuntos puntos obtenidos por el jugador.
      */
     public int getPuntos()
     {
         return j.getPuntos();
     }
     
+    /**Este metodo retorna el valor de la variable ganar que indica si se a completado el juego.
+       @return ganar 0 si no se ha ganado, 1 si se gano.
+    */
     public int ganar()
     {
         return ganar;

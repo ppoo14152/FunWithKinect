@@ -1,17 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * esta clase crea un esenario de tpo juegoGoool
- * @param ban variable que sirve para añadir al mundo los objetos una sola vez
- * @param ban2 variable que indica cuando se ha pateado el balon
- * @param ban3 variable que indica que el balon esta en movimiento
- * @param tipo variable para indicar el boton presionado
- * @param pd variable que representa la coordenada en y dle pie derecho
- * @param pi variable que representa la coordenada en y del pie izquierdo
- * @param perder variable que indica cuando se ha perdido
- * @param port variable que genera la porteria
- * @param balon variable que genera los balones
- * @param portero variable que genera al portero
+ * Esta clase crea un esenario de tpo juegoGoool.
+ * @param ban variable que sirve para añadir al mundo los objetos una sola vez.
+ * @param ban2 variable que indica cuando se ha pateado el balon.
+ * @param ban3 variable que indica que el balon esta en movimiento.
+ * @param tipo variable para indicar el boton presionado.
+ * @param pd variable que representa la coordenada en y del pie derecho.
+ * @param pi variable que representa la coordenada en y del pie izquierdo.
+ * @param perder variable que indica cuando se ha perdido.
+ * @param port variable que genera la porteria.
+ * @param balon variable que genera los balones.
+ * @param portero variable que genera al portero.
  */
 public class JuegoGool extends Juego
 {
@@ -32,8 +32,8 @@ public class JuegoGool extends Juego
     private int ganar;
 
     /**
-     * constructor de la clase, inicializa las variables que necesita la clase, llama al constructor de la superclase
-     * para iniciar algunas de estas
+     * Constructor de la clase, inicializa las variables que necesita la clase, llama al constructor de la superclase
+     * para iniciar algunas de estas.
      */
 
     public JuegoGool(){
@@ -54,9 +54,8 @@ public class JuegoGool extends Juego
     }
 
     /**
-     * metodo act, eneste metodo se añade el balon el portero la porteria y la mira para seleccionar botones y maipular
-     * el balon
-     * 
+     * Metodo act, en este metodo se añade el balon el portero la porteria y la mira para seleccionar botones y maipular
+     * el balon.
      */
     public void act() 
     {  
@@ -117,8 +116,8 @@ public class JuegoGool extends Juego
     }
 
     /**
-     * metodo botonP, regresa el tipo de boton presionado
-     * @return tipo variable que indica el tipo de boton presionado
+     * Metodo botonP, regresa el tipo de boton presionado.
+     * @return tipo variable que indica el tipo de boton presionado.
      * 
      */
     public int botonP()
@@ -127,7 +126,7 @@ public class JuegoGool extends Juego
     }
 
     /**
-     * metodo que incrementa los puntos del jugador si es  que ha anotado gol
+     * Metodo que incrementa los puntos del jugador si es  que ha anotado gol.
      * 
      */
     public void IncPun(){
@@ -135,14 +134,18 @@ public class JuegoGool extends Juego
     }
 
     /**
-     * metodo que regresa la variable perder cuando se ha perdido
-     * @return perde variable que indica si se ha perdido el juego
+     * Metodo que regresa la variable perder cuando se ha perdido
+     * @return perde variable que indica si se ha perdido el juego.
      */
     public int perder()
     {
         return perder;
 
     }
+    
+    /**Este metodo retorna el valor de la variable ganar que indica si se a completado el juego.
+       @return ganar 0 si no se ha ganado, 1 si se gano.
+    */
     public int ganar()
     {
         return ganar;

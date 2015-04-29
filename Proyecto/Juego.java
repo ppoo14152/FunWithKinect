@@ -1,25 +1,46 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**Clase Juego, Contiene los metodos usados en los diferentes juegos.
+@param j Variable de tipo Juegador que representa el usuario.*/
 
 abstract class Juego extends KinectFun
 {
 
-public  Jugador j;
-    
+    public  Jugador j;
+
+    /**Constructor inicializa las variables.
+    @param P contiene la pantalla del juego.
+    @param J contiene el jugador.
+    @param M contiene la mira que se utilizara.
+     */
     public Juego(Pantalla P, Jugador J,Mira M)
     {
         super (P,M);
         j=J;
-    } 
+    }
+
+    /** Metodo nuevoNivel usado en juegoLaberinto crea una nueva pantalla y una mira y remueve los anterio.
+    @param pa contiene la nueva pantalla del juego.
+    @param mi contiene la nueva mira.
+     */  
     public void nuevoNivel(Pantalla pa, Mira mi){
-        
         super.nuevoNivel(pa,mi);
     }
+
+    /**Metodo abstracto se define en las subclases.*/
     abstract int botonP();
+
+    /**Metodo abstracto se define en las subclases.*/
     abstract void IncPun();
+
+    /**Metodo abstracto se define en las subclases.*/
     abstract int perder();
+
+    /**Metodo abstracto se define en las subclases.*/
     abstract int getPuntos();
+
+    /**Metodo abstracto se define en las subclases.*/
     abstract int ganar();
-    
-    
-  }
+
+}
+ 
