@@ -14,6 +14,7 @@ public class Inicio extends KinectWorld
     private static final int THUMBNAIL_WIDTH = 80;
     private static final int THUMBNAIL_HEIGHT = 60;
     private long leftHandUp;
+    private Pantalla calibra;
     private int ban=0; 
     private KinectFun mundo;
     private GreenfootSound musica;
@@ -26,6 +27,7 @@ public class Inicio extends KinectWorld
     {    
         super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, 1.0, false);
         puntuacion=0;
+        calibra=new Pantalla("Calibrar");
         setActOrder(Pantalla.class,Boton.class,Mira.class,Mono.class );
         final int width = getWidth();
         final int height = getHeight();      
@@ -33,6 +35,9 @@ public class Inicio extends KinectWorld
         mundo=new Principal(); 
         musica= new GreenfootSound("menuMusica.mp3");
         addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
+        addObject(calibra,width/2,height/2);
+        
+        
     }
 
     /**En el act se conecta al jugador con el juego y una ves que esta conectado
@@ -53,6 +58,7 @@ public class Inicio extends KinectWorld
         if (anyLeftHandUp && ban==0 )
         {
             ban=1;
+            removeObject(calibra);
             musica= new GreenfootSound("menuMusica.mp3");
             musica.setVolume(50);
             musica.play();

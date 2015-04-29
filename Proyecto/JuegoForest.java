@@ -93,7 +93,7 @@ public class JuegoForest extends Juego
                     tipo=b.getTipo(); 
         }
         
-        if(forest.getX()>getWorld().getWidth())
+        if(forest.getX() > getWorld().getWidth()-50)
         ganar=1;
         
         perder=j.muerto();

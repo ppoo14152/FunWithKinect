@@ -29,7 +29,7 @@ public class Obstaculo extends Objeto
         obstaculo=new  GreenfootImage(objeto+".png");
         seg=System.currentTimeMillis();
         seg2=System.currentTimeMillis();
-        obstaculo.scale(50,60);
+        obstaculo.scale(30,50);
 
     }
 
