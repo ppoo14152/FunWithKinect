@@ -4,4 +4,6 @@ comment0.target=Records()
 comment0.text=\r\n\ inicializa\ las\ variables\ nesesarias\r\n
 comment1.params=nom\ punt
 comment1.target=void\ escribeRecords(java.lang.String,\ int)
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ leeRecords()
+numComments=3

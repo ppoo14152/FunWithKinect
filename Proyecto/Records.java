@@ -17,18 +17,53 @@ public class Records
      */
     public Records()
     {file= new File ("rec.txt");
-     if(!file.exists()){
-         try{
-             file.createNewFile();
+        if(!file.exists()){
+            try{
+                file.createNewFile();
             }catch(IOException ex){}
         }
-        
-    
-    
+
     }
-    
     public void escribeRecords(String nom, int punt){
-        // put your code here
-       
+        FileWriter escritor;
+        BufferedWriter bw;
+        PrintWriter s;
+        try{
+            escritor= new FileWriter(file);
+            bw= new BufferedWriter(escritor);
+            s = new PrintWriter(bw);
+
+            s.write("nombre"+ nom+"             " +     punt+"\n");
+            s.close();
+            bw.close();
+        }catch(IOException e){}
+
     }
-}
+
+    public String leeRecords(){
+       
+            String texto = "";
+            FileReader lector=null;
+            String linea = "";
+            try {
+                lector = new FileReader(file);
+                BufferedReader bl = new BufferedReader(lector);
+                while ((linea = bl.readLine()) != null) {
+                    texto += linea + "\n";
+                }                
+            } catch (IOException e) {
+              
+            } finally {
+                if (lector != null) {
+                    try {
+                        lector.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            return texto;
+        }
+
+    }
+
