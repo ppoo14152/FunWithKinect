@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=nivel
+comment0.target=Nivel(java.lang.String)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=int\ botonP()
+comment2.text=\r\n\ Metodo\ botonP,\ este\ metodo\ retorna\ el\ tipo\ de\ boton\ presionado.\r\n\ @return\ tipo\ Variable\ entera\ que\ indica\ el\ tipo\ del\ boton\ presionado.\r\n
+numComments=3

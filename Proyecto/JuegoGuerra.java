@@ -19,13 +19,13 @@ public class JuegoGuerra extends Juego
     private LinkedList<Boton> menu;
     private int tiempo;
     private int n;
+    private int c;
     private Arma arma;        
     private int ban; 
     private int conEnem;
     private int tipo;
     private int perder;
     private int ganar; 
-    private Nivel nivel;
     private long seg, seg1,seg2,seg3,seg4;
     private Actor banA;
     private Label b;
@@ -41,11 +41,11 @@ public class JuegoGuerra extends Juego
         menu=new LinkedList<Boton>(); 
         menu.add(new Boton(580,450,2));
         ban=0;
+        c=0;
         tipo=0;
         perder=0;
         n=1;
         cantEnem=1;
-        nivel=new Nivel("Nivel"+n);
         tiempo=10;
         ganar=0;
         seg=System.currentTimeMillis();
@@ -59,7 +59,8 @@ public class JuegoGuerra extends Juego
      * metodo act, anade al mundo los elementos una sola vez y algunos otros cada cierto tiempo
      */
     public void act() 
-    {  
+    {
+        
         int x;
         int rem=0;
         if(System.currentTimeMillis()- seg4>5000){        
@@ -126,16 +127,17 @@ public class JuegoGuerra extends Juego
             getWorld().removeObjects(getWorld().getObjects(Boton.class));
             getWorld().removeObjects(getWorld().getObjects(Salud.class));
             ban=0;
-            nivel=null;
+            c=0;
             n=2;
-            nivel=new Nivel("Nivel"+n);
             seg4=System.currentTimeMillis();
             tiempo=30;
         }
       
     }
-    else
-    getWorld().addObject(nivel,0,0);
+    else if(c==0){
+    c=1;
+    getWorld().addObject(new Nivel("Nivel"+n),0,0);
+      }
 }
 
 
