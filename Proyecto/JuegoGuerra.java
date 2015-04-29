@@ -126,6 +126,8 @@ public class JuegoGuerra extends Juego
             getWorld().removeObjects(getWorld().getObjects(Arma.class));
             getWorld().removeObjects(getWorld().getObjects(Boton.class));
             getWorld().removeObjects(getWorld().getObjects(Salud.class));
+            getWorld().removeObjects(getWorld().getObjects(Granada.class));
+            getWorld().removeObjects(getWorld().getObjects(Bala.class));
             ban=0;
             c=0;
             n=2;

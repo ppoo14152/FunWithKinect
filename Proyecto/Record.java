@@ -11,7 +11,7 @@ public class Record extends Menu
     private int tipo;
     private int ban; 
     
-    private ScoreBoard puntuacion;
+ 
     public Record()
     {
         super(new Pantalla("record"),new Mira(0,0,1));
@@ -26,13 +26,13 @@ public class Record extends Menu
       if (ban==0)
      {
          getWorld().addObject(p,0,0);
-         puntuacion=new ScoreBoard(329,199);
+         
          for(Boton b : menu){
                getWorld().addObject(b,0,0);
                            }
          getWorld().addObject(m,0,0);  
          ban=1;
-         getWorld().addObject(puntuacion,329,199);
+        
         }
         
      if(m.getBan()== 1){
