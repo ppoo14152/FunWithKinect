@@ -18,13 +18,15 @@ public class JuegoGuerra extends Juego
 {
     private LinkedList<Boton> menu;
     private int tiempo;
+    private int n;
     private Arma arma;        
     private int ban; 
     private int conEnem;
     private int tipo;
     private int perder;
-    private int ganar;        
-    private long seg, seg1,seg2,seg3;
+    private int ganar; 
+    private Nivel nivel;
+    private long seg, seg1,seg2,seg3,seg4;
     private Actor banA;
     private Label b;
     private int cantEnem;
@@ -41,13 +43,16 @@ public class JuegoGuerra extends Juego
         ban=0;
         tipo=0;
         perder=0;
+        n=1;
         cantEnem=1;
-        tiempo=30;
+        nivel=new Nivel("Nivel"+n);
+        tiempo=10;
         ganar=0;
         seg=System.currentTimeMillis();
         seg1=System.currentTimeMillis();
         seg2=System.currentTimeMillis();
         seg3=System.currentTimeMillis();
+        seg4=System.currentTimeMillis();
     }
 
     /**
@@ -57,6 +62,7 @@ public class JuegoGuerra extends Juego
     {  
         int x;
         int rem=0;
+        if(System.currentTimeMillis()- seg4>5000){        
         x=Greenfoot.getRandomNumber(600);
         if (ban==0){
             getWorld().addObject(p,0,0);
@@ -104,9 +110,34 @@ public class JuegoGuerra extends Juego
                 if(b.getTipo()!=0)
                     tipo=b.getTipo(); 
         }
-        perder=j.muerto();
+        
+        if(tiempo==0 && n==2)
+        ganar=1;
+            
+         perder=j.muerto();
          getWorld().addObject(b,100,420);
+         
+           if(tiempo==0 && n!=2)
+        {
+            getWorld().removeObjects(getWorld().getObjects(Enemigo.class));
+            getWorld().removeObjects(getWorld().getObjects(Municion.class));
+            getWorld().removeObjects(getWorld().getObjects(Label.class));
+            getWorld().removeObjects(getWorld().getObjects(Arma.class));
+            getWorld().removeObjects(getWorld().getObjects(Boton.class));
+            getWorld().removeObjects(getWorld().getObjects(Salud.class));
+            ban=0;
+            nivel=null;
+            n=2;
+            nivel=new Nivel("Nivel"+n);
+            seg4=System.currentTimeMillis();
+            tiempo=30;
+        }
+      
     }
+    else
+    getWorld().addObject(nivel,0,0);
+}
+
 
     /**
      * Metodo botonP regresa el tipo del boon presionado
