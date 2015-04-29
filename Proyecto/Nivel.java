@@ -31,8 +31,10 @@ public class Nivel extends Menu
             getWorld().addObject(p,0,0);
             ban=1;
         }
-        if(System.currentTimeMillis()-seg>5000)
+        if(System.currentTimeMillis()-seg>3000){
+        getWorld().removeObject(p);
         getWorld().removeObject(this);
+    }
 
     }    
 
