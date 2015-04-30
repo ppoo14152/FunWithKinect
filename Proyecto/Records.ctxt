@@ -8,4 +8,6 @@ comment2.params=
 comment2.target=void\ leeRecords()
 comment3.params=us
 comment3.target=void\ addUsuario(Usuario)
-numComments=4
+comment4.params=
+comment4.target=void\ creaTablaRecords()
+numComments=5

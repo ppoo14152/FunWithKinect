@@ -88,6 +88,10 @@ public class Records extends Actor
             records.add(us);
             this.escribeRecords();
         }
+    public void creaTablaRecords()
+    {
+        getWorld().addObject(new TablaRecords(records), 0,0);
+    }
 
     }
 

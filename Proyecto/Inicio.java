@@ -44,7 +44,7 @@ public class Inicio extends KinectWorld
         musica= new GreenfootSound("menuMusica.mp3");
         addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
         addObject(calibra,width/2,height/2);
-        rec.addUsuario(usuario);
+       
         
     }
 
@@ -95,9 +95,9 @@ public class Inicio extends KinectWorld
                         removeObjects(getObjects(null));
                         mundo=new Ganar(puntuacion);
                         addObject(mundo,0,0);
-  
+                       
                     }
-
+                usuario.setPuntos(puntuacion);
                 break;
                 case 1: //botonJugar.png, carga los botones de los distintos juegos 
                 if(musica.isPlaying()==true)
@@ -165,8 +165,10 @@ public class Inicio extends KinectWorld
                 if(musica.isPlaying()==true)
                     musica.stop();
                 removeObjects(getObjects(null));
-
-
+                mundo= new Record();
+                addObject(mundo,0,0); 
+                rec.addUsuario(usuario);
+                rec.creaTablaRecords();
                 musica= new GreenfootSound("guerraSound.mp3");
                 musica.playLoop();
                 break;
