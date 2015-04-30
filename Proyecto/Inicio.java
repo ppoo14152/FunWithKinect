@@ -23,7 +23,7 @@ public class Inicio extends KinectWorld
     private Usuario usuario;
     private Records rec;
     private TablaRecords tabla;
-
+    private int banNom;
   
 
     /**Es el constructor de la clase se llama al constructor de la superclase, donde se crea una 
@@ -33,7 +33,7 @@ public class Inicio extends KinectWorld
     {    
         super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, 1.0, false);
         puntuacion=0;
-     
+        banNom=0;
         pideDatos=0;
         calibra=new Pantalla("Calibrar");
         setActOrder(Pantalla.class,Boton.class,Mira.class,Mono.class );
@@ -56,7 +56,10 @@ public class Inicio extends KinectWorld
     {  
         
         super.act();
-       
+       if(banNom==0){
+           banNom=1;
+           usuario.setNombre(Greenfoot.ask("dame tu nombre"));
+        }
        
         if (!isConnected())
             return;
@@ -168,6 +171,7 @@ public class Inicio extends KinectWorld
                 removeObjects(getObjects(null));
                 mundo= new Record();
                 addObject(mundo,0,0); 
+                rec.addUsuario(usuario);
                 tabla=new TablaRecords(rec.creaTablaRecords());
                 addObject(tabla,0,0); 
                 break;

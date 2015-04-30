@@ -10,4 +10,6 @@ comment3.params=us
 comment3.target=void\ addUsuario(Usuario)
 comment4.params=
 comment4.target=java.util.LinkedList\ creaTablaRecords()
-numComments=5
+comment5.params=
+comment5.target=void\ acomodaRecords()
+numComments=6

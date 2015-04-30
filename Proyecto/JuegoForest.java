@@ -29,7 +29,7 @@ public class JuegoForest extends Juego
     public JuegoForest()
     {
 
-        super(new Pantalla("Forest",640,240),new Jugador(50,50,100),new Mira(0,0, 4 ));
+        super(new Pantalla("Forest"),new Jugador(50,50,100),new Mira(0,0, 4 ));
         forest= new Mono(240,420);
         sombra= new Sombra(50,420);
         menu.add(new Boton(580,450,2));

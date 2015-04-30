@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Usuario extends Actor
+public  class Usuario extends Actor /*implements Comparable */
 {
     private int puntos;
     private String nombre;
@@ -31,5 +31,19 @@ public class Usuario extends Actor
     }
     public int getPuntos(){
         return puntos;
-    }
+    }    
+    /*public int compareTo(Object o){
+       if(o instanceof Usuario){          
+           if(this.puntos==((Usuario)o).puntos)
+               return 0;
+           else
+               if(this.puntos > (((Usuario)o).puntos))
+               return -1 ;
+               else
+                 return 1;
+                               
+            }
+       else 
+            return 0;
+        }*/
 }

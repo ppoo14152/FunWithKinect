@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.LinkedList;
+import java.util.*;
 /**
  * Write a description of class TablaRecords here.
  * 
