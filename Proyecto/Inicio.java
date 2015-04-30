@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.LinkedList;
 /**La clase inicio es un mundo donde se crearan cada uno de los diferentes escenarios del juego asi como sus diferentes componentes.
 @param THUMNAIL_HEIGHT Esta variable guarda el valor de la altura del mundo.
 @param THUMNAIL_WIDTH  Esta variable guarda el valor de la anchura del mundo.
@@ -14,12 +14,17 @@ public class Inicio extends KinectWorld
     private static final int THUMBNAIL_WIDTH = 80;
     private static final int THUMBNAIL_HEIGHT = 60;
     private long leftHandUp;
+    private int pideDatos;
     private Pantalla calibra;
     private int ban=0; 
     private KinectFun mundo;
     private GreenfootSound musica;
     private int puntuacion;
-    private Records reco;
+    private Usuario usuario;
+    private Records rec;
+
+  
+
     /**Es el constructor de la clase se llama al constructor de la superclase, donde se crea una 
      * pequeña camara que es odnde se visualiza el jugador al inicio del juego
      */
@@ -27,16 +32,19 @@ public class Inicio extends KinectWorld
     {    
         super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, 1.0, false);
         puntuacion=0;
+     
+        pideDatos=0;
         calibra=new Pantalla("Calibrar");
         setActOrder(Pantalla.class,Boton.class,Mira.class,Mono.class );
         final int width = getWidth();
-        final int height = getHeight();      
-        reco= new Records();
+        final int height = getHeight();
+        usuario= new Usuario();
+        rec=new Records();
         mundo=new Principal(); 
         musica= new GreenfootSound("menuMusica.mp3");
         addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
         addObject(calibra,width/2,height/2);
-        
+        rec.addUsuario(usuario);
         
     }
 
@@ -45,7 +53,10 @@ public class Inicio extends KinectWorld
      */
     public void act()
     {  
+        
         super.act();
+       
+       
         if (!isConnected())
             return;
         UserData[] us = getTrackedUsers();
@@ -68,6 +79,7 @@ public class Inicio extends KinectWorld
             musica.setVolume(50);
             switch(mundo.botonP()){
                 case 0:
+                
                 if((mundo).perder()== 1){
                     if(musica.isPlaying()==true)
                         musica.stop();
@@ -83,8 +95,9 @@ public class Inicio extends KinectWorld
                         removeObjects(getObjects(null));
                         mundo=new Ganar(puntuacion);
                         addObject(mundo,0,0);
+  
                     }
-                        
+
                 break;
                 case 1: //botonJugar.png, carga los botones de los distintos juegos 
                 if(musica.isPlaying()==true)
@@ -152,15 +165,8 @@ public class Inicio extends KinectWorld
                 if(musica.isPlaying()==true)
                     musica.stop();
                 removeObjects(getObjects(null));
-                mundo= new Record();
-                if (UserInfo.isStorageAvailable()) {
-                    UserInfo myInfo = UserInfo.getMyInfo();
-                    if (puntuacion > myInfo.getScore()) {
-                        myInfo.setScore(puntuacion);
-                        myInfo.store();  // write back to server
-                    }
-                }
-                addObject(mundo,0,0);
+
+
                 musica= new GreenfootSound("guerraSound.mp3");
                 musica.playLoop();
                 break;
@@ -208,7 +214,7 @@ public class Inicio extends KinectWorld
     public void stopped(){
         if(musica.isPlaying()==true)
             musica.stop();
-       reco.escribeRecords(reco.leeRecords(),0);
+       
     }  
 
     /**

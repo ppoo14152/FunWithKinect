@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Quesito extends Actor
 {
-
+  
     private GreenfootImage queso;
     /**
      * Constructor, aqui se crea el queso y pone la imagen en pantalla 
@@ -22,6 +22,8 @@ public class Quesito extends Actor
      */
     public void act() 
     {
+    
+ 
         if(getOneIntersectingObject(Mira.class)!=null ){
             ((Inicio)getWorld()).IncPun();
             getWorld().removeObject(this);
