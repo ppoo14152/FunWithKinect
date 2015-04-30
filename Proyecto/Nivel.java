@@ -26,14 +26,17 @@ public class Nivel extends Menu
     
     public void act() 
     {
+       
         if (ban==0)
         {
             getWorld().addObject(p,0,0);
             ban=1;
         }
-        if(System.currentTimeMillis()-seg>3000){
+
+        if(System.currentTimeMillis()-seg>5000){
         getWorld().removeObject(p);
         getWorld().removeObject(this);
+
     }
 
     }    
@@ -45,4 +48,6 @@ public class Nivel extends Menu
     public int botonP(){
         return 0;
     }
+    
+   
 }

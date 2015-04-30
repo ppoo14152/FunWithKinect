@@ -85,8 +85,13 @@ public class Records extends Actor
          }
     public void addUsuario(Usuario us)
         {
+            for(Usuario i: records){
+            if(i.getPuntos() < us.getPuntos()){
+            records.remove(i);
+                                              }
             records.add(us);
             this.escribeRecords();
+        }  
         }
     public void creaTablaRecords()
     {
