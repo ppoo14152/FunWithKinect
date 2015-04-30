@@ -19,6 +19,7 @@ public class Pantalla extends Actor
      */
 
     public Pantalla(String Fondo){
+        
         fondo= new GreenfootImage(Fondo +".png");
         ban=0;
         x=0;
@@ -33,11 +34,14 @@ public class Pantalla extends Actor
      * @param Y coordenada en y dle fondo
      */
     public Pantalla(String Fondo, int X, int Y ){
+  
         fondo= new GreenfootImage(Fondo +".png");
         ban=1;
         x=X;
         y=Y;
         setImage(fondo);
+        
+   
     }
 
     /**
@@ -51,8 +55,9 @@ public class Pantalla extends Actor
             y=getWorld().getHeight()/2;
             setLocation(x,y);
             ban=1;
+            setLocation(x,y);
         }
-        setLocation(x,y);
+        
 
     }
 

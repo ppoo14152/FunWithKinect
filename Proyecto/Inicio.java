@@ -22,6 +22,7 @@ public class Inicio extends KinectWorld
     private int puntuacion;
     private Usuario usuario;
     private Records rec;
+    private TablaRecords tabla;
 
   
 
@@ -40,11 +41,11 @@ public class Inicio extends KinectWorld
         final int height = getHeight();
         usuario= new Usuario();
         rec=new Records();
-        mundo=new Principal(); 
+        mundo=new Principal();
         musica= new GreenfootSound("menuMusica.mp3");
         addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
         addObject(calibra,width/2,height/2);
-       
+    
         
     }
 
@@ -167,10 +168,8 @@ public class Inicio extends KinectWorld
                 removeObjects(getObjects(null));
                 mundo= new Record();
                 addObject(mundo,0,0); 
-                rec.addUsuario(usuario);
-                rec.creaTablaRecords();
-                musica= new GreenfootSound("guerraSound.mp3");
-                musica.playLoop();
+                tabla=new TablaRecords(rec.creaTablaRecords());
+                addObject(tabla,0,0); 
                 break;
 
             }
