@@ -1,12 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Usuario here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ *clase usuario, esta clase permite guardar el nombre y puntuacion de un jugador
+ *@param puntos cariable que guarda los puntos
+ *@param nombre variable que guarda el nombre del jugador
  */
-public  class Usuario extends Actor /*implements Comparable */
+public  class Usuario extends Actor
 {
     private int puntos;
     private String nombre;
@@ -32,18 +31,5 @@ public  class Usuario extends Actor /*implements Comparable */
     public int getPuntos(){
         return puntos;
     }    
-    /*public int compareTo(Object o){
-       if(o instanceof Usuario){          
-           if(this.puntos==((Usuario)o).puntos)
-               return 0;
-           else
-               if(this.puntos > (((Usuario)o).puntos))
-               return -1 ;
-               else
-                 return 1;
-                               
-            }
-       else 
-            return 0;
-        }*/
+    
 }
