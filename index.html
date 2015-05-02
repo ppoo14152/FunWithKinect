@@ -60,6 +60,9 @@ Consiste en un vídeo juego para computadora manejado por kinect, se encuentra c
 
 <p>### Requisitos para jugar</p>
 
+<h3>
+<a id="windows" class="anchor" href="#windows" aria-hidden="true"><span class="octicon octicon-link"></span></a>Windows</h3>
+
 <p>FunWhitKinect funciona en la plataforma de Windows(xp,8,7,vista), requiere la instalación de los  programas Geeenfoot<br>
  kinect Server Y la librería OpenNI y el controlador de OpenNI, los cuales pueden descargarse de los siguientes links:</p>
 
@@ -69,9 +72,60 @@ Consiste en un vídeo juego para computadora manejado por kinect, se encuentra c
 
 <p><a href="http://www.greenfoot.org/doc/kinect/SensorKinect-Win32.msi">controlador de openNI</a></p>
 
-<p>Si usted requiet install libwxbase2.8-dev libwxgtk2.8-dev wx-commonere usarlo en alguna otra plataforma siga los pasos mencionados en el siguiente link:</p>
+<p>Si usted requiere  usarlo en alguna otra plataforma siga los pasos mencionados en el siguiente link:</p>
 
-<p><a href="http://www.greenfoot.org/doc/kinect">http://www.greenfoot.org/doc/kinect</a></p>
+<h3>
+<a id="linux" class="anchor" href="#linux" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux</h3>
+
+<p>Paquetes necesarios:
+      sudo apt-get install g++ libglut3-dev libboost-all-dev
+      sudo apt-get install libwxbase2.8-dev libwxgtk2.8-dev wx-common
+Inatalar <a href="http://www.greenfoot.org/doc/kinect/OpenNI-Linux32.tar.bz2">openNI</a>:
+        mkdir OpenNI
+        cd OpenNI
+        wget <a href="http://www.greenfoot.org/doc/kinect/OpenNI-Linux32.tar.bz2">http://www.greenfoot.org/doc/kinect/OpenNI-Linux32.tar.bz2</a>
+        tar -jxf OpenNI-Linux32.tar.bz2
+        sudo ./install.sh
+        cd ..
+instalar <a href="http://www.greenfoot.org/doc/kinect/NITE-Linux32.tar.bz2">NITE</a>:
+        mkdir NITE
+        cd NITE
+        wget <a href="http://www.greenfoot.org/doc/kinect/NITE-Linux32.tar.bz2">http://www.greenfoot.org/doc/kinect/NITE-Linux32.tar.bz2</a>
+        tar -jxf NITE-Linux32.tar.bz2
+        echo '0KOIk2JeIBYClPWVnMoRKn5cdY4=' | sudo ./install.sh
+        cd ..
+instalar <a href="http://www.greenfoot.org/doc/kinect/SensorKinect-Linux32.tar.bz2">KinectDriver</a>:
+         mkdir Kinect
+         cd Kinect
+         wget <a href="http://www.greenfoot.org/doc/kinect/SensorKinect-Linux32.tar.bz2">http://www.greenfoot.org/doc/kinect/SensorKinect-Linux32.tar.bz2</a>
+         tar -jxf SensorKinect-Linux32.tar.bz2
+         sudo ./install.sh
+         cd ..</p>
+
+<h3>
+<a id="mac-os-x" class="anchor" href="#mac-os-x" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mac OS X</h3>
+
+<p>Installar <a href="http://developer.apple.com/xcode/">XCode</a>:</p>
+
+<p>Instalar macPort:
+    <a href="https://distfiles.macports.org/MacPorts/MacPorts-2.0.1-10.5-Leopard.dmg">Leopard</a>
+    <a href="https://distfiles.macports.org/MacPorts/MacPorts-2.0.1-10.6-SnowLeopard.dmg">SnowLeopard</a>
+    <a href="https://distfiles.macports.org/MacPorts/MacPorts-2.0.1-10.7-Lion.dmg">Lion</a>
+Instalar librerias:
+       En la terminal use:
+                         sudo /opt/local/bin/port -v selfupdate
+                         sudo /opt/local/bin/port install libtool
+                         sudo /opt/local/bin/port install libusb-devel +universal
+                         sudo /opt/local/bin/port install boost
+                         sudo /opt/local/bin/port install wxWidgets-devel
+Instalar <a href="http://www.greenfoot.org/doc/kinect/OpenNI-MacOSX.tar.bz2">openNI</a>
+Instalar <a href="http://www.greenfoot.org/doc/kinect/SensorKinect-MacOSX.tar.bz2">KinectDriver</a>
+Instalar <a href="http://www.greenfoot.org/doc/kinect/NITE-MacOSX.tar.bz2">NITE</a>
+          En caso de que pida un serial utilize:0KOIk2JeIBYClPWVnMoRKn5cdY4
+Intalar <a href="http://www.greenfoot.org/doc/kinect/kinectserver-1.2.tar.gz">KinectServer</a>
+         y utilize esto en la terminal: 
+                        ./configure --with-boost=/opt/local/include --with-wx-config=/opt/local/bin/wx-config --with-wx-                                                                                     prefix=/opt/localmake
+                        sudo make install</p>
 
 <h3>
 <a id="autores-y-contribuciones" class="anchor" href="#autores-y-contribuciones" aria-hidden="true"><span class="octicon octicon-link"></span></a>Autores y contribuciones.</h3>
