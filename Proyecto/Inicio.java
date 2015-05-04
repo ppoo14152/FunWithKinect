@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.LinkedList;
+
 /**La clase inicio es un mundo donde se crearan cada uno de los diferentes escenarios del juego asi como sus diferentes componentes.
 @param THUMNAIL_HEIGHT Esta variable guarda el valor de la altura del mundo.
 @param THUMNAIL_WIDTH  Esta variable guarda el valor de la anchura del mundo.
@@ -24,7 +25,6 @@ public class Inicio extends KinectWorld
     private Records rec;
     private TablaRecords tabla;
     private int banNom;
-  
 
     /**Es el constructor de la clase se llama al constructor de la superclase, donde se crea una 
      * pequeña camara que es odnde se visualiza el jugador al inicio del juego
@@ -45,8 +45,7 @@ public class Inicio extends KinectWorld
         musica= new GreenfootSound("menuMusica.mp3");
         addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
         addObject(calibra,width/2,height/2);
-    
-        
+
     }
 
     /**En el act se conecta al jugador con el juego y una ves que esta conectado
@@ -54,13 +53,13 @@ public class Inicio extends KinectWorld
      */
     public void act()
     {  
-        
+
         super.act();
-       if(banNom==0){
-           banNom=1;
-           usuario.setNombre(Greenfoot.ask("dame tu nombre"));
+        if(banNom==0){
+            banNom=1;
+            usuario.setNombre(Greenfoot.ask("dame tu nombre"));
         }
-       
+
         if (!isConnected())
             return;
         UserData[] us = getTrackedUsers();
@@ -83,7 +82,7 @@ public class Inicio extends KinectWorld
             musica.setVolume(50);
             switch(mundo.botonP()){
                 case 0:
-                
+
                 if((mundo).perder()== 1){
                     if(musica.isPlaying()==true)
                         musica.stop();
@@ -91,16 +90,16 @@ public class Inicio extends KinectWorld
                     removeObjects(getObjects(null));
                     mundo=new GameOver();
                     addObject(mundo,0,0);
-                                         }
-                    else if((mundo).ganar()==1){
-                        if(musica.isPlaying()==true)
+                }
+                else if((mundo).ganar()==1){
+                    if(musica.isPlaying()==true)
                         musica.stop();
-                        puntuacion+=((Juego)mundo).getPuntos();
-                        removeObjects(getObjects(null));
-                        mundo=new Ganar(puntuacion);
-                        addObject(mundo,0,0);
-                       
-                    }
+                    puntuacion+=((Juego)mundo).getPuntos();
+                    removeObjects(getObjects(null));
+                    mundo=new Ganar(puntuacion);
+                    addObject(mundo,0,0);
+
+                }
                 usuario.setPuntos(puntuacion);
                 break;
                 case 1: //botonJugar.png, carga los botones de los distintos juegos 
@@ -175,9 +174,33 @@ public class Inicio extends KinectWorld
                 tabla=new TablaRecords(rec.creaTablaRecords());
                 addObject(tabla,0,0); 
                 break;
+                case 9://AyudaForest         
+                if(musica.isPlaying()==true)
+                    musica.stop();
+                musica= new GreenfootSound("forestAyuda.mp3");
+                musica.play();
+                //Reproducir sonido AyudaForest
+                break;
+                case 10://AyudaGool         
+                if(musica.isPlaying()==true)
+                    musica.stop();
+                musica= new GreenfootSound("goolAyuda.mp3");
+                musica.play();
+                break;
+                case 11://AyudaLaberinto       
+                if(musica.isPlaying()==true)
+                    musica.stop();
+                musica= new GreenfootSound("laberintoAyuda.mp3");
+                musica.play();
+                break;
+                case 12://AyudaResistencia;         
+                if(musica.isPlaying()==true)
+                    musica.stop();
+                musica= new GreenfootSound("resistenciaAyuda.mp3");
+                musica.play();
+                break;
 
             }
-
         }       
     }
 
@@ -219,7 +242,7 @@ public class Inicio extends KinectWorld
     public void stopped(){
         if(musica.isPlaying()==true)
             musica.stop();
-       
+
     }  
 
     /**

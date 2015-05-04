@@ -45,6 +45,18 @@ public class Boton extends Objeto
             case 8 : boton.add( new GreenfootImage("BotonRecords.png"));
             boton.add( new GreenfootImage("BotonRecords1.png"));
             break;
+            case 9: boton.add( new GreenfootImage("AyudaForest.png"));
+                    boton.add( new GreenfootImage("AyudaForest1.png"));
+            break;
+            case 10:boton.add( new GreenfootImage("AyudaGool.png"));
+                    boton.add( new GreenfootImage("AyudaGool1.png"));
+            break;
+            case 11: boton.add( new GreenfootImage("AyudaLaberinto.png"));
+            boton.add( new GreenfootImage("AyudaLaberinto1.png"));
+            break;
+            case 12:boton.add( new GreenfootImage("AyudaResistencia.png"));
+            boton.add( new GreenfootImage("AyudaResistencia1.png"));
+            break;
         }
         x=X;
         y=Y;

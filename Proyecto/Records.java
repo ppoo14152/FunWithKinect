@@ -90,9 +90,10 @@ public class Records extends Actor
     {        
         records.add(us);
         this.acomodaRecords();
-        records.remove(0);        
+        if(records.size()>4)
+            records.remove(0);        
         this.escribeRecords();
-        
+
     }
 
     public LinkedList<Usuario> creaTablaRecords()
@@ -109,8 +110,8 @@ public class Records extends Actor
                     aux=records.get(c2);
                     records.add(c2,records.get(c2+1));
                     records.remove(c2+2);                    
-                   // records.add(c2+1,aux);
-                    
+                    // records.add(c2+1,aux);
+
                     System.out.println("1");
                 }
             }

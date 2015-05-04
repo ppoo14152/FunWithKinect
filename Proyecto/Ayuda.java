@@ -15,6 +15,10 @@ public class Ayuda extends Menu
     public Ayuda(){
         super(new Pantalla("ayuda"),new Mira(0,0,1));
         menu.add(new Boton(500,400,2));
+        menu.add(new Boton(169,100,9));
+        menu.add(new Boton(169,200,10));
+        menu.add(new Boton(169,300,11));
+        menu.add(new Boton(169,400,12));
         ban=0;
         tipo=0;
     }
