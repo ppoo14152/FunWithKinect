@@ -17,6 +17,7 @@ public class Inicio extends KinectWorld
     private long leftHandUp;
     private int pideDatos;
     private Pantalla calibra;
+    private Mira mira;
     private int ban=0; 
     private KinectFun mundo;
     private GreenfootSound musica;
@@ -124,7 +125,7 @@ public class Inicio extends KinectWorld
                 break;
                 case 3://botonAyuda.png carga los botones de menuInicio3
                 removeObjects(getObjects(null));
-                mundo=new Ayuda(); 
+                mundo=new MenuAyuda(); 
                 addObject(mundo,0,0);
 
                 break;
@@ -174,30 +175,28 @@ public class Inicio extends KinectWorld
                 tabla=new TablaRecords(rec.creaTablaRecords());
                 addObject(tabla,0,0); 
                 break;
-                case 9://AyudaForest         
-                if(musica.isPlaying()==true)
-                    musica.stop();
-                musica= new GreenfootSound("forestAyuda.mp3");
-                musica.play();
+                case 9://AyudaForest 
+                removeObjects(getObjects(null));
+                mundo=new Ayuda("AyudaJForest");
+                addObject(mundo,0,0);
+                addObject(new Boton(500,400,2),500,400);
+                addObject(new Mira(0,0,1),0,0);
                 //Reproducir sonido AyudaForest
                 break;
-                case 10://AyudaGool         
-                if(musica.isPlaying()==true)
-                    musica.stop();
-                musica= new GreenfootSound("goolAyuda.mp3");
-                musica.play();
+                case 10://AyudaGool
+                removeObjects(getObjects(null));
+                mundo=new Ayuda("AyudaJGool");
+                addObject(mundo,0,0);
                 break;
-                case 11://AyudaLaberinto       
-                if(musica.isPlaying()==true)
-                    musica.stop();
-                musica= new GreenfootSound("laberintoAyuda.mp3");
-                musica.play();
+                case 11://AyudaLaberinto
+                removeObjects(getObjects(null));
+                mundo=new Ayuda("AyudaJLaberinto");
+                addObject(mundo,0,0); 
                 break;
-                case 12://AyudaResistencia;         
-                if(musica.isPlaying()==true)
-                    musica.stop();
-                musica= new GreenfootSound("resistenciaAyuda.mp3");
-                musica.play();
+                case 12://AyudaResistencia;
+                removeObjects(getObjects(null));
+                mundo=new Ayuda("AyudaJResistencia");
+                addObject(mundo,0,0);
                 break;
 
             }

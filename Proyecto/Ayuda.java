@@ -1,33 +1,19 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
+
 /**
- * Clase ayuda, esta clase genera un apantalla de ayuda, en pantalla se mostrara como jugar.
+ * Write a description of class Ayuda here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-  // tipo Variable que indica el tipo de boton que se presiono.
-  // ban Variable que permite añadir los botones y la mira al mundo una sola vez.
-
 public class Ayuda extends Menu
-{ 
-    private int tipo;
+{
+   private int tipo;
     private int ban;  
-    /**
-     * Constructor de la clase, inicializa todas las variables que se usan en esta clase.
-     */
-    public Ayuda(){
-        super(new Pantalla("ayuda"),new Mira(0,0,1));
-        menu.add(new Boton(500,400,2));
-        menu.add(new Boton(169,374,9));
-        menu.add(new Boton(169,230,10));
-        menu.add(new Boton(485,300,11));
-        menu.add(new Boton(485,156,12));
-        ban=0;
-        tipo=0;
-    }
-
-    /**
-     * Metodo act, añade la mira y los botones una sola vez al mundo.
-     * tambien verificaq que tipo de boton se ha presionado.
-     * 
-     */
+   public Ayuda(String ayuda){
+    super(new Pantalla(ayuda),new Mira(0,0,1));
+    menu.add(new Boton(500,400,2));
+                             }
     public void act() 
     {
         if (ban==0)
@@ -45,8 +31,7 @@ public class Ayuda extends Menu
                 if(b.getTipo()!=0)
                     tipo = b.getTipo();
         }
-    }    
-
+    }
     /**
      * Metodo botonP, en este metodo se retorna el tipo de boton que se ha presionado.
      * @return tipo Variable entera que indica el tipo de boton prsionado.
@@ -54,5 +39,4 @@ public class Ayuda extends Menu
     public int botonP(){
         return tipo;
     }
-
 }

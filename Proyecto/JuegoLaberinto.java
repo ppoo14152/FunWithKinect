@@ -73,9 +73,6 @@ public class JuegoLaberinto extends Juego
             getWorld().addObject(j,0,0);
             getWorld().addObject(p,0,0);
             getWorld().addObject(m,0,0);
-            /*for(Boton b : menu){
-            getWorld().addObject(b,0,0);
-            }*/
             ban=1;
             if(nivel==1){
                 creaLaberinto();  
@@ -134,9 +131,7 @@ public class JuegoLaberinto extends Juego
         if(inicia==1){
             
             if(m.ratonMuere()==1){        
-                System.out.println(perder);
                 banMuere=1;
-                //segVida=System.currentTimeMillis();
 
             }
         }
