@@ -142,8 +142,7 @@ public class JuegoLaberinto extends Juego
         }
         perder=j.muerto();        
         if(  System.currentTimeMillis()- segVida   >= 500 && banMuere==1){    
-            banMuere=0;
-           if(nivel==2)
+            banMuere=0;          
             j.daña();
             segVida=System.currentTimeMillis();
         }

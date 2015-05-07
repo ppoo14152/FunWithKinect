@@ -1,6 +1,6 @@
 Class documentation
 <---- javadoc command: ---->
-C:\Program Files\Java\jdk1.7.0_45\bin\javadoc.exe
+D:\Program Files (x86)\Greenfoot\jdk\bin\javadoc.exe
 -author
 -version
 -nodeprecated
@@ -10,22 +10,22 @@ C:\Program Files\Java\jdk1.7.0_45\bin\javadoc.exe
 -nohelp
 -nonavbar
 -source
-1.7
+1.8
 -classpath
-C:\Program Files\Greenfoot\lib\extensions\greenfoot.jar;C:\Program Files\Greenfoot\lib\bluejcore.jar;C:\Program Files\Greenfoot\lib\bluejeditor.jar;C:\Program Files\Greenfoot\lib\bluejext.jar;C:\Program Files\Greenfoot\lib\AppleJavaExtensions.jar;C:\Program Files\Greenfoot\lib\junit-4.8.2.jar;C:\Program Files\Greenfoot\lib\bluej.jar;C:\Program Files\Greenfoot\lib\commons-httpclient-3.1.jar;C:\Program Files\Greenfoot\lib\commons-logging-api-1.1.2.jar;C:\Program Files\Greenfoot\lib\commons-codec-1.3.jar;C:\Program Files\Greenfoot\lib\jl1.0.1.jar;C:\Program Files\Greenfoot\lib\opencsv-2.3.jar;C:\Users\pones\Desktop\FunWithKinect\trunk\Proyecto
+D:\Program Files (x86)\Greenfoot\lib\extensions\greenfoot.jar;D:\Program Files (x86)\Greenfoot\lib\bluejcore.jar;D:\Program Files (x86)\Greenfoot\lib\bluejeditor.jar;D:\Program Files (x86)\Greenfoot\lib\bluejext.jar;D:\Program Files (x86)\Greenfoot\lib\AppleJavaExtensions.jar;D:\Program Files (x86)\Greenfoot\lib\junit-4.8.2.jar;D:\Program Files (x86)\Greenfoot\lib\bluej.jar;D:\Program Files (x86)\Greenfoot\lib\commons-httpclient-3.1.jar;D:\Program Files (x86)\Greenfoot\lib\commons-logging-api-1.1.2.jar;D:\Program Files (x86)\Greenfoot\lib\commons-codec-1.3.jar;D:\Program Files (x86)\Greenfoot\lib\jl1.0.1.jar;D:\Program Files (x86)\Greenfoot\lib\opencsv-2.3.jar;D:\Users\Arturo\Desktop\FunWithKinect.git\trunk\Proyecto
 -d
-C:\Users\pones\Desktop\FunWithKinect\trunk\Proyecto\doc
+D:\Users\Arturo\Desktop\FunWithKinect.git\trunk\Proyecto\doc
 -encoding
 UTF-8
 -charset
 UTF-8
 -docletpath
-C:\Program Files\Greenfoot\lib\bjdoclet.jar
+D:\Program Files (x86)\Greenfoot\lib\bjdoclet.jar
 -doclet
 bluej.doclet.doclets.formats.html.HtmlDoclet
-C:\Users\pones\Desktop\FunWithKinect\trunk\Proyecto\KinectFun.java
+D:\Users\Arturo\Desktop\FunWithKinect.git\trunk\Proyecto\KinectFun.java
 <---- end of javadoc command ---->
-Loading source file C:\Users\pones\Desktop\FunWithKinect\trunk\Proyecto\KinectFun.java...
+Loading source file D:\Users\Arturo\Desktop\FunWithKinect.git\trunk\Proyecto\KinectFun.java...
 Constructing Javadoc information...
 javadoc: error - No public or protected classes found to document.
 1 error
