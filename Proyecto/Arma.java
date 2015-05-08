@@ -1,30 +1,32 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /** Clase Arma, nos permite crear objetos Arma los cuales son usados en juegoGuerra.
- * @param ban Bandera que indica si se disparo.
- * @param banCam Bandera que indica si el jugador camino y reproduce el sonido camina.
- * @param c Variable que no permite que el objeto se incerte mas de una vez en el mundo.
- * @param x2 Variable que contiene la posicion en el eje x de el Arma.
- * @param banMuere Bandera que indica si el jugador recibio un impacto de bala enemiga.
- * @param banBal 
- * @param balas Variable que almacena el numero de balas que tiene el jugador.
- * @param bala  Objeto que se inserta en el mundo cada que se realiza un disparo.
- * @param mira  Objeto usado para apuntar a el enemigo y fijar la direccion de la bala.
- * @param arma Variable que contiene los diferentes disfraces de objeto.
- * @param b    Objeto que muestra el numero de balas en pantalla.
- * @param seg  Variable que contiene una referencia de tiempo que marca las transiciones entre los distintos disfraces.
- * @param camina Variable que contiene el sonido de camina el cual se reproduce cuando el jugador se mueve de un lado a otro.
- */
+ * */
+ // ban      Bandera que indica si se disparo.
+ // banCam   Bandera que indica si el jugador camino y reproduce el sonido camina.
+ // granada  Objeto de tipo granada se inserta al juntar los brazos.
+ // c        Variable que no permite que el objeto se incerte mas de una vez en el mundo.
+ // x2       Variable que contiene la posicion en el eje x de el Arma.
+ // banMuere Bandera que indica si el jugador recibio un impacto de bala enemiga.
+ // balas    Variable que almacena el numero de balas que tiene el jugador.
+ // bala     Objeto que se inserta en el mundo cada que se realiza un disparo.
+ // mira     Objeto usado para apuntar a el enemigo y fijar la direccion de la bala.
+ // arma     Variable que contiene los diferentes disfraces de objeto.
+ // b        Objeto que muestra el numero de balas en pantalla.
+ // seg      Variable que contiene una referencia de tiempo que marca las transiciones entre los distintos disfraces.
+ // camina   Variable que contiene el sonido de camina el cual se reproduce cuando el jugador se mueve de un lado a otro.
+ // segGra   Referencia de tiempo que controla el chequeo de granadas.
+ // granadas Contiene el numero de granadas con las que cuenta el jugador.
+ // banGra   Bandera que indica si se arrojo una granada.
+ 
 public class Arma extends Objeto
 {   
     private int ban;
     private  Granada granada;
     private int banCam;
-   
     private int c;
     private int x2;
     private int banMuere;
-    private int banBal;
     private int balas;
     private Bala bala;
     private Mira mira;
@@ -48,7 +50,6 @@ public class Arma extends Objeto
         segG=System.currentTimeMillis(); 
         banCam=0;
         camina=new GreenfootSound("caminasoldado.mp3");
-        banBal=0;
         x2=0;
         banMuere=0;
         seg=System.currentTimeMillis();     
@@ -70,11 +71,6 @@ public class Arma extends Objeto
             getWorld().addObject(mira,0,0);
             c=1;               
         }
-        /* if(banBal==1){                        
-
-        if((getWorld().getObjects(Bala.class)).size()==0);               
-        banBal=0;
-        } */
         KinectWorld mundo =(KinectWorld)getWorld();
         UserData[] usuarios = mundo.getTrackedUsers();
         if (banMuere==1){
@@ -104,11 +100,10 @@ public class Arma extends Objeto
                 ban=1;
                 getWorld().removeObject(b);
                 b=new Label(Integer.toString(balas),20);
-                banBal=1;
+
             }    
             else if(i.getJoint(Joint.LEFT_HAND).getY() < y && ban==1){
-                ban=0;
-                banBal=0;}
+                ban=0;}
         }
         if(getOneIntersectingObject(BalaEnemigo.class)!=null){
             banMuere=1;

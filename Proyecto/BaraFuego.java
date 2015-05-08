@@ -1,11 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**Clase BaraFuego, permite crear objetos de este tipo los cuales son usados en el juegoLaberinto.
-@param bara Guarda la imagen del objeto.
-@param rot  Esta variable guarda un numero que indica el angulo de la bara. 
-@param seg  Variable que almacena una relacion de tiempo la cual marca la rotacion del objeto.
-@param seg2 Variable que almacena una relacion de tiempo la cual marca la reproduccion de sonido fuego.
-@param fuego Contiene el sonido de juego.
- */
+ * */
+// bara Guarda la imagen del objeto.
+// rot  Esta variable guarda un numero que indica el angulo de la bara. 
+// seg  Variable que almacena una relacion de tiempo la cual marca la rotacion del objeto.
+// seg2 Variable que almacena una relacion de tiempo la cual marca la reproduccion de sonido fuego.
+// fuego Contiene el sonido de juego.
+
 public class BaraFuego extends Objeto
 {
     private GreenfootImage bara;

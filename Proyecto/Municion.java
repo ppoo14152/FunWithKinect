@@ -1,10 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
-/**Clase Municion, nos permite crear objetos tipo municion usados en el juegoGuerra.
-@param c Bandera que detecta si se esta tocando un objeto de tipo Mira.
-@param municion Contiene la imagen de la municion.
-@param muni Guarda el sonido de rcoleccion de municion que se activa al recoger municion.
- */
+/**Clase Municion, nos permite crear objetos tipo municion usados en el juegoGuerra.*/
+
+// c        Bandera que detecta si se esta tocando un objeto de tipo Mira.
+// municion Contiene la imagen de la municion.
+// muni     Guarda el sonido de rcoleccion de municion que se activa al recoger municion.
+// seg      Contiene una referencia de tiempo que controla el chequeo de coliciones.
+ 
 public class Municion extends Objeto
 {
     private GreenfootImage municion;

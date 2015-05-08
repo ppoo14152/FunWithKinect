@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**Esta clase genera el jugador para los escenarios incluye salud, puntuacon  y sonidos como variables heredadas
- * del supertipo.
- * @param puntos variable encargada de acumular los puntos del jugador.
- * @param objeto tipo Label nos permite visualizar los puntos en el juego.
- * @param objeto tipo Salud el cual nos permite visualizar la salud del jugador.
- * @param ban bandera que no permite insertar un objeto mas de una ves.
- * @param vida variable que indica la cantidad de salud que tiene el jugador.
- * @param pierde contiene el sonido perder, se reproduce si el jugador pierde.
- * @param daño contiene el sonido de daño el cual se reproduce si el jugador recibe algun daño.
- */ 
+ * del supertipo.*/
+ // puntos variable encargada de acumular los puntos del jugador.
+ // objeto tipo Label nos permite visualizar los puntos en el juego.
+ // objeto tipo Salud el cual nos permite visualizar la salud del jugador.
+ // ban bandera que no permite insertar un objeto mas de una ves.
+ // vida variable que indica la cantidad de salud que tiene el jugador.
+ // pierde contiene el sonido perder, se reproduce si el jugador pierde.
+ // daño contiene el sonido de daño el cual se reproduce si el jugador recibe algun daño.
+ 
 public class Jugador extends Personaje
 {
     private int puntos;

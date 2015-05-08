@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Records()
-comment0.text=\r\n\ inicializa\ las\ variables\ nesesarias\r\n
+comment0.text=\r\n\ Inicializa\ las\ variables\ nesesarias\r\n
 comment1.params=
 comment1.target=void\ escribeRecords()
+comment1.text=Metodo\ que\ escribe\ en\ el\ archivo\ los\ records
 comment2.params=
 comment2.target=void\ leeRecords()
+comment2.text=Metodo\ que\ lee\ el\ archivo\ y\ lo\ pasa\ a\ una\ variable\ que\ lo\ almacena.
 comment3.params=us
 comment3.target=void\ addUsuario(Usuario)
+comment3.text=Metodo\ que\ agrega\ un\ usuario\ a\ la\ variable\ records.
 comment4.params=
 comment4.target=java.util.LinkedList\ creaTablaRecords()
+comment4.text=Metodo\ que\ retorna\ la\ variable\ de\ records
 comment5.params=
 comment5.target=void\ acomodaRecords()
 numComments=6

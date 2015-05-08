@@ -1,16 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- *esta clase genera una granada en el juegoGuerra
- *@param seg variable que permite contar en milisegundos
- *@param granada lista de imagenes de la granada
- *@param alto variable que representa el alto de la imagen
- *@param explosion variable que indica si ha expotado
- *@param largo variable que indica el largo de la imagen
- *@param con contador para cambiar los sprites de la granada
- *@param banSonido variable que permite reproducir el sonido una sola vez cuando ha explotado
- *@param explota sonido que simula explosion
- */
+ *Esta clase genera una granada en el juegoGuerra.*/
+ // seg       Variable que permite contar en milisegundos
+ // granada   Lista de imagenes de la granada
+ // alto      Variable que representa el alto de la imagen
+ // explosion Variable que indica si ha expotado
+ // largo     Variable que indica el largo de la imagen
+ // con       Contador para cambiar los sprites de la granada
+ // banSonido Variable que permite reproducir el sonido una sola vez cuando ha explotado
+ // explota   Sonido que simula explosion
+ // seguro    Contiene el sonido de el seguro de la granada.
+ // con2      Controla el cambio de disfraces y la eliminacion del objeto.
+
 public class Granada extends Objeto
 {
 
@@ -23,7 +25,7 @@ public class Granada extends Objeto
     private int con2;
     private int banSonido;
     private GreenfootSound explota;
-     private GreenfootSound seguro;
+    private GreenfootSound seguro;
    /**
     * constructor de la granada solo recibe coordenada en x
     * inicializa las variables y llama al constructor de la superclase para inicializar algunas otras
@@ -88,7 +90,7 @@ public class Granada extends Objeto
            
     }   
     /**
-     * metodo getExplosion este metodo regresa la variable de explosion 
+     * Metodo getExplosion este metodo regresa la variable de explosion 
      * @return explosion variable que indica cuando ha explotado la granada
      */
     public int getExplosion(){

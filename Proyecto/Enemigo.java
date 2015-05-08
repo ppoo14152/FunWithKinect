@@ -1,15 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
-/**Esta clase crea un enemigo para el escenario de guerra habra dos tipos de enemigos 
-@param enemigo se encarga de guardar los distintos disfraces del enemigo.
-@param seg se encarga de almacenar una referencia de tiempo para realizar los movimientos del personaje.
-@param dir indica en que direccion se mueve el enemigo.
-@param banDis indica si el jugador realizo un disparo.
-@param banM indica si el jugador recogio municion.
-@param bala objeto que representa una bala enemiga, si la banDis es 1 se crea un objeto de este tipo.
-@param disparo almacena el sonido de disparo de el enemigo.
-@param muere almacena el sonido de muere del enemigo.
- */
+/**Esta clase crea un enemigo para el escenario de guerra habra dos tipos de enemigos.*/
+
+// enemigo Se encarga de guardar los distintos disfraces del enemigo.
+// seg     Se encarga de almacenar una referencia de tiempo para realizar los movimientos del personaje.
+// dir     Indica en que direccion se mueve el enemigo.
+// banDis  Indica si el jugador realizo un disparo.
+// banM    Indica si el jugador recogio municion.
+// bala    Objeto que representa una bala enemiga, si la banDis es 1 se crea un objeto de este tipo.
+// disparo Almacena el sonido de disparo de el enemigo.
+// muere   Almacena el sonido de muere del enemigo.
+
 public class Enemigo extends Objeto
 {
     private LinkedList< GreenfootImage> enemigo;

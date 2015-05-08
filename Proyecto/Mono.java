@@ -1,19 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**Clase Mono, nos permite crear objetos Mono usados en el juegoForest.
-@param forest Variable que guarda los diferentes disfraces de el objeto.
-@param brinco Contiene el sonido de brinco que se ejecuta al saltar.
-@param correr Contiene el correr que se ejecuta mientras el jugador no salte ni se agache.
-@param c Variable que indica el disfraz que se esta utilizando y permite el cambio del disfraz.
-@param seg Variable que contiene una relacion de tiempo y marca las transiciones entre disfraces.
-@param y2  Variable que contiene la posicion en el eje y de la cabeza del jugador.
-@param y3  Variable que contiene la posicion inicial en el eje y del jugador.
-@param ban Bandera encargada de controlar las actualizaciones de y2 e y3.
-@param b   Bandera encargada de controlar el cambio de disfraces al agacharce.
-@param ban2 Bandera encargada de detectar si se ha ejecutado un brinco.
-@param ban3 Bandera encargada de detectar si el jugador se agacho.
-@param tropesar contiene el sonido tropesar el cual se reproduce si el jugador choca con algun objeto.
- */
+ * */
+// forest   Variable que guarda los diferentes disfraces de el objeto.
+// brinco   Contiene el sonido de brinco que se ejecuta al saltar.
+// correr   Contiene el correr que se ejecuta mientras el jugador no salte ni se agache.
+// c        Variable que indica el disfraz que se esta utilizando y permite el cambio del disfraz.
+// seg      Variable que contiene una relacion de tiempo y marca las transiciones entre disfraces.
+// y2       Variable que contiene la posicion en el eje y de la cabeza del jugador.
+// y3       Variable que contiene la posicion inicial en el eje y del jugador.
+// ban      Bandera encargada de controlar las actualizaciones de y2 e y3.
+// b        Bandera encargada de controlar el cambio de disfraces al agacharce.
+// ban2     Bandera encargada de detectar si se ha ejecutado un brinco.
+// ban3     Bandera encargada de detectar si el jugador se agacho.
+// tropesar contiene el sonido tropesar el cual se reproduce si el jugador choca con algun objeto.
+
 public class Mono extends Objeto
 {
     private LinkedList<GreenfootImage> forest;

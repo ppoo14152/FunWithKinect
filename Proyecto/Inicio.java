@@ -1,13 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.LinkedList;
 
-/**La clase inicio es un mundo donde se crearan cada uno de los diferentes escenarios del juego asi como sus diferentes componentes.
-@param THUMNAIL_HEIGHT Esta variable guarda el valor de la altura del mundo.
-@param THUMNAIL_WIDTH  Esta variable guarda el valor de la anchura del mundo.
-@param leftHandUP      Bandera que se usa para detectar si nuestro jugador esta levantando las manos.
-@param ban             Bandera usada al incertar un objeto, no permite que el objeto se incerte mas que una vez.
-@param mundo           Esta variable guarda el mundo en el que se encuentra el jugador.     
-@param musica          Se encarga de almacenar la musica del juego */
+/**La clase inicio es un mundo donde se crearan cada uno de los diferentes escenarios del juego asi como sus diferentes componentes.*/
+// THUMNAIL_HEIGHT Esta variable guarda el valor de la altura del mundo.
+// THUMNAIL_WIDTH  Esta variable guarda el valor de la anchura del mundo.
+// leftHandUP      Bandera que se usa para detectar si nuestro jugador esta levantando las manos.
+// ban             Bandera usada al incertar un objeto, no permite que el objeto se incerte mas que una vez.
+// mundo           Esta variable guarda el mundo en el que se encuentra el jugador.     
+// musica          Se encarga de almacenar la musica del juego 
+// calibra         Contiene la imagen de inicio que indica los pasos para poder jugar.
+//mira             Variable de tipo mira se usa en los menus.
+//ban              Bandera que controla la insercion de objetos en el mundo.
+//mundo            Contenedor del juego, aqui se insertan todos los objetos.
+//musica           Contiene los diferentes sonidos de ambiente que se reproducen en el juego.
+//puntuacion       Variable que contiene la puntuacion del jugador en el juego.
+//usuario          Objeto que contiene los datos del usuario.
+//rec              Se encarga de gusrdar los jugadores.
+//tabla            Representa los records en una tabla ordenada.
 
 public class Inicio extends KinectWorld
 {
@@ -15,7 +24,7 @@ public class Inicio extends KinectWorld
     private static final int THUMBNAIL_WIDTH = 80;
     private static final int THUMBNAIL_HEIGHT = 60;
     private long leftHandUp;
-    private int pideDatos;
+    //private int pideDatos;
     private Pantalla calibra;
     private Mira mira;
     private int ban=0; 
@@ -35,7 +44,7 @@ public class Inicio extends KinectWorld
         super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, 1.0, false);
         puntuacion=0;
         banNom=0;
-        pideDatos=0;
+        //pideDatos=0;
         calibra=new Pantalla("Calibrar");
         setActOrder(Pantalla.class,Boton.class,Mira.class,Mono.class );
         final int width = getWidth();

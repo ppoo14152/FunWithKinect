@@ -1,22 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
-Clase Balon nos permite crear un objeto de tipo Balon el cual es usado en juegoGool
-@param balon contiene la imagen del objeto.
-@param patada contiene el sonido de patada, el cual se reproduce cuando se patea el balon.
-@param parado contiene el sonido de parado, el cual se reproduce si el portero intercepta el balon.
-@param gool contiene el sonido de gool, el cual se reproduce si se anota un gool.
-@param seg variable que contiene una referencia de tiempo, se usa para marcar el tiempo en que el balon 
-realiza sus acciones y movimientos.
-@param v variable que contiene la velocidad en que se mueve el balon;
-@param x1 variable usada para manipular la direccion del balon, almacena la coordenada en x de nuestra 
-mano derecha.
-@param y1 variable usada para manipular la direccion del balon, almacena la coordenada en x de nuestra 
-mano derecha.
-@param disparo bandera que nos indica si el balon fue pateado.
-@param ban bandera que no permite que los objetos se incerten mas de una vez.
-@param act variable usada para detectar las coliciones que tiene el balon.
- */
+Clase Balon nos permite crear un objeto de tipo Balon el cual es usado en juegoGool.
+*/
+// balon  Contiene la imagen del objeto.
+// patada Contiene el sonido de patada, el cual se reproduce cuando se patea el balon.
+// parado Contiene el sonido de parado, el cual se reproduce si el portero intercepta el balon.
+// gool   Contiene el sonido de gool, el cual se reproduce si se anota un gool.
+// seg    Variable que contiene una referencia de tiempo, se usa para marcar el tiempo en que el balon 
+//        realiza sus acciones y movimientos.
+// v      Variable que contiene la velocidad en que se mueve el balon;
+// x1     Variable usada para manipular la direccion del balon, almacena la coordenada en x de nuestra 
+//        mano derecha.
+// y1     Variable usada para manipular la direccion del balon, almacena la coordenada en x de nuestra 
+//        mano derecha.
+//disparo Bandera que nos indica si el balon fue pateado.
+// ban    Bandera que no permite que los objetos se incerten mas de una vez.
+// act    Variable usada para detectar las coliciones que tiene el balon.
+
 public class Balon extends Objeto
 {
 

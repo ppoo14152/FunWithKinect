@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
-/** Class Sombra, nos permite crear objetos Sombra usados en el juegoForest.
-@param f Variable que contiene la imagen del objeto. 
-@param c Variable que selecciona la imagen que se muestra en pantalla.
-@param seg Variable que contiene una referencia de tiempo la cual marca el movimiento del objeto.
-@param i Variable que contiene la direccion actual del objeto.
- */
+/** Class Sombra, nos permite crear objetos Sombra usados en el juegoForest.*/
+// f   Variable que contiene la imagen del objeto. 
+// c   Variable que selecciona la imagen que se muestra en pantalla.
+// seg Variable que contiene una referencia de tiempo la cual marca el movimiento del objeto.
+// i   Variable que contiene la direccion actual del objeto.
+ 
 public class Sombra extends Objeto
 {  private LinkedList<GreenfootImage> f;
     private int c;

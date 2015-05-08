@@ -2,11 +2,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
 Clase Bala nos permite crear objetos de tipo Bala.
-@param yf variable que guarda la posicion en y de la mira al momento de disparar. 
-@param c  variable que guarda la posicion en y de el alrma a el momento de disparar, se usa como un contador. 
-@param bala variable que contiene la imagen de la bala.
-@param disparo variable que contiene el sonido de disparo.
- */
+*/
+//yf      variable que guarda la posicion en y de la mira al momento de disparar. 
+//c       variable que guarda la posicion en y de el alrma a el momento de disparar, se usa como un contador. 
+//bala    variable que contiene la imagen de la bala.
+//disparo variable que contiene el sonido de disparo.
+
 public class Bala extends Objeto
 {
 

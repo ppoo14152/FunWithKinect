@@ -1,8 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.LinkedList;
 /**Clase Boton nos permite crear objetos de tipo menu con los cuales el jugador podra seleccionar las diferentes opciones del juego.
-@param boton guarda la imagen de el boton. 
-@param tipo  selecciona la imagen que se va a utilizar. */
+ */
+// boton     guarda la imagen de el boton. 
+// tipo      selecciona la imagen que se va a utilizar. 
+// Seleccion contiene el sonido que se reproduce al seleccionar un boton.
+// c         bandera que controla la reproduccion del sonido seleccion.
+
 public class Boton extends Objeto
 {
     private LinkedList<GreenfootImage> boton;

@@ -1,19 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
-/** Clase Mira permite crear objetos de esta clase. 
-@param tipo variable que contiene el tipo de mira que se quiere crear.
-@param c variable que indica la trancicion de los diferentes disfracez del puntero.
-@param seg variable que contiene una referancia de tiempo en las tranciciones de la mira del  menu.
-@param seg2 variable que contiene una referancia de tiempo en los movimiento de la mira en el juegoLaberinto.
-@param xg variable que contiene las coordenada en x de la mano derecha y fija la direccion de la mira en juegoLaberinto.
-@param yg variable que contiene las coordenada en y de la mano derecha y fija la direccion de la mira en juegoLaberinto.
-@param puntero variable que contiene los diferentes disfraces de el puntero.
-@param colicion variable que indica si la mira coliciono con un boton.
-@param a variable que indica si la mira coliciono con un Pared y Enemigo.
-@param a1 variable que indica si la mira coliciono con un Picos.
-@param a2 variable que indica si la mira coliciono con un baraFuego.
-@param sel1
- */
+/** Clase Mira permite crear objetos de esta clase.*/
+// tipo     Variable que contiene el tipo de mira que se quiere crear.
+// c        Variable que indica la trancicion de los diferentes disfracez del puntero.
+// seg      Variable que contiene una referancia de tiempo en las tranciciones de la mira del  menu.
+// seg2     Variable que contiene una referancia de tiempo en los movimiento de la mira en el juegoLaberinto.
+// xg       Variable que contiene las coordenada en x de la mano derecha y fija la direccion de la mira en juegoLaberinto.
+// yg       Variable que contiene las coordenada en y de la mano derecha y fija la direccion de la mira en juegoLaberinto.
+// puntero  Variable que contiene los diferentes disfraces de el puntero.
+// colicion Variable que indica si la mira coliciono con un boton.
+// a        Variable que indica si la mira coliciono con un Pared y Enemigo.
+// a1       Variable que indica si la mira coliciono con un Picos.
+// a2       Variable que indica si la mira coliciono con un baraFuego.
+// a3       Variable que indica si la mira coliciono con una ratonera.
+// sel1     Contiene el sonido de seleccion.
+
 public class Mira extends Objeto
 {
     private int tipo;

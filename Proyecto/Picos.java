@@ -1,12 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
-/**Clase Picos, nos permite crear objetos Pico usados en el juegoLaberinto.
-@param pico contiene los diferentes disfraces del objeto.
-@param seg variable que contiene una referencia de tiempo que maraca las transiciones entre disfraces.
-@param c esta variable indica el disfraz que se esta usando.
-@param filo contiene el sonido de activacion de la trampa.
- */
+/**Clase Picos, nos permite crear objetos Pico usados en el juegoLaberinto.*/
+
+// pico  Contiene los diferentes disfraces del objeto.
+// seg   Variable que contiene una referencia de tiempo que maraca las transiciones entre disfraces.
+// c     Esta variable indica el disfraz que se esta usando.
+// filo  Contiene el sonido de activacion de la trampa.
+
 public class Picos extends Objeto
 {
     private LinkedList <GreenfootImage> pico;

@@ -1,12 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**Clase Obstaculo, permite crear un objeto Obstaculo usado en juegoForest.
- *@param obstaculo Variable que contiene la imagen del objeto.
- *@param choque Variable que contiene el sonido choque, el cual se reproduce si ocurre una colicion con un objeto Mono.
- *@param seg Variable que contiene una referencia de tiempo la cual marca las transiciones en el desplazamiento del objeto.
- *@param seg2 Variable que contiene una referencia de tiempo la cual marca la revicion de coliciones.
- *@param v Variable que indica la velocidad del objeto
- */
+/**Clase Obstaculo, permite crear un objeto Obstaculo usado en juegoForest.*/
+
+// obstaculo Variable que contiene la imagen del objeto.
+// choque    Variable que contiene el sonido choque, el cual se reproduce si ocurre una colicion con un objeto Mono.
+// seg       Variable que contiene una referencia de tiempo la cual marca las transiciones en el desplazamiento del objeto.
+// seg2      Variable que contiene una referencia de tiempo la cual marca la revicion de coliciones.
+// v         Variable que indica la velocidad del objeto
+
 public class Obstaculo extends Objeto
 {
     private GreenfootImage obstaculo;

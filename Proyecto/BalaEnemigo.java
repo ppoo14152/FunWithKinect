@@ -1,12 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
-Clase BalaEnemigo nos permite crear objetos BalaEnemigo usados en juegoGuerra.}
-@param yf variable que guarda la posicion en y de la mira al momento de disparar. 
-@param c  variable que guarda la posicion en y de el alrma a el momento de disparar, se usa como un contador. 
-@param bala variable que contiene la imagen de la bala.
-@param coli Bandera encargada de detectar si el objeto golpea al jugador.
- */
+Clase BalaEnemigo nos permite crear objetos BalaEnemigo usados en juegoGuerra.
+*/
+// yf   Variable que guarda la posicion en y de la mira al momento de disparar. 
+// c    Variable que guarda la posicion en y de el alrma a el momento de disparar, se usa como un contador. 
+// bala Variable que contiene la imagen de la bala.
+// coli Bandera encargada de detectar si el objeto golpea al jugador.
+
 public class BalaEnemigo extends Objeto
 {
     private int yf;

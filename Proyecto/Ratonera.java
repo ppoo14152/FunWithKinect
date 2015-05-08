@@ -1,12 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.LinkedList;
 /**
+ * Esta clas crea una ratonera para el juego laberinto, se crea una lisa de imagenes
+  y se ponen en pantalla*/
+  
+ // ratonera lista de imagenes que representan la ratonera
+ // sonido   este es un sonido que imita el clik de la ratonera
+ // ban      bandera que controla la eliminacion del objeto.
+ // seg      contiene una referencia de tiempo para el chequeo de coliciones.
 
- * esta clas crea una ratonera para el juego laberinto, se crea una lisa de imagenes
- * y se ponen en pantalla
- * @param ratonera lista de imagenes que representan la ratonera
- *@param sonido este es un sonido que imita el clik de la ratonera
- */
 public class Ratonera extends Objeto
 {
     private LinkedList<GreenfootImage> ratonera;
@@ -14,7 +16,7 @@ public class Ratonera extends Objeto
     private int ban;
     private long seg;
     /**
-     * constructor de la clase, crea la lista y carga las imagenes
+     * Constructor de la clase, crea la lista y carga las imagenes
      * tambien pone la primera en pantalla
      */
     public Ratonera(int tipo){
@@ -34,7 +36,7 @@ public class Ratonera extends Objeto
     }
 
     /**
-     * metodo act este metodo verifica si va a matar al raton sie es asi reproduce un sonido y cambia de imagen
+     * Metodo act este metodo verifica si va a matar al raton sie es asi reproduce un sonido y cambia de imagen
      */
     public void act() 
     {

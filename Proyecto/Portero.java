@@ -1,11 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
-/**Clase portero, nos permite crear objetos de tipo Portero usados en juegoGool.
-@param portero Contiene la imagen del objeto.
-@param seg     Contiene una relacion de tiempo la cual marca el movimiento del objeto.
-@param c       Variable que contiene la velocidad con la cual se mueve el objeto.
- */
+/**Clase portero, nos permite crear objetos de tipo Portero usados en juegoGool.*/
+
+// portero Contiene la imagen del objeto.
+// seg     Contiene una relacion de tiempo la cual marca el movimiento del objeto.
+// c       Variable que contiene la velocidad con la cual se mueve el objeto.
+
 public class Portero extends Objeto
 {
     private LinkedList<GreenfootImage> portero;

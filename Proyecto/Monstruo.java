@@ -1,13 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.LinkedList;
-/**Clase Monstruo permite crear objetos de tipo monstruo usados en el juegoForest
-@param m contiene los disfraces del objeto.
-@param ban variable que controla que los objetos no sean incertados mas de una vez.
-@param seg contiene una referencia de tiempo la cual maraca la transicion de disfraces asi como el movimiento del objeto.
-@param seg2 contiene una referencia de tiempo la cual maraca el choque con un objeto.
-@param c variable que indica el difraz usado en el momento.
-@param choque contiene el sonido de choque.
- */
+/**Clase Monstruo permite crear objetos de tipo monstruo usados en el juegoForest.*/
+
+// m      Contiene los disfraces del objeto.
+// ban    Variable que controla que los objetos no sean incertados mas de una vez.
+// seg    Contiene una referencia de tiempo la cual maraca la transicion de disfraces asi como el movimiento del objeto.
+// seg2   Contiene una referencia de tiempo la cual maraca el choque con un objeto.
+// c      Variable que indica el difraz usado en el momento.
+// choque Contiene el sonido de choque.
+
 public class Monstruo extends Objeto
 {
     private LinkedList<GreenfootImage> m;

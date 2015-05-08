@@ -1,9 +1,12 @@
  import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-/**Clase Pared perite crear objetos de tipo pared usados en el juegoLaberinto.
-@param pared contiene la imagen de la pared.*/
+/**Clase Pared perite crear objetos de tipo pared usados en el juegoLaberinto.*/
+
+// pared contiene la imagen de la pared.
 
 public class Pared extends Objeto
-{  private GreenfootImage pared;   
+{ 
+    private GreenfootImage pared;   
+    
     /**Constructor de la clase inicializa las variables y llama al constructor de la superclase para inicializar las coordenadas iniciales del 
     objeto.
     @param tipo indica la posicion de la pared. 

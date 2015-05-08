@@ -2,9 +2,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 import java.io.*;
 /**
- * esta clase crea un archivo de texto si es que no existe con records del juego.
- * si existen ya los lee, tambien los sobreescribira.
+ * Esta clase crea un archivo de texto si es que no existe con records del juego.
+   si existen ya los lee, tambien los sobreescribira.
  */
+
+//file      Variable que contiene el archivo que se va a leer o escribir.
+//escritor  Variable que escribe en el archivo.
+//bufer
+//salida    
+//records   Variable que guarda la informacion tomada del archivo.
+
 public class Records extends Actor  
 {
     private File file;
@@ -13,11 +20,10 @@ public class Records extends Actor
     private PrintWriter salida;
     private LinkedList<Usuario>  records;
     /**
-     * inicializa las variables nesesarias
+     * Inicializa las variables nesesarias
      */
     public Records()
     {
-        //records=new LinkedList<Usuario>();
         records=new LinkedList<Usuario>();
         file= new File ("rec.txt");
         if(!file.exists()){
@@ -30,6 +36,7 @@ public class Records extends Actor
 
     }
 
+    /** Metodo que escribe en el archivo los records*/
     public void escribeRecords(){
         PrintWriter escritor;
         String num;
@@ -49,7 +56,8 @@ public class Records extends Actor
         }catch(IOException e){}
 
     }
-
+    
+    /**Metodo que lee el archivo y lo pasa a una variable que lo almacena.*/
     public void leeRecords(){
         Usuario usuario;
         String nombre="";
@@ -85,7 +93,8 @@ public class Records extends Actor
         }
 
     }
-
+    
+    /**Metodo que agrega un usuario a la variable records. */
     public void addUsuario(Usuario us)
     {        
         records.add(us);
@@ -95,7 +104,7 @@ public class Records extends Actor
         this.escribeRecords();
 
     }
-
+    /**Metodo que retorna la variable de records */
     public LinkedList<Usuario> creaTablaRecords()
     {
         return records;
