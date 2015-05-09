@@ -3,17 +3,16 @@ import java.util.*;
 
 /**
  * Esta clase permite generar un nuevo juego de guerra en el cual se anadiran sus elementos.
- * @param menu lista de botones que estan en el mundo.
- * @param arma arma del jugador tiene balas y granadas.
- * @param ban variable que permite anadir al mundo los elementos solo una vez.
- * @param tipo tipo de boton preisonado.
- * @param perder variable que indica que ha perdido.
- * @param seg variable que permite contar el tiempo en milisegundos.
- * @param seg1 variable que permite contar el tiempo en milisegundos segundo contador.
- * @param seg2 variable que permite contar el tiempo en milisegundos tercer contador.
- * @param banA variable que permite detectar coliciones entre los elementos del juego.
  */
-
+// menu lista de botones que estan en el mundo.
+// arma arma del jugador tiene balas y granadas.
+// ban variable que permite anadir al mundo los elementos solo una vez.
+// tipo tipo de boton preisonado.
+// perder variable que indica que ha perdido.
+// seg variable que permite contar el tiempo en milisegundos.
+// seg1 variable que permite contar el tiempo en milisegundos segundo contador.
+// seg2 variable que permite contar el tiempo en milisegundos tercer contador.
+// banA variable que permite detectar coliciones entre los elementos del juego.
 public class JuegoGuerra extends Juego
 {
     private LinkedList<Boton> menu;

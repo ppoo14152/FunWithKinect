@@ -1,8 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Esta clase genera el menu de los juegos que podra seleccionar
- * @param ban Variable que permite añadir al mundo los botones solo una vez, no se añadene n el constructor por que causa errores.
- * 
+ * Esta clase genera el menu de los juegos que podra seleccionar 
  */
 public class Juegos extends Menu
 {

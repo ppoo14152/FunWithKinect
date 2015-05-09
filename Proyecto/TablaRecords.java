@@ -1,11 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * Write a description of class TablaRecords here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ tabla recors crea una tabla donde se mostraran los records
+ */ 
+//usuario variable que contiene puntos y nombre
+//tabla imagen de ofndo de la tabla
+//nombre etiqueta que muestra nombre en pantalla
+//etiqueta que muestra puntos en pantalla
+//ban bandera que permite anadir al mundo una sola vez las cosas
+//c contador para anadir el numero de usuarios
+
 public class TablaRecords extends Actor
 {
     

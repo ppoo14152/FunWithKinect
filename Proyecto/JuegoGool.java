@@ -1,18 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
+
 /**
  * Esta clase crea un esenario de tpo juegoGoool.
- * @param ban variable que sirve para añadir al mundo los objetos una sola vez.
- * @param ban2 variable que indica cuando se ha pateado el balon.
- * @param ban3 variable que indica que el balon esta en movimiento.
- * @param tipo variable para indicar el boton presionado.
- * @param pd variable que representa la coordenada en y del pie derecho.
- * @param pi variable que representa la coordenada en y del pie izquierdo.
- * @param perder variable que indica cuando se ha perdido.
- * @param port variable que genera la porteria.
- * @param balon variable que genera los balones.
- * @param portero variable que genera al portero.
  */
+
+// ban variable que sirve para añadir al mundo los objetos una sola vez.
+// ban2 variable que indica cuando se ha pateado el balon.
+// ban3 variable que indica que el balon esta en movimiento.
+// tipo variable para indicar el boton presionado.
+// pd variable que representa la coordenada en y del pie derecho.
+// pi variable que representa la coordenada en y del pie izquierdo.
+// perder variable que indica cuando se ha perdido.
+// port variable que genera la porteria.
+// balon variable que genera los balones.
+// portero variable que genera al portero.
+
 public class JuegoGool extends Juego
 {
     LinkedList<Boton> menu=new LinkedList<Boton>(); 
@@ -69,10 +72,10 @@ public class JuegoGool extends Juego
             ban=true;
         }                   
         if(System.currentTimeMillis()- seg>1000 && tiempo>0){
-        seg=System.currentTimeMillis();
-        tiempo--;
-        getWorld().removeObject(b);
-        b=new Label("Tiempo: "+Integer.toString(tiempo),40);
+            seg=System.currentTimeMillis();
+            tiempo--;
+            getWorld().removeObject(b);
+            b=new Label("Tiempo: "+Integer.toString(tiempo),40);
         }
         KinectWorld mundo =(KinectWorld)getWorld();
 
@@ -103,10 +106,10 @@ public class JuegoGool extends Juego
                 if(b.getTipo()!=0)
                     tipo=b.getTipo(); 
         }
-       
+
         if(tiempo==0)
-        ganar=true;
-        
+            ganar=true;
+
         perder=j.muerto();
         getWorld().addObject(b,100,420);
     }
@@ -138,10 +141,10 @@ public class JuegoGool extends Juego
         return perder;
 
     }
-    
+
     /**Este metodo retorna el valor de la variable ganar que indica si se a completado el juego.
-       @return ganar 0 si no se ha ganado, 1 si se gano.
-    */
+    @return ganar 0 si no se ha ganado, 1 si se gano.
+     */
     public boolean ganar()
     {
         return ganar;

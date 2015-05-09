@@ -1,16 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
+
 /**
  * Clase JuegoForest esta clase permite crear un juegoForest.
- * @param ban variable que permite anadir al mundo los elementos una sola vez
- * @param perder variable que indica si ha perdido o no
- * @param c variable cntador permite cambiar la posicion de la pantalla para simular scroll
- * @param o variable que permite poner cada cierto tiempo algunos elementos en el mundo
- * @param seg variable que permite contar en milisegundos el tiempo
- * @param seg1 variable que permite contar el tiempo en milisegundos contador 2
- * @param forest variable tipo Mono que representa el jugador en pantalla
- * @param sombra variable que representa el enmigo en pantalla
  */
+//ban variable que permite anadir al mundo los elementos una sola vez
+// perder variable que indica si ha perdido o no
+// c variable cntador permite cambiar la posicion de la pantalla para simular scroll
+// o variable que permite poner cada cierto tiempo algunos elementos en el mundo
+//seg variable que permite contar en milisegundos el tiempo
+// seg1 variable que permite contar el tiempo en milisegundos contador 2
+// forest variable tipo Mono que representa el jugador en pantalla
+//sombra variable que representa el enmigo en pantalla
+
 public class JuegoForest extends Juego
 {
     private boolean ban;
@@ -36,7 +38,7 @@ public class JuegoForest extends Juego
         o=0;
         seg=System.currentTimeMillis();
         seg1=System.currentTimeMillis();
-  
+
     }
 
     /**
@@ -89,10 +91,10 @@ public class JuegoForest extends Juego
                 if(b.getTipo()!=0)
                     tipo=b.getTipo(); 
         }
-        
+
         if(forest.getX() > getWorld().getWidth()-50)
-        ganar=true;
-        
+            ganar=true;
+
         perder=j.muerto();
     }
 
@@ -135,10 +137,10 @@ public class JuegoForest extends Juego
     {
         return perder;
     }
-    
+
     /**Este metodo retorna el valor de la variable ganar que indica si se a completado el juego.
-       @return ganar 0 si no se ha ganado, 1 si se gano.
-    */
+    @return ganar 0 si no se ha ganado, 1 si se gano.
+     */
     public boolean ganar()
     {
         return ganar;

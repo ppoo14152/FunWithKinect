@@ -1,8 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**Clase Juego, Contiene los metodos usados en los diferentes juegos.
-@param j Variable de tipo Juegador que representa el usuario.*/
-
+/**Clase Juego, Contiene los metodos usados en los diferentes juegos.*/
+//j Variable de tipo Juegador que representa el usuario.*/
+// perder variable que indica cuando se pierde
+// ganar variable que indica cuando se gana
 abstract class Juego extends KinectFun
 {
 

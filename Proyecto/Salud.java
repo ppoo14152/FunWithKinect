@@ -2,9 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
 esta clase permite visualizar la vida del jugador en pantalla, es un actor ya que 
-estara cambiando con el juego, estara actuando
-@param salud Lista de imagenes que muestran la cantidad de salud
- */
+estara cambiando con el juego, estara actuando*/
+// salud Lista de imagenes que muestran la cantidad de salud
+
 public class Salud extends Actor
 {
     private LinkedList <GreenfootImage> salud;

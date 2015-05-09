@@ -1,12 +1,14 @@
 import greenfoot.*; 
 import java.util.*; 
+
 /**
  * clase pantalla, crea una pantalla de juego con una imagen
- * @param fondo imagen que sera el fondo en la pantalla
- * @param ban variale que permite anadir al mundo una sola vez los elementos
- * @param x coordenada en x del fondo
- * @param y coordenada en y del fondo
  */
+// fondo imagen que sera el fondo en la pantalla
+// ban variale que permite anadir al mundo una sola vez los elementos
+// x coordenada en x del fondo
+// y coordenada en y del fondo
+
 public class Pantalla extends Actor
 {
     GreenfootImage fondo;
@@ -19,7 +21,7 @@ public class Pantalla extends Actor
      */
 
     public Pantalla(String Fondo){
-        
+
         fondo= new GreenfootImage(Fondo +".png");
         ban=0;
         x=0;
@@ -34,16 +36,14 @@ public class Pantalla extends Actor
      * @param Y coordenada en y dle fondo
      */
     public Pantalla(String Fondo, int X, int Y ){
-  
+
         fondo= new GreenfootImage(Fondo +".png");
         ban=1;
         x=X;
         y=Y;
         setImage(fondo);
-        
-   
-    }
 
+    }
     /**
      * metodo act en este medoto se anade al mundo los elementos y se le coloca una locacion
      */
@@ -57,10 +57,8 @@ public class Pantalla extends Actor
             ban=1;
             setLocation(x,y);
         }
-        
 
     }
-
     /**
      * este metodo solo se usa en el juegoForest, cambia la x y la y del fondo por alguna nueva 
      * para que simule movimiento en la pantalla

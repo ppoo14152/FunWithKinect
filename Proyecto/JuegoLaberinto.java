@@ -3,19 +3,19 @@ import java.util.*;
 
 /**
  * Esta clase crea un juego de tipo laberinto y anade al mundo lo necesario.
- * @param b Etiqueta que da instrucciones iniciales.
- * @param rata variable tipo GreenfootSound que reproduce el sonido de un raton.
- * @param ban bandera que permite anadir al mundo los elementos un a sola vez.
- * @param tipo Tipo de boton que se ha presionado.
- * @param perder variable que indica cuando se ha perdido.
- * @ param bara obstaculo del escenario.
- * @param pared paredes del laberinto.
- * @param picos obstaculo del escenario.
- * @param inicia variable que indica que el juego a iniciado.
- * @param seg variable que permite contar en milisegundos.
- * @param gana variable que indica que ha ganado.
- * 
  */
+// Etiqueta que da instrucciones iniciales.
+//rata variable tipo GreenfootSound que reproduce el sonido de un raton.
+//ban bandera que permite anadir al mundo los elementos un a sola vez.
+// tipo Tipo de boton que se ha presionado.
+//perder variable que indica cuando se ha perdido.
+// bara obstaculo del escenario.
+//pared paredes del laberinto.
+// picos obstaculo del escenario.
+// inicia variable que indica que el juego a iniciado.
+//seg variable que permite contar en milisegundos.
+//gana variable que indica que ha ganado.
+
 public class JuegoLaberinto extends Juego
 {
     private  Label b;

@@ -1,11 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Record here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ * clase record esta clsae genera la pantalla de los records
+   */
 public class Record extends Menu
 {
 

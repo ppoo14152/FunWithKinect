@@ -1,9 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /** Superclase  de los diferentes escenarios del juego, contiene las clases  abstractas de los escenarios.
-@param p Contiene la imagen de fondo de el escenario.
-@param m Variable clase Mira almacena el apuntador usado en el escenario.
-@param menu Lista que contiene los diferentes botones usados en el escenario.*/
+
+ */
+//p Contiene la imagen de fondo de el escenario.
+//m Variable clase Mira almacena el apuntador usado en el escenario.
+//menu Lista que contiene los diferentes botones usados en el escenario.
 abstract class KinectFun extends Actor
 {
 

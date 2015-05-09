@@ -1,10 +1,8 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Ayuda here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * clase ayuda, genera un menu con opciones para ver las ayudas de los juegos
+ * se iniciaizan algunas variables en la super clase , ya que estas s e heredan
  */
 public class Ayuda extends Menu
 {

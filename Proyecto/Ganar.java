@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 /**
  * clase Ganar, esta clase crea una pantalla de ganar para todos los juegos
- * @param ban Variable que permite añadir al mundo los botones.
- * @param tipo Variable entera que indica el tipo de boton que se ha presionado.
- */
-
+ */  
 public class Ganar extends Menu
 {
 

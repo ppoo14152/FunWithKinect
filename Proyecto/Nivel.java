@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Nivel here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ clase nivel esta clase genera una pantalla que indica el nivel que se va a jugar
  */
 public class Nivel extends Menu
 {
