@@ -18,18 +18,16 @@ public class JuegoGool extends Juego
     LinkedList<Boton> menu=new LinkedList<Boton>(); 
     private int tiempo;
     private long seg;
-    private int ban;
-    private int ban2;
-    private int ban3;
+    private boolean ban;
+    private boolean ban2;
+    private boolean ban3;
     private int tipo;
     private int pd;
-    private  int pi;
-    private int perder;
+    private  int pi;   
     private Porteria port;
     private Balon balon;
     private Portero portero;
-    private Label b;
-    private int ganar;
+    private Label b; 
 
     /**
      * Constructor de la clase, inicializa las variables que necesita la clase, llama al constructor de la superclase
@@ -42,14 +40,12 @@ public class JuegoGool extends Juego
         port=new Porteria(340,200);
         balon=new Balon(340,420,10);
         portero= new Portero(340,210);
-        ban=0;
-        ban2=0;
-        ban3=0;
+        ban=false;
+        ban2=false;
+        ban3=false;
         tipo=0;
         tiempo=30;
-        seg=System.currentTimeMillis();
-        perder=0;
-        ganar=0;
+        seg=System.currentTimeMillis();       
         b=new Label("Tiempo: "+Integer.toString(tiempo),40);
     }
 
@@ -60,7 +56,7 @@ public class JuegoGool extends Juego
     public void act() 
     {  
 
-        if (ban==0){
+        if (ban==false){
             getWorld().addObject(p,0,0);
             getWorld().addObject(j,0,0);
             getWorld().addObject(m,0,0);
@@ -70,7 +66,7 @@ public class JuegoGool extends Juego
             for(Boton b : menu){
                 getWorld().addObject(b,0,0);
             }
-            ban=1;
+            ban=true;
         }                   
         if(System.currentTimeMillis()- seg>1000 && tiempo>0){
         seg=System.currentTimeMillis();
@@ -85,21 +81,21 @@ public class JuegoGool extends Juego
         {         
             Joint pie = i.getJoint(Joint.RIGHT_FOOT);
             pd=pie.getY();
-            if(ban2==0){
+            if(ban2==false){
                 pie = i.getJoint(Joint.LEFT_FOOT);
                 pi=pie.getY();
-                ban2=1;
+                ban2=true;
             }
 
         } 
 
-        if(pi-pd>40 && ban3==0){
+        if(pi-pd>40 && ban3==false){
             balon.patada();
 
-            ban3=1;
+            ban3=true;
         }
         else if(pi-pd<40)
-            ban3=0;
+            ban3=false;
         balon.setDireccion(m.getX(),m.getY()); 
         if(m.getBan()== 1){
             for(Boton b: menu)
@@ -109,7 +105,7 @@ public class JuegoGool extends Juego
         }
        
         if(tiempo==0)
-        ganar=1;
+        ganar=true;
         
         perder=j.muerto();
         getWorld().addObject(b,100,420);
@@ -137,7 +133,7 @@ public class JuegoGool extends Juego
      * Metodo que regresa la variable perder cuando se ha perdido
      * @return perde variable que indica si se ha perdido el juego.
      */
-    public int perder()
+    public boolean perder()
     {
         return perder;
 
@@ -146,7 +142,7 @@ public class JuegoGool extends Juego
     /**Este metodo retorna el valor de la variable ganar que indica si se a completado el juego.
        @return ganar 0 si no se ha ganado, 1 si se gano.
     */
-    public int ganar()
+    public boolean ganar()
     {
         return ganar;
 

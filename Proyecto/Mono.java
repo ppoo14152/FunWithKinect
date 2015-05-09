@@ -24,10 +24,10 @@ public class Mono extends Objeto
     private long seg;
     private int y2;
     private int y3;
-    private int ban;
+    private boolean ban;
     private int b;
-    private int ban2;//salto
-    private int ban3;//agacharce
+    private boolean ban2;//salto
+    private boolean ban3;//agacharce
     private int tropesar;
 
     /**Constructor de la clase, aqui se inicializan todas la variable, ademas se llama al constructor de la superclase para inicializar las coordenadas iniciales del objeto
@@ -37,10 +37,10 @@ public class Mono extends Objeto
     public Mono(int X, int Y)
     {
         super(X,Y);
-        ban=0;
+        ban=false;
         b=0;
-        ban2=0;
-        ban3=0;
+        ban2=false;
+        ban3=false;
         brinco= new GreenfootSound("saltoforest.mp3");
         correr= new GreenfootSound("correr.mp3");
         forest=new LinkedList <GreenfootImage> () ;
@@ -74,31 +74,31 @@ public class Mono extends Objeto
         {         
             Joint cabeza = i.getJoint(Joint.HEAD);            
             y2=cabeza.getY();   
-            if(ban==0){
+            if(ban==false){
                 y3=y2;
-                ban=1;
+                ban=true;
             } 
         }  
 
-        if(y2<y3-20 && ban2==0 && ban3==0)
+        if(y2<y3-20 && ban2==false && ban3==false)
         {
-            ban2=1; 
+            ban2=true; 
             brinco.play();
             c=0;  
         }
-        else if(y2>y3+20 && ban3==0 && ban2==0){
-            ban3=1;
+        else if(y2>y3+20 && ban3==false && ban2==false){
+            ban3=true;
             c=0;
         }
 
         if( System.currentTimeMillis()- seg   >=150){
-            ban=0;
+            ban=false;
             x+=1;
-            if(ban2==1 && ban3==0){
+            if(ban2==true && ban3==false){
 
                 if(correr.isPlaying()==true)
                     correr.stop();
-                
+
                 if(c>1)
                     y=y+50;
                 else
@@ -107,9 +107,9 @@ public class Mono extends Objeto
                 setImage(forest.get(c+4));
                 c++;
                 if(c+4==8)
-                    ban2=0;
+                    ban2=false;
             }
-            else if(ban3==1 && ban2==0){
+            else if(ban3==true && ban2==false){
                 if(correr.isPlaying()==true)
                     correr.stop();
                 setLocation(x,y);
@@ -126,9 +126,9 @@ public class Mono extends Objeto
                 }
                 if(c==0){
                     b=0;
-                    ban3=0;
+                    ban3=false;
                 }
-            }else if(ban2==0  && ban3==0){
+            }else if(ban2==false  && ban3==false){
                 correr.play();
                 if(c<3)
                     c++;

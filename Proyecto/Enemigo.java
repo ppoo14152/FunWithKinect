@@ -17,7 +17,7 @@ public class Enemigo extends Objeto
     private long seg;
     private int dir;
     private int banDis;
-    private int baM;
+    private boolean baM;
     private BalaEnemigo bala;
     private GreenfootSound disparo;
     private GreenfootSound muere;
@@ -34,7 +34,7 @@ public class Enemigo extends Objeto
         muere= new GreenfootSound("muereEnemigo.mp3");
         dir=0;
         banDis=0;
-        baM=0;
+        baM=false;
         seg=System.currentTimeMillis();
         enemigo= new LinkedList<GreenfootImage>();
 
@@ -66,13 +66,13 @@ public class Enemigo extends Objeto
         if(getOneIntersectingObject(Bala.class)!=null ){
             setImage(enemigo.get(1));
             muere.play();
-            baM=1;  
+            baM=true;  
 
         }
-        if((getObjectsInRange(300,Granada.class).size()!=0)&& (((Inicio)getWorld()).explota()==1)){
+        if((getObjectsInRange(300,Granada.class).size()!=0)&& (((Inicio)getWorld()).explota()==true)){
             setImage(enemigo.get(1));
             muere.play();
-            baM=1;
+            baM=true;
         }
         if(  System.currentTimeMillis()- seg   >= 500){          
             if(banDis == 3){
@@ -82,7 +82,7 @@ public class Enemigo extends Objeto
             else
                 banDis++;   
 
-            if(baM==1){
+            if(baM==true){
                 ((Inicio)getWorld()).IncPun();
                 getWorld().removeObject(this);
             }

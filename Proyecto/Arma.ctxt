@@ -18,6 +18,6 @@ comment5.params=
 comment5.target=greenfoot.Actor\ getCol()
 comment5.text=\ Metodo\ getCol\ Indica\ si\ se\ recibio\ un\ impacto.\r\n\ \ \ \ @return\ null\ si\ no\ coliciono\ y\ diferente\ de\ null\ si\ coliciono.\r\n
 comment6.params=
-comment6.target=int\ getExplosion()
+comment6.target=boolean\ getExplosion()
 comment6.text=\r\n\ metodo\ getExplosion\ este\ metodo\ regresa\ una\ bandera\ que\ indica\r\n\ si\ la\ granada\ ha\ explotado\r\n
 numComments=7

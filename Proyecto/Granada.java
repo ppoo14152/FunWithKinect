@@ -19,11 +19,11 @@ public class Granada extends Objeto
     private long seg;
     private LinkedList<GreenfootImage> granada;
     private int alto;
-    private int explosion;
+    private boolean explosion;
     private int largo;
     private int con;
     private int con2;
-    private int banSonido;
+    private boolean banSonido;
     private GreenfootSound explota;
     private GreenfootSound seguro;
    /**
@@ -36,11 +36,11 @@ public class Granada extends Objeto
         super(X,440);
         con=0;
         con2=2;
-        explosion=0;
+        explosion=false;
         explota= new GreenfootSound("explosion.mp3");
         seguro= new GreenfootSound("seguroGranada.mp3");
         alto=50;
-        banSonido=0;
+        banSonido=false;
         largo=40;
         seg=System.currentTimeMillis();
         granada= new LinkedList<GreenfootImage>();
@@ -74,10 +74,10 @@ public class Granada extends Objeto
                 setLocation(x,y);
             }
             else{
-                if(banSonido==0){
-                banSonido=1;
+                if(banSonido==false){
+                banSonido=true;
                 explota.play();
-                explosion=1;
+                explosion=true;
             }               
                 setImage(granada.get(con2));      
                 con2++;
@@ -93,7 +93,7 @@ public class Granada extends Objeto
      * Metodo getExplosion este metodo regresa la variable de explosion 
      * @return explosion variable que indica cuando ha explotado la granada
      */
-    public int getExplosion(){
+    public boolean getExplosion(){
         return explosion;
     }
 

@@ -15,7 +15,7 @@ public class Jugador extends Personaje
     private int puntos;
     private Label puntuacion;
     private Salud salud;
-    private int ban;
+    private boolean ban;
     private int vida;
     private GreenfootSound pierde;
     private GreenfootSound daño;      
@@ -33,7 +33,7 @@ public class Jugador extends Personaje
         puntos=0;
         pierde= new GreenfootSound("pierde.mp3");
         salud=new Salud();
-        ban=0;
+        ban=false;
         puntuacion=new Label(Integer.toString(puntos),50);   
         daño= new GreenfootSound("muereJugador.mp3");
     }
@@ -42,8 +42,8 @@ public class Jugador extends Personaje
      * El metodo act solo anade los puntos y la salud al mundo.
      */
     public void act(){
-        if(ban==0){
-            ban=1;
+        if(ban==false){
+            ban=true;
             getWorld().addObject(puntuacion,50,20);
             getWorld().addObject(salud,225,20);
         }
@@ -60,7 +60,7 @@ public class Jugador extends Personaje
         puntos+=cantidad;
         getWorld().removeObject(puntuacion);
         puntuacion=new Label(Integer.toString(puntos),50);
-        ban=0;
+        ban=false;
     }
 
     /** 
@@ -70,7 +70,7 @@ public class Jugador extends Personaje
     public void daña(){
         daño.play();   
         if(vida>0)                 
-            vida--;
+            vida--; 
         else 
             vida=0;
 
@@ -82,14 +82,14 @@ public class Jugador extends Personaje
      * El metodo muerto indica si el jugador ha perdido y  reproduce el sonido de perder.
      * @return retorna 0  si el jugador no a perdido o 1 si el jugador ha perdido. 
      */
-    public int muerto()
+    public boolean muerto()
     {
         if(vida==0){           
             pierde.play();
-            return 1;
+            return true;
         }
         else
-            return 0;
+            return false;
     }
 
     /**

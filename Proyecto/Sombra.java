@@ -6,7 +6,7 @@ import java.util.*;
 // c   Variable que selecciona la imagen que se muestra en pantalla.
 // seg Variable que contiene una referencia de tiempo la cual marca el movimiento del objeto.
 // i   Variable que contiene la direccion actual del objeto.
- 
+
 public class Sombra extends Objeto
 {  private LinkedList<GreenfootImage> f;
     private int c;

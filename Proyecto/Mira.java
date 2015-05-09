@@ -148,7 +148,7 @@ public class Mira extends Objeto
         a1 = getOneIntersectingObject(Picos.class);
         a2 = getOneIntersectingObject(BaraFuego.class);
         a3=getOneIntersectingObject(Ratonera.class);
-         if(a!=null || a1 !=null  ||  a3!= null ||(a2!=null && ((Inicio)getWorld()).getPicos()==1) )
+        if(a!=null || a1 !=null  ||  a3!= null ||(a2!=null && ((Inicio)getWorld()).getPicos()==1) )
             return 1;
         else
             return 0;

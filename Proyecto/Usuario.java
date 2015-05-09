@@ -2,9 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  *clase usuario, esta clase permite guardar el nombre y puntuacion de un jugador
- *@param puntos cariable que guarda los puntos
- *@param nombre variable que guarda el nombre del jugador
  */
+  // puntos cariable que guarda los puntos
+  // nombre variable que guarda el nombre del jugador
+ 
 public  class Usuario extends Actor
 {
     private int puntos;

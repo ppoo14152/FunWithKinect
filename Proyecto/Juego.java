@@ -6,8 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 abstract class Juego extends KinectFun
 {
 
-    public  Jugador j;
-
+    protected  Jugador j;
+    protected boolean perder;
+    protected boolean ganar;
     /**Constructor inicializa las variables.
     @param P contiene la pantalla del juego.
     @param J contiene el jugador.
@@ -17,6 +18,8 @@ abstract class Juego extends KinectFun
     {
         super (P,M);
         j=J;
+        perder=false;
+        ganar=false;
     }
 
     /** Metodo nuevoNivel usado en juegoLaberinto crea una nueva pantalla y una mira y remueve los anterio.
@@ -34,13 +37,13 @@ abstract class Juego extends KinectFun
     abstract void IncPun();
 
     /**Metodo abstracto se define en las subclases.*/
-    abstract int perder();
+    abstract boolean perder();
 
     /**Metodo abstracto se define en las subclases.*/
     abstract int getPuntos();
 
     /**Metodo abstracto se define en las subclases.*/
-    abstract int ganar();
+    abstract boolean ganar();
 
 }
  

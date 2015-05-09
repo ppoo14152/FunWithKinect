@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
 Clase Balon nos permite crear un objeto de tipo Balon el cual es usado en juegoGool.
-*/
+ */
 // balon  Contiene la imagen del objeto.
 // patada Contiene el sonido de patada, el cual se reproduce cuando se patea el balon.
 // parado Contiene el sonido de parado, el cual se reproduce si el portero intercepta el balon.

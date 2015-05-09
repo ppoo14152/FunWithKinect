@@ -30,9 +30,9 @@ abstract class KinectFun extends Actor
     abstract int botonP();
 
     /**Metodo abstracto se define en las subclases.*/
-    abstract int perder();
+    abstract boolean perder();
 
     /**Metodo abstracto se define en las subclases.*/
-    abstract int ganar();
+    abstract boolean ganar();
 
 }

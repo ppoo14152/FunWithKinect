@@ -12,7 +12,7 @@ import java.util.LinkedList;
 public class Monstruo extends Objeto
 {
     private LinkedList<GreenfootImage> m;
-    private int ban;
+    private boolean ban;
     private long seg;
     private long seg2;
     private int c;
@@ -23,7 +23,7 @@ public class Monstruo extends Objeto
         super(X,Y);
         m= new  LinkedList<GreenfootImage>();
         choque=new GreenfootSound("pierdeForest.WAV");
-        ban=0;
+        ban=false;
         seg=System.currentTimeMillis();
         seg2=System.currentTimeMillis();
         c=0;
@@ -32,10 +32,10 @@ public class Monstruo extends Objeto
     /**Metodo act de la clase, aqui se verifican las coliciones y se realiza el movimiento del objeto, ademas de actualizar las vanderas de puntos y daño.*/
     public void act() 
     {
-        if(ban==0){
+        if(ban==false){
             m.add(new GreenfootImage("ojo.png"));
             m.add(new GreenfootImage("ojo1.png"));
-            ban=1;
+            ban=true;
         }
         if(getOneIntersectingObject(Sombra.class)!=null ){
             ((Inicio)getWorld()).IncPun();    

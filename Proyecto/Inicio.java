@@ -23,18 +23,17 @@ public class Inicio extends KinectWorld
 
     private static final int THUMBNAIL_WIDTH = 80;
     private static final int THUMBNAIL_HEIGHT = 60;
-    private long leftHandUp;
-    //private int pideDatos;
+    private long leftHandUp;   
     private Pantalla calibra;
     private Mira mira;
-    private int ban=0; 
+    private boolean ban; 
     private KinectFun mundo;
     private GreenfootSound musica;
     private int puntuacion;
     private Usuario usuario;
     private Records rec;
     private TablaRecords tabla;
-    private int banNom;
+    private boolean banNom;
 
     /**Es el constructor de la clase se llama al constructor de la superclase, donde se crea una 
      * pequeña camara que es odnde se visualiza el jugador al inicio del juego
@@ -43,8 +42,8 @@ public class Inicio extends KinectWorld
     {    
         super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, 1.0, false);
         puntuacion=0;
-        banNom=0;
-        //pideDatos=0;
+        banNom=false;
+        ban=false;       
         calibra=new Pantalla("Calibrar");
         setActOrder(Pantalla.class,Boton.class,Mira.class,Mono.class );
         final int width = getWidth();
@@ -65,8 +64,8 @@ public class Inicio extends KinectWorld
     {  
 
         super.act();
-        if(banNom==0){
-            banNom=1;
+        if(banNom==false){
+            banNom=true;
             usuario.setNombre(Greenfoot.ask("dame tu nombre"));
         }
 
@@ -79,9 +78,9 @@ public class Inicio extends KinectWorld
             anyLeftHandUp = anyLeftHandUp || (u.getJoint(Joint.LEFT_HAND).getY() < u.getJoint(Joint.HEAD).getY());
         }
 
-        if (anyLeftHandUp && ban==0 )
+        if (anyLeftHandUp && ban==false )
         {
-            ban=1;
+            ban=true;
             removeObject(calibra);
             musica= new GreenfootSound("menuMusica.mp3");
             musica.setVolume(50);
@@ -93,7 +92,7 @@ public class Inicio extends KinectWorld
             switch(mundo.botonP()){
                 case 0:
 
-                if((mundo).perder()== 1){
+                if((mundo).perder()== true){
                     if(musica.isPlaying()==true)
                         musica.stop();
                     puntuacion+=((Juego)mundo).getPuntos();
@@ -101,7 +100,7 @@ public class Inicio extends KinectWorld
                     mundo=new GameOver();
                     addObject(mundo,0,0);
                 }
-                else if((mundo).ganar()==1){
+                else if((mundo).ganar()==true){
                     if(musica.isPlaying()==true)
                         musica.stop();
                     puntuacion+=((Juego)mundo).getPuntos();
@@ -257,7 +256,7 @@ public class Inicio extends KinectWorld
      * este metodo determina si una granada ha explotado
      * @return explosion variable que se pone en 1 si una granada explota
      */
-    public int explota(){
+    public boolean explota(){
         return ((JuegoGuerra)mundo).getExplosion();
     }
 }

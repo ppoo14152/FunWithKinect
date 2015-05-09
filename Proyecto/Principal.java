@@ -9,8 +9,7 @@ import java.util.*;
 
 public class Principal extends Menu
 {
-    private int ban;
-    private int tipo;
+
     /**
      * constructor de la clase principal,inicializa la pantalla con una nueva mira,añade los botones tambien.
      * 
@@ -19,10 +18,7 @@ public class Principal extends Menu
         super(new Pantalla("inicio"),new Mira(0,0,1));
         menu.add(new Boton(156,169,1));
         menu.add(new Boton(156,270,3));
-        menu.add(new Boton(156,370,8));
-     
-        ban=0;
-        tipo=0;
+        menu.add(new Boton(156,370,8));  
     }
 
     /**
@@ -30,7 +26,7 @@ public class Principal extends Menu
      */
     public void act() 
     {
-        if (ban==0)
+        if (ban==false)
         {
             getWorld().addObject(p,0,0);
             for(Boton b : menu){
@@ -38,7 +34,7 @@ public class Principal extends Menu
             }
             getWorld().addObject(m,0,0);
             getWorld().addObject( new Mono(536,384) ,536,384);
-            ban=1;
+            ban=true;
         }
 
         if(m.getBan()== 1){
@@ -46,10 +42,8 @@ public class Principal extends Menu
                 if(b.getTipo()!=0)
                     tipo = b.getTipo();
         }
-           
-       
-    }    
 
+    }    
     /**
      * metodo botonP, este metodo regresa el tipo del boton que se a presionado para saber que instruccion ejecutar.
      * @return tipo variable entera que indica tipo de boton.

@@ -20,21 +20,21 @@ import java.util.*;
  // banGra   Bandera que indica si se arrojo una granada.
  
 public class Arma extends Objeto
-{   
-    private int ban;
+{      
     private  Granada granada;
-    private int banCam;
+    private boolean banCam;
+    private boolean banMuere;
+    private boolean ban;
+    private boolean banGra;
     private int c;
-    private int x2;
-    private int banMuere;
+    private int x2;    
     private int balas;
     private Bala bala;
     private Mira mira;
     private  LinkedList <GreenfootImage> arma;
     private Label b;
     private long seg;
-    private long segG;
-    private int banGra;
+    private long segG;    
     private int granadas;
     private GreenfootSound camina;
 
@@ -44,14 +44,14 @@ public class Arma extends Objeto
      */
     public Arma(int X,int Y){
         super(X,Y);
-        ban=1;
-        banGra=0;
+        ban=true;
+        banGra=false;
         granadas=5;
         segG=System.currentTimeMillis(); 
-        banCam=0;
+        banCam=false;
         camina=new GreenfootSound("caminasoldado.mp3");
         x2=0;
-        banMuere=0;
+        banMuere=false;
         seg=System.currentTimeMillis();     
         c=0;         
         arma= new LinkedList <GreenfootImage>(); 
@@ -73,10 +73,10 @@ public class Arma extends Objeto
         }
         KinectWorld mundo =(KinectWorld)getWorld();
         UserData[] usuarios = mundo.getTrackedUsers();
-        if (banMuere==1){
+        if (banMuere==true){
             if(  System.currentTimeMillis()- seg   >= 350){            
                 setImage(arma.get(0));
-                banMuere=0;
+                banMuere=false;
             }}
         for(UserData i : usuarios)
         {         
@@ -84,33 +84,33 @@ public class Arma extends Objeto
             x=manoDerecha.getX();
             y=manoDerecha.getY(); 
             setLocation(x+50,410);
-            if( banCam==0)
+            if( banCam==false)
                 x2=x;
-            if ((i.getJoint(Joint.RIGHT_HAND).getX()>= i.getJoint(Joint.LEFT_HAND).getX()-3) && (i.getJoint(Joint.RIGHT_HAND).getX()<= i.getJoint(Joint.LEFT_HAND).getX()+3)  && granadas > 0 && banGra==0){
-                banGra=1;
+            if ((i.getJoint(Joint.RIGHT_HAND).getX()>= i.getJoint(Joint.LEFT_HAND).getX()-3) && (i.getJoint(Joint.RIGHT_HAND).getX()<= i.getJoint(Joint.LEFT_HAND).getX()+3)  && granadas > 0 && banGra==false){
+                banGra=true;
                 this.lanzaGranda(x);   
                 segG=System.currentTimeMillis(); 
-            }else if(  System.currentTimeMillis()- segG   >= 800){ 
+            }else if(  System.currentTimeMillis()- segG   >= 500){ 
                 segG=System.currentTimeMillis(); 
-                banGra=0;
+                banGra=false;
                 }
-            if (i.getJoint(Joint.LEFT_HAND).getY() > y && ban==0 && balas > 0)
+            if (i.getJoint(Joint.LEFT_HAND).getY() > y && ban==false && balas > 0)
             {    
                 this.Disparo(x,300,y);
-                ban=1;
+                ban=true;
                 getWorld().removeObject(b);
                 b=new Label(Integer.toString(balas),20);
 
             }    
-            else if(i.getJoint(Joint.LEFT_HAND).getY() < y && ban==1){
-                ban=0;}
+            else if(i.getJoint(Joint.LEFT_HAND).getY() < y && ban==true){
+                ban=false;}
         }
         if(getOneIntersectingObject(BalaEnemigo.class)!=null){
-            banMuere=1;
+            banMuere=true;
             setImage(arma.get(1));          
         }
         if(x2!=x)
-        {banCam=0;
+        {banCam=false;
             camina.play();
         }
         getWorld().removeObject(b);
@@ -161,7 +161,7 @@ public class Arma extends Objeto
      * metodo getExplosion este metodo regresa una bandera que indica
      * si la granada ha explotado
      */
-    public int getExplosion(){
+    public boolean getExplosion(){
         return granada.getExplosion();
     }
 

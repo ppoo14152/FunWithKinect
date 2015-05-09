@@ -13,7 +13,7 @@ public class Ratonera extends Objeto
 {
     private LinkedList<GreenfootImage> ratonera;
     private GreenfootSound sonido;
-    private int ban;
+    private boolean ban;
     private long seg;
     /**
      * Constructor de la clase, crea la lista y carga las imagenes
@@ -21,7 +21,7 @@ public class Ratonera extends Objeto
      */
     public Ratonera(int tipo){
         super(0,0);
-        ban=0;
+        ban=false;
         sonido= new GreenfootSound("ratoneraClik.mp3");
         ratonera= new LinkedList<GreenfootImage>();
         ratonera.add(new GreenfootImage ("ratonera1.png"));
@@ -40,14 +40,14 @@ public class Ratonera extends Objeto
      */
     public void act() 
     {
-        if(getOneIntersectingObject(Mira.class)!=null && ban==0){
+        if(getOneIntersectingObject(Mira.class)!=null && ban==false){
             setImage(ratonera.get(1));
             sonido.play();
-            ban=1;
+            ban=true;
 
             seg=System.currentTimeMillis();
         }
-        if(ban==1 &&  System.currentTimeMillis()-seg>200){
+        if(ban==true &&  System.currentTimeMillis()-seg>200){
             seg=System.currentTimeMillis();
             getWorld().removeObject(this);
     }

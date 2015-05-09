@@ -12,32 +12,28 @@ public class Nivel extends Menu
      * Act - do whatever the Nivel wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int ban;
-    private int tipo;
     private long seg;
 
     public Nivel(String nivel) 
     {
-        super(new Pantalla(nivel),new Mira(0,0,1));
-        ban=0;
-        tipo=0;
+        super(new Pantalla(nivel),new Mira(0,0,1));      
         seg=System.currentTimeMillis();
     }    
-    
+
     public void act() 
     {
-       
-        if (ban==0)
+
+        if (ban==false)
         {
             getWorld().addObject(p,0,0);
-            ban=1;
+            ban=true;
         }
 
         if(System.currentTimeMillis()-seg>5000){
-        getWorld().removeObject(p);
-        getWorld().removeObject(this);
+            getWorld().removeObject(p);
+            getWorld().removeObject(this);
 
-    }
+        }
 
     }    
 
@@ -48,6 +44,5 @@ public class Nivel extends Menu
     public int botonP(){
         return 0;
     }
-    
-   
+
 }

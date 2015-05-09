@@ -21,11 +21,10 @@ public class JuegoLaberinto extends Juego
     private  Label b;
     private int nivel;
     private  GreenfootSound rata;     
-    private  int ban;
-    private int ban2;
+    private boolean ban;
+    private boolean ban2;
     private Ratonera ratonera;
-    private int tipo;
-    private int perder;
+    private int tipo;  
     private BaraFuego bara;
     private Pared pared;
     private Picos picos;
@@ -33,10 +32,10 @@ public class JuegoLaberinto extends Juego
     private long seg;
     private long segVida;
     private int gana;
-    private int banMuere;
+    private boolean banMuere;
     private Quesito queso;
     private int puntos;
-    private int ganar;
+
     /**
      * Constructor de la clase, se inicializan las variables usadas y se utiliza el constructor de la superclase
      * para inicializar algunas de estas .
@@ -47,19 +46,17 @@ public class JuegoLaberinto extends Juego
         menu.add(new Boton(580,450,2));
         picos=new Picos();
         nivel=1;
-        banMuere=0;
+        banMuere=false;
         puntos=0;
         b=new Label("inicia en la zona azul y llega a la cueva",40);        
-        ban=0;
-        ban2=0;
+        ban=false;
+        ban2=false;
         seg=System.currentTimeMillis();
         segVida=System.currentTimeMillis();
-        rata= new GreenfootSound("rata.mp3");
-        perder=0;
+        rata= new GreenfootSound("rata.mp3");     
         bara=new BaraFuego();
         inicia=0;
         gana=0;
-        ganar=0;
     }
 
     /**
@@ -68,12 +65,12 @@ public class JuegoLaberinto extends Juego
      */
     public void act() 
     {
-        if(ban==0){
+        if(ban==false){
 
             getWorld().addObject(j,0,0);
             getWorld().addObject(p,0,0);
             getWorld().addObject(m,0,0);
-            ban=1;
+            ban=true;
             if(nivel==1){
                 creaLaberinto();  
                 getWorld().addObject(b,320,220);
@@ -96,7 +93,7 @@ public class JuegoLaberinto extends Juego
             this.ponQueso();
             getWorld().removeObject(b);
             if(nivel==2)
-            this.ponRatoneras();
+                this.ponRatoneras();
 
         }
         if(gana==0){
@@ -107,12 +104,12 @@ public class JuegoLaberinto extends Juego
                         tipo=b.getTipo(); 
             }
         }
-        else{if(ban2==0){ 
+        else{if(ban2==false){ 
 
                 getWorld().removeObjects(getWorld().getObjects(Quesito.class));
                 getWorld().removeObjects(getWorld().getObjects(Pared.class));
                 inicia=0;
-                ban2=1;
+                ban2=true;
                 nivel=2;              
                 getWorld().removeObject(picos);
                 getWorld().removeObject(bara);
@@ -123,25 +120,26 @@ public class JuegoLaberinto extends Juego
                 getWorld().addObject(m,10,10);                
                 b=new Label("inicia en la zona azul y llega al queso",40);      
                 getWorld().addObject(b,320,220);          
-                
+
                 this.ponQueso();
 
-            }
+            }else
+                ganar=true;
         }
         if(inicia==1){
-            
+
             if(m.ratonMuere()==1){        
-                banMuere=1;
+                banMuere=true;
 
             }
         }
         perder=j.muerto();        
-        if(  System.currentTimeMillis()- segVida   >= 500 && banMuere==1){    
-            banMuere=0;          
+        if(  System.currentTimeMillis()- segVida   >= 500 && banMuere==true){    
+            banMuere=false;          
             j.daña();
             segVida=System.currentTimeMillis();
         }
-        banMuere=0;
+        banMuere=false;
 
     }
 
@@ -164,7 +162,7 @@ public class JuegoLaberinto extends Juego
      * Metodo perder, en este metodo se regresa la variable que indica si se ha perdido.
      * @return perder variable que indica cuando se ha perdido el juego.
      */
-    public int perder()
+    public boolean perder()
     {
         return perder;
     }
@@ -215,6 +213,7 @@ public class JuegoLaberinto extends Juego
     public int getPicos(){
         return picos.getPicos();
     }
+
     /**Metodo ponQueso inserta los quesos en el mundo en cierta posicion.*/
     private void ponQueso(){
         if(nivel==1){ queso= new Quesito();
@@ -241,7 +240,7 @@ public class JuegoLaberinto extends Juego
         }
 
     }
-    
+
     /**Metodo ponRatoneras, dependiendo el nivel inserta las ratoneras en el mundo en un lugar especifico.*/
     private void ponRatoneras(){
         ratonera= new Ratonera(1);
@@ -276,11 +275,11 @@ public class JuegoLaberinto extends Juego
     {
         return j.getPuntos();
     }
-    
+
     /**Este metodo retorna el valor de la variable ganar que indica si se a completado el juego.
-       @return ganar 0 si no se ha ganado, 1 si se gano.
-    */
-    public int ganar()
+    @return ganar 0 si no se ha ganado, 1 si se gano.
+     */
+    public boolean ganar()
     {
         return ganar;
     }

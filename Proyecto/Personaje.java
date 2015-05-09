@@ -7,9 +7,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Personaje extends Actor
 { 
-    public int x;
-    public int y;
-    public int salud;
+    protected int x;
+    protected int y;
+    protected int salud;
 
     /**el ocnstructor inicializa las coordenadas y la salud, recibe como parametro estas variables
      * @param X coordenada en x que se le coloca al crear instancias de esta clase

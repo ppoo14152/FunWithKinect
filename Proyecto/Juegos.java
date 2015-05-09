@@ -6,8 +6,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Juegos extends Menu
 {
-    private int ban;
-    private int tipo;
     /**
      * constructor de la clase, inicializa los botones y banderas.
      */
@@ -17,9 +15,7 @@ public class Juegos extends Menu
         menu.add(new Boton(160,160, 4 ));
         menu.add(new Boton(160,240,5));
         menu.add(new Boton(160,320,6 ));
-        menu.add(new Boton(160,400,7));
-        ban=0;
-        tipo=0;
+        menu.add(new Boton(160,400,7));       
     }
 
     /**
@@ -27,14 +23,14 @@ public class Juegos extends Menu
      */
     public void act() 
     {
-        if (ban==0)
+        if (ban==false)
         {
             getWorld().addObject(p,0,0);
             for(Boton b : menu){
                 getWorld().addObject(b,0,0);
             }
             getWorld().addObject(m,0,0);  
-            ban=1;
+            ban=true;
         }
 
         if(m.getBan()== 1){

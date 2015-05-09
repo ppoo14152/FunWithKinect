@@ -7,8 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Ganar extends Menu
 {
-    private int ban;
-    private int tipo;
+
     private Label puntos;
     /**
      * constructor de la clase, se inicializan todas las variables que se ocupan
@@ -17,8 +16,7 @@ public class Ganar extends Menu
         super(new Pantalla("ganar"),new Mira(0,0,1));
         puntos= new Label(Integer.toString(p),60);
         menu.add(new Boton(567,430,2));
-        ban=0;
-        tipo=0;
+
     }
 
     /**
@@ -27,16 +25,16 @@ public class Ganar extends Menu
      */
     public void act() 
     {
-        if (ban==0)
+        if (ban==false)
         {
             getWorld().addObject(p,0,0);
             for(Boton b : menu){
-               
+
                 getWorld().addObject(b,0,0);
             }
             getWorld().addObject(m,0,0);  
             getWorld().addObject(puntos,320,260);
-            ban=1;
+            ban=true;
         }
 
         if(m.getBan()== 1){

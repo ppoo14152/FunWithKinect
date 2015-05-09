@@ -13,12 +13,10 @@ import java.util.*;
  */
 public class JuegoForest extends Juego
 {
-    private int ban;
+    private boolean ban;
     private int tipo;
-    private int perder;
     private int c;
     private int o;
-    private int ganar;
     private long seg;
     private long seg1;
     private Mono forest;
@@ -33,13 +31,12 @@ public class JuegoForest extends Juego
         forest= new Mono(240,420);
         sombra= new Sombra(50,420);
         menu.add(new Boton(580,450,2));
-        ban=0;
+        ban=false;
         c=640;
-        ganar=0;
         o=0;
         seg=System.currentTimeMillis();
         seg1=System.currentTimeMillis();
-        perder=0;
+  
     }
 
     /**
@@ -49,7 +46,7 @@ public class JuegoForest extends Juego
     public void act() 
     {
         Random r=new Random();
-        if(ban==0){
+        if(ban==false){
             getWorld().addObject(j,0,0);
             getWorld().addObject(p,0,0);
             getWorld().addObject(m,0,0);
@@ -58,7 +55,7 @@ public class JuegoForest extends Juego
             for(Boton b : menu){
                 getWorld().addObject(b,0,0);
             }
-            ban=1;
+            ban=true;
 
         }
 
@@ -94,7 +91,7 @@ public class JuegoForest extends Juego
         }
         
         if(forest.getX() > getWorld().getWidth()-50)
-        ganar=1;
+        ganar=true;
         
         perder=j.muerto();
     }
@@ -134,7 +131,7 @@ public class JuegoForest extends Juego
      * Metodo perder este metodo indica cuando ha perdido o no.
      * @return perder variable que indica cuando se ha perdido o no.
      */
-    public int perder()
+    public boolean perder()
     {
         return perder;
     }
@@ -142,7 +139,7 @@ public class JuegoForest extends Juego
     /**Este metodo retorna el valor de la variable ganar que indica si se a completado el juego.
        @return ganar 0 si no se ha ganado, 1 si se gano.
     */
-    public int ganar()
+    public boolean ganar()
     {
         return ganar;
     }

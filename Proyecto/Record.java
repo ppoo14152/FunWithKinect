@@ -8,43 +8,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Record extends Menu
 {
-    private int tipo;
-    private int ban; 
-    
- 
+
     public Record()
     {
         super(new Pantalla("record"),new Mira(0,0,1));
-        menu.add(new Boton(567,430,2));
-      
-        ban=0;
-        tipo=0;
+        menu.add(new Boton(567,430,2)); 
     }
-    
+
     public void act() 
     {
-      if (ban==0)
-     {
-         getWorld().addObject(p,0,0);
-         
-         for(Boton b : menu){
-               getWorld().addObject(b,0,0);
-                           }
-         getWorld().addObject(m,0,0);  
-         ban=1;
-        
+        if (ban==false)
+        {
+            getWorld().addObject(p,0,0);
+
+            for(Boton b : menu){
+                getWorld().addObject(b,0,0);
+            }
+            getWorld().addObject(m,0,0);  
+            ban=true;
+
         }
-        
-     if(m.getBan()== 1){
-             for(Boton b: menu)
+
+        if(m.getBan()== 1){
+            for(Boton b: menu)
                 if(b.getTipo()!=0)
-                tipo = b.getTipo();
+                    tipo = b.getTipo();
         }
-     
-      
-}
+
+    }
     public int botonP(){
         return tipo;
-                        }
-   
+    }
+
 }

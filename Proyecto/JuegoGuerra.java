@@ -21,11 +21,9 @@ public class JuegoGuerra extends Juego
     private int n;
     private int c;
     private Arma arma;        
-    private int ban; 
+    private boolean ban; 
     private int conEnem;
-    private int tipo;
-    private int perder;
-    private int ganar; 
+    private int tipo;   
     private long seg, seg1,seg2,seg3,seg4;
     private Actor banA;
     private Label b;
@@ -40,14 +38,12 @@ public class JuegoGuerra extends Juego
         conEnem=0;
         menu=new LinkedList<Boton>(); 
         menu.add(new Boton(580,450,2));
-        ban=0;
+        ban=false;
         c=0;
-        tipo=0;
-        perder=0;
+        tipo=0;   
         n=1;
         cantEnem=1;
-        tiempo=10;
-        ganar=0;
+        tiempo=10;       
         seg=System.currentTimeMillis();
         seg1=System.currentTimeMillis();
         seg2=System.currentTimeMillis();
@@ -60,88 +56,87 @@ public class JuegoGuerra extends Juego
      */
     public void act() 
     {
-        
+
         int x;
         int rem=0;
         if(System.currentTimeMillis()- seg4>5000){        
-        x=Greenfoot.getRandomNumber(600);
-        if (ban==0){
-            getWorld().addObject(p,0,0);
-            getWorld().addObject(j,0,0);
-            getWorld().addObject(m,0,0);
-            getWorld().addObject(arma,0,0);
-            for(Boton b : menu){
-                getWorld().addObject(b,0,0);
-            }
-            ban=1;
-        }  
-         
-       if(System.currentTimeMillis()- seg3 > 1000 && tiempo>0){
-        seg3=System.currentTimeMillis();
-        tiempo--;
-        getWorld().removeObject(b);
-        b=new Label("Tiempo: "+Integer.toString(tiempo),40);
-        }
+            x=Greenfoot.getRandomNumber(600);
+            if (ban==false){
+                getWorld().addObject(p,0,0);
+                getWorld().addObject(j,0,0);
+                getWorld().addObject(m,0,0);
+                getWorld().addObject(arma,0,0);
+                for(Boton b : menu){
+                    getWorld().addObject(b,0,0);
+                }
+                ban=true;
+            }  
 
-        if(System.currentTimeMillis()- seg > 5000){
-            for(int c=0;c<cantEnem;c++){Enemigo e = new Enemigo(x,200,Greenfoot.getRandomNumber(2));
-                seg = System.currentTimeMillis();
-                getWorld().addObject(e,x,0);
-                conEnem++;
-
-            }
-            if(conEnem>=15)
-                cantEnem++;
+            if(System.currentTimeMillis()- seg3 > 1000 && tiempo>0){
+                seg3=System.currentTimeMillis();
+                tiempo--;
+                getWorld().removeObject(b);
+                b=new Label("Tiempo: "+Integer.toString(tiempo),40);
             }
 
-        if(System.currentTimeMillis()- seg1 > 10000){
-            seg1 = System.currentTimeMillis();
-            Municion mun = new Municion(Greenfoot.getRandomNumber(600),Greenfoot.getRandomNumber(400));
-            getWorld().addObject(mun,Greenfoot.getRandomNumber(600),Greenfoot.getRandomNumber(400));
+            if(System.currentTimeMillis()- seg > 5000){
+                for(int c=0;c<cantEnem;c++){Enemigo e = new Enemigo(x,200,Greenfoot.getRandomNumber(2));
+                    seg = System.currentTimeMillis();
+                    getWorld().addObject(e,x,0);
+                    conEnem++;
+
+                }
+                if(conEnem>=15)
+                    cantEnem++;
+            }
+
+            if(System.currentTimeMillis()- seg1 > 10000){
+                seg1 = System.currentTimeMillis();
+                Municion mun = new Municion(Greenfoot.getRandomNumber(600),Greenfoot.getRandomNumber(400));
+                getWorld().addObject(mun,Greenfoot.getRandomNumber(600),Greenfoot.getRandomNumber(400));
+
+            }
+
+            banA=arma.getCol();  
+            if(banA!=null )
+                j.daña(); 
+
+            if(m.getBan()== 1){
+                for(Boton b: menu)
+
+                    if(b.getTipo()!=0)
+                        tipo=b.getTipo(); 
+            }
+
+            if(tiempo==0 && n==2)
+                ganar=true;
+
+            perder=j.muerto();
+            getWorld().addObject(b,100,420);
+
+            if(tiempo==0 && n!=2)
+            {
+                getWorld().removeObjects(getWorld().getObjects(Enemigo.class));
+                getWorld().removeObjects(getWorld().getObjects(Municion.class));
+                getWorld().removeObjects(getWorld().getObjects(Label.class));
+                getWorld().removeObjects(getWorld().getObjects(Arma.class));
+                getWorld().removeObjects(getWorld().getObjects(Boton.class));
+                getWorld().removeObjects(getWorld().getObjects(Salud.class));
+                getWorld().removeObjects(getWorld().getObjects(Granada.class));
+                getWorld().removeObjects(getWorld().getObjects(Bala.class));
+                ban=false;
+                c=0;
+                n=2;
+                seg4=System.currentTimeMillis();
+                tiempo=30;
+            }
 
         }
-
-        banA=arma.getCol();  
-        if(banA!=null )
-            j.daña(); 
-
-        if(m.getBan()== 1){
-            for(Boton b: menu)
-
-                if(b.getTipo()!=0)
-                    tipo=b.getTipo(); 
+        else if(c==0){
+            c=1;
+            getWorld().addObject(new Nivel("Nivel"+n),0,0);
         }
-        
-        if(tiempo==0 && n==2)
-        ganar=1;
-            
-         perder=j.muerto();
-         getWorld().addObject(b,100,420);
-         
-           if(tiempo==0 && n!=2)
-        {
-            getWorld().removeObjects(getWorld().getObjects(Enemigo.class));
-            getWorld().removeObjects(getWorld().getObjects(Municion.class));
-            getWorld().removeObjects(getWorld().getObjects(Label.class));
-            getWorld().removeObjects(getWorld().getObjects(Arma.class));
-            getWorld().removeObjects(getWorld().getObjects(Boton.class));
-            getWorld().removeObjects(getWorld().getObjects(Salud.class));
-            getWorld().removeObjects(getWorld().getObjects(Granada.class));
-            getWorld().removeObjects(getWorld().getObjects(Bala.class));
-            ban=0;
-            c=0;
-            n=2;
-            seg4=System.currentTimeMillis();
-            tiempo=30;
-        }
-      
     }
-    else if(c==0){
-    c=1;
-    getWorld().addObject(new Nivel("Nivel"+n),0,0);
-      }
-}
-
 
     /**
      * Metodo botonP regresa el tipo del boon presionado
@@ -170,7 +165,7 @@ public class JuegoGuerra extends Juego
      * Metodo perder este metodo regresa una varible que indica si ha perdido o no
      * @return perder variable que indica si se ha perdido o no
      */
-    public int perder()
+    public boolean perder()
     {
         return perder;
 
@@ -191,14 +186,14 @@ public class JuegoGuerra extends Juego
      * @return explosion variable que indica explosion de una granada
      * 
      */
-    public int getExplosion(){
+    public boolean getExplosion(){
         return arma.getExplosion();
     }
-    
+
     /**Este metodo retorna el valor de la variable ganar que indica si se a completado el juego.
-       @return ganar 0 si no se ha ganado, 1 si se gano.
-    */
-    public int ganar()
+    @return ganar 0 si no se ha ganado, 1 si se gano.
+     */
+    public boolean ganar()
     {
         return ganar;
     }
