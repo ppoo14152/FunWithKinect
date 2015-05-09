@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Objeto extends Actor
 {
-    public int x;
-    public int y;
+    protected int x;
+    protected int y;
 
     /** Constructor de la clase objeto recibe como parametro la coordenada en X y Y y se las asigna a las variables del objeto  */
     public Objeto(int X, int Y)

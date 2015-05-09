@@ -9,9 +9,9 @@ import java.util.*;
 abstract class KinectFun extends Actor
 {
 
-    public Pantalla p;
-    public Mira m;
-    public LinkedList<Boton> menu=new LinkedList<Boton>(); 
+    protected Pantalla p;
+    protected Mira m;
+    protected LinkedList<Boton> menu=new LinkedList<Boton>(); 
 
     /**Constructor de la clase recibe una pantalla y una mira y la inicializa. */
     public KinectFun(Pantalla P, Mira M  ){
