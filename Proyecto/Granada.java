@@ -58,7 +58,7 @@ public class Granada extends Objeto
         seguro.play();
     }
     /**
-     * metodo act este metodo hace la animacion de la granada, cambia de sprites y 
+     * Metodo act este metodo hace la animacion de la granada, cambia de sprites y 
      * genera sonido de explosion, aqui tambien se elimina a la instancia de granada
      */
     public void act() 
