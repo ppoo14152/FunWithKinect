@@ -47,7 +47,7 @@ public class Balon extends Objeto
         ban=0;
         Greenfoot.playSound("silbato.mp3");
         balon=new GreenfootImage("balon.png");
-        patada=new GreenfootSound("patada.mp3");
+        patada=new GreenfootSound("patada.wav");
         parado=new GreenfootSound("BOO.WAV");
         gool=new GreenfootSound("gool.WAV");
         seg=System.currentTimeMillis();

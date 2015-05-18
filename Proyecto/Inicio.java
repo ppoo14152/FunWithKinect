@@ -21,8 +21,8 @@ import java.util.LinkedList;
 public class Inicio extends KinectWorld
 {
 
-    private static final int THUMBNAIL_WIDTH = 80;
-    private static final int THUMBNAIL_HEIGHT = 60;
+    private static final int THUMBNAIL_WIDTH = 160;
+    private static final int THUMBNAIL_HEIGHT = 120;
     private long leftHandUp;   
     private Pantalla calibra;
     private Mira mira;
@@ -34,6 +34,8 @@ public class Inicio extends KinectWorld
     private Records rec;
     private TablaRecords tabla;
     private boolean banNom;
+    final int width = getWidth();
+    final int height = getHeight();
 
     /**Es el constructor de la clase se llama al constructor de la superclase, donde se crea una 
      * pequeña camara que es odnde se visualiza el jugador al inicio del juego
@@ -45,9 +47,8 @@ public class Inicio extends KinectWorld
         banNom=false;
         ban=false;       
         calibra=new Pantalla("Calibrar");
-        setActOrder(Pantalla.class,Boton.class,Mira.class,Mono.class );
-        final int width = getWidth();
-        final int height = getHeight();
+        setActOrder(Pantalla.class,Boton.class,Mira.class,Mono.class,Thumbnail.class );
+       
         usuario= new Usuario();
         rec=new Records();
         mundo=new Principal();
@@ -97,6 +98,7 @@ public class Inicio extends KinectWorld
                         musica.stop();
                     puntuacion+=((Juego)mundo).getPuntos();
                     removeObjects(getObjects(null));
+                    addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                     mundo=new GameOver();
                     addObject(mundo,0,0);
                 }
@@ -105,6 +107,7 @@ public class Inicio extends KinectWorld
                         musica.stop();
                     puntuacion+=((Juego)mundo).getPuntos();
                     removeObjects(getObjects(null));
+                     addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                     mundo=new Ganar(puntuacion);
                     addObject(mundo,0,0);
 
@@ -117,6 +120,7 @@ public class Inicio extends KinectWorld
                 musica= new GreenfootSound("menuMusica.mp3");
                 musica.play();
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo=new Juegos();
                 addObject(mundo,0,0);
                 break;
@@ -128,11 +132,13 @@ public class Inicio extends KinectWorld
                 if(mundo instanceof Juego)
                     puntuacion+=((Juego)mundo).getPuntos();
                 removeObjects(getObjects(null));
+                addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo=new Principal(); 
                 addObject(mundo,0,0);
                 break;
                 case 3://botonAyuda.png carga los botones de menuInicio3
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo=new MenuAyuda(); 
                 addObject(mundo,0,0);
 
@@ -141,6 +147,7 @@ public class Inicio extends KinectWorld
                 if(musica.isPlaying()==true)
                     musica.stop();
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo = new JuegoLaberinto();
                 addObject(mundo,0,0);
                 musica= new GreenfootSound("laberintoMusica.mp3");
@@ -150,6 +157,7 @@ public class Inicio extends KinectWorld
                 if(musica.isPlaying()==true)
                     musica.stop();
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo = new JuegoForest();
                 addObject(mundo,0,0);
                 musica= new GreenfootSound("forestMusica.mp3");
@@ -159,6 +167,7 @@ public class Inicio extends KinectWorld
                 if(musica.isPlaying()==true)
                     musica.stop();
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo = new JuegoGool();
                 addObject(mundo,0,0);
                 break;
@@ -167,6 +176,7 @@ public class Inicio extends KinectWorld
                 if(musica.isPlaying()==true)
                     musica.stop();
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo= new JuegoGuerra();
                 addObject(mundo,0,0);
                 musica= new GreenfootSound("guerraSound.mp3");
@@ -177,6 +187,7 @@ public class Inicio extends KinectWorld
                 if(musica.isPlaying()==true)
                     musica.stop();
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo= new Record();
                 addObject(mundo,0,0); 
                 rec.addUsuario(usuario);
@@ -185,6 +196,7 @@ public class Inicio extends KinectWorld
                 break;
                 case 9://AyudaForest 
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo=new Ayuda("AyudaJForest");
                 addObject(mundo,0,0);
                 addObject(new Boton(500,400,2),500,400);
@@ -193,16 +205,19 @@ public class Inicio extends KinectWorld
                 break;
                 case 10://AyudaGool
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo=new Ayuda("AyudaJGool");
                 addObject(mundo,0,0);
                 break;
                 case 11://AyudaLaberinto
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo=new Ayuda("AyudaJLaberinto");
                 addObject(mundo,0,0); 
                 break;
                 case 12://AyudaResistencia;
                 removeObjects(getObjects(null));
+                 addObject(new Thumbnail(), width - THUMBNAIL_WIDTH/2, height - THUMBNAIL_HEIGHT/2);
                 mundo=new Ayuda("AyudaJResistencia");
                 addObject(mundo,0,0);
                 break;
