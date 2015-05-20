@@ -47,4 +47,3 @@ abstract class Juego extends KinectFun
     abstract boolean ganar();
 
 }
- 

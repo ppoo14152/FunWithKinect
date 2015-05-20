@@ -5,14 +5,14 @@ import java.util.*;
 // forest   Variable que guarda los diferentes disfraces de el objeto.
 // brinco   Contiene el sonido de brinco que se ejecuta al saltar.
 // correr   Contiene el correr que se ejecuta mientras el jugador no salte ni se agache.
-// c        Variable que indica el disfraz que se esta utilizando y permite el cambio del disfraz.
+// disfraz        Variable que indica el disfraz que se esta utilizando y permite el cambio del disfraz.
 // seg      Variable que contiene una relacion de tiempo y marca las transiciones entre disfraces.
 // y2       Variable que contiene la posicion en el eje y de la cabeza del jugador.
 // y3       Variable que contiene la posicion inicial en el eje y del jugador.
-// ban      Bandera encargada de controlar las actualizaciones de y2 e y3.
+// banCoor      Bandera encargada de controlar las actualizaciones de y2 e y3.
 // b        Bandera encargada de controlar el cambio de disfraces al agacharce.
-// ban2     Bandera encargada de detectar si se ha ejecutado un brinco.
-// ban3     Bandera encargada de detectar si el jugador se agacho.
+// banSalto     Bandera encargada de detectar si se ha ejecutado un brinco.
+// banAgacharse     Bandera encargada de detectar si el jugador se agacho.
 // tropesar contiene el sonido tropesar el cual se reproduce si el jugador choca con algun objeto.
 
 public class Mono extends Objeto
@@ -20,14 +20,14 @@ public class Mono extends Objeto
     private LinkedList<GreenfootImage> forest;
     private GreenfootSound brinco;
     private GreenfootSound correr;
-    private int c;
+    private int disfraz;
     private long seg;
     private int y2;
     private int y3;
-    private boolean ban;
+    private boolean banCoor;
     private int b;
-    private boolean ban2;//salto
-    private boolean ban3;//agacharce
+    private boolean banSalto;//salto
+    private boolean banAgacharse;//agacharce
     private int tropesar;
 
     /**Constructor de la clase, aqui se inicializan todas la variable, ademas se llama al constructor de la superclase para inicializar las coordenadas iniciales del objeto
@@ -37,10 +37,10 @@ public class Mono extends Objeto
     public Mono(int X, int Y)
     {
         super(X,Y);
-        ban=false;
+        banCoor=false;
         b=0;
-        ban2=false;
-        ban3=false;
+        banSalto=false;
+        banAgacharse=false;
         brinco= new GreenfootSound("saltoforest.mp3");
         correr= new GreenfootSound("correr.mp3");
         forest=new LinkedList <GreenfootImage> () ;
@@ -56,7 +56,7 @@ public class Mono extends Objeto
         forest.add(new GreenfootImage ("derrape2.png"));
         forest.add(new GreenfootImage ("derrape3.png"));
         forest.add(new GreenfootImage ("derrape4.png"));
-        c=0;
+        disfraz=0;
         tropesar=0;
         seg=System.currentTimeMillis();
         setLocation(x,y);
@@ -74,69 +74,69 @@ public class Mono extends Objeto
         {         
             Joint cabeza = i.getJoint(Joint.HEAD);            
             y2=cabeza.getY();   
-            if(ban==false){
+            if(banCoor==false){
                 y3=y2;
-                ban=true;
+                banCoor=true;
             } 
         }  
 
-        if(y2<y3-20 && ban2==false && ban3==false)
+        if(y2<y3-20 && banSalto==false && banAgacharse==false)
         {
-            ban2=true; 
+            banSalto=true; 
             brinco.play();
-            c=0;  
+            disfraz=0;  
         }
-        else if(y2>y3+20 && ban3==false && ban2==false){
-            ban3=true;
-            c=0;
+        else if(y2>y3+20 && banAgacharse==false && banSalto==false){
+            banAgacharse=true;
+            disfraz=0;
         }
 
         if( System.currentTimeMillis()- seg   >=150){
-            ban=false;
+            banCoor=false;
             x+=1;
-            if(ban2==true && ban3==false){
+            if(banSalto==true && banAgacharse==false){
 
                 if(correr.isPlaying()==true)
                     correr.stop();
 
-                if(c>1)
+                if(disfraz>1)
                     y=y+50;
                 else
                     y=y-50;
                 setLocation(x,y);
-                setImage(forest.get(c+4));
-                c++;
-                if(c+4==8)
-                    ban2=false;
+                setImage(forest.get(disfraz+4));
+                disfraz++;
+                if(disfraz+4==8)
+                    banSalto=false;
             }
-            else if(ban3==true && ban2==false){
+            else if(banAgacharse==true && banSalto==false){
                 if(correr.isPlaying()==true)
                     correr.stop();
                 setLocation(x,y);
-                setImage(forest.get(c+8));
-                if(c+8<11 && b==0){
-                    c++;
+                setImage(forest.get(disfraz+8));
+                if(disfraz+8<11 && b==0){
+                    disfraz++;
                     y+=10;
                 }
                 else
                     b=1;
                 if(b==1){
                     y-=10;
-                    c--;
+                    disfraz--;
                 }
-                if(c==0){
+                if(disfraz==0){
                     b=0;
-                    ban3=false;
+                    banAgacharse=false;
                 }
-            }else if(ban2==false  && ban3==false){
+            }else if(banSalto==false  && banAgacharse==false){
                 correr.play();
-                if(c<3)
-                    c++;
+                if(disfraz<3)
+                    disfraz++;
                 else{
-                    c=0;
+                    disfraz=0;
                 }
                 setLocation(x,y);
-                setImage(forest.get(c));
+                setImage(forest.get(disfraz));
 
             }
             seg=System.currentTimeMillis();

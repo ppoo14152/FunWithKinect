@@ -9,13 +9,13 @@ Clase Balon nos permite crear un objeto de tipo Balon el cual es usado en juegoG
 // gool   Contiene el sonido de gool, el cual se reproduce si se anota un gool.
 // seg    Variable que contiene una referencia de tiempo, se usa para marcar el tiempo en que el balon 
 //        realiza sus acciones y movimientos.
-// v      Variable que contiene la velocidad en que se mueve el balon;
+// velocidad      Variable que contiene la velocidad en que se mueve el balon;
 // x1     Variable usada para manipular la direccion del balon, almacena la coordenada en x de nuestra 
 //        mano derecha.
 // y1     Variable usada para manipular la direccion del balon, almacena la coordenada en x de nuestra 
 //        mano derecha.
 //disparo Bandera que nos indica si el balon fue pateado.
-// ban    Bandera que no permite que los objetos se incerten mas de una vez.
+
 // act    Variable usada para detectar las coliciones que tiene el balon.
 
 public class Balon extends Objeto
@@ -26,11 +26,10 @@ public class Balon extends Objeto
     private GreenfootSound parado;
     private GreenfootSound gool;   
     private long seg;
-    private int v;
+    private int speed;
     private int x1;
     private int y1;
-    private int disparo;
-    private int ban;
+    private int disparo;    
     private Actor act;
 
     /**
@@ -43,8 +42,7 @@ public class Balon extends Objeto
     public Balon(int X, int Y, int velocidad)
     {
         super(X,Y);
-        v=velocidad;
-        ban=0;
+        speed=velocidad;       
         Greenfoot.playSound("silbato.mp3");
         balon=new GreenfootImage("balon.png");
         patada=new GreenfootSound("patada.wav");

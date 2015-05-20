@@ -12,12 +12,12 @@ Clase Tabla records, se encarga de mostrar en pantalla una tabla con los records
 public class TablaRecords extends Actor
 {
 
-   private LinkedList<Usuario> usuario;
-   private GreenfootImage tabla;
-   private Label nombre;
-   private Label puntos;
-   private boolean ban;
-   private int c;
+    private LinkedList<Usuario> usuario;
+    private GreenfootImage tabla;
+    private Label nombre;
+    private Label puntos;
+    private boolean ban;
+    private int ordenador;
     /**Constructor de la clase aqui se inicializan todas las variables.
     @param us Lista de todos los usuarios.*/
     public TablaRecords(LinkedList<Usuario> us)
@@ -25,7 +25,7 @@ public class TablaRecords extends Actor
         usuario=new LinkedList<Usuario>();
         usuario=us;
         ban=false;
-        c=0;
+        ordenador=0;
         tabla=new GreenfootImage("TablaRecords.png");
 
     }
@@ -33,20 +33,20 @@ public class TablaRecords extends Actor
     /**Metodo act de la clase aqui se inserta la tabla y las etiquetas en orden.*/
     public void act() 
     {
-    
-     if(ban==false )
-    {
-     setLocation(getWorld().getWidth()/2,getWorld().getHeight()/2);
-     tabla.scale(350,300);
-     setImage(tabla);
-     for(Usuario i : usuario){
-       nombre=new Label(i.getNombre()+".",30);
-       puntos=new Label(i.getPuntos()+".",30);
-       getWorld().addObject(nombre, 231,176+40*c);
-       getWorld().addObject(puntos, 432,176+40*c);
-       c++;
-                            }
-       ban=true;                
-                        }
-   }    
+
+        if(ban==false )
+        {
+            setLocation(getWorld().getWidth()/2,getWorld().getHeight()/2);
+            tabla.scale(350,300);
+            setImage(tabla);
+            for(Usuario i : usuario){
+                nombre=new Label(i.getNombre()+".",30);
+                puntos=new Label(i.getPuntos()+".",30);
+                getWorld().addObject(nombre, 231,176+40*ordenador);
+                getWorld().addObject(puntos, 432,176+40*ordenador);
+                ordenador++;
+            }
+            ban=true;                
+        }
+    }    
 }

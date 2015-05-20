@@ -18,11 +18,10 @@ import java.util.*;
 
 public class JuegoLaberinto extends Juego
 {
-    private  Label b;
+    private  Label etiqueta;
     private int nivel;
-    private  GreenfootSound rata;     
-    private boolean ban;
-    private boolean ban2;
+    private  GreenfootSound rata;  
+    private boolean banNivel;
     private Ratonera ratonera;
     private int tipo;  
     private BaraFuego bara;
@@ -48,9 +47,9 @@ public class JuegoLaberinto extends Juego
         nivel=1;
         banMuere=false;
         puntos=0;
-        b=new Label("inicia en la zona azul y llega a la cueva",40);        
-        ban=false;
-        ban2=false;
+        etiqueta=new Label("inicia en la zona azul y llega a la cueva",40);        
+
+        banNivel=false;
         seg=System.currentTimeMillis();
         segVida=System.currentTimeMillis();
         rata= new GreenfootSound("rata.mp3");     
@@ -65,15 +64,15 @@ public class JuegoLaberinto extends Juego
      */
     public void act() 
     {
-        if(ban==false){
+        if(banInsercion==false){
 
             getWorld().addObject(j,0,0);
             getWorld().addObject(p,0,0);
             getWorld().addObject(m,0,0);
-            ban=true;
+            banInsercion=true;
             if(nivel==1){
                 creaLaberinto();  
-                getWorld().addObject(b,320,220);
+                getWorld().addObject(etiqueta,320,220);
                 getWorld().addObject(bara,560,75);
                 getWorld().addObject(picos,300,371);
             }
@@ -91,7 +90,7 @@ public class JuegoLaberinto extends Juego
         if(m.getX()<120&&m.getX()>58 &&m.getY()>420 &&m.getY()<480 && inicia==0){
             inicia=1;           
             this.ponQueso();
-            getWorld().removeObject(b);
+            getWorld().removeObject(etiqueta);
             if(nivel==2)
                 this.ponRatoneras();
 
@@ -104,22 +103,22 @@ public class JuegoLaberinto extends Juego
                         tipo=b.getTipo(); 
             }
         }
-        else{if(ban2==false){ 
+        else{if(banNivel==false){ 
 
                 getWorld().removeObjects(getWorld().getObjects(Quesito.class));
                 getWorld().removeObjects(getWorld().getObjects(Pared.class));
                 inicia=0;
-                ban2=true;
+                banNivel=true;
                 nivel=2;              
                 getWorld().removeObject(picos);
                 getWorld().removeObject(bara);
-                getWorld().removeObject(b);
+                getWorld().removeObject(etiqueta);
                 puntos=j.getPuntos();
                 super.nuevoNivel(new Pantalla("lab2"),new Mira(0,0,3 ));           
                 getWorld().addObject(p,getWorld().getWidth() / 2,getWorld().getHeight()/2);
                 getWorld().addObject(m,10,10);                
-                b=new Label("inicia en la zona azul y llega al queso",40);      
-                getWorld().addObject(b,320,220);          
+                etiqueta=new Label("inicia en la zona azul y llega al queso",40);      
+                getWorld().addObject(etiqueta,320,220);          
 
                 this.ponQueso();
 

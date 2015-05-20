@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- clase nivel esta clase genera una pantalla que indica el nivel que se va a jugar
+clase nivel esta clase genera una pantalla que indica el nivel que se va a jugar
  */
 public class Nivel extends Menu
 {
@@ -20,10 +20,10 @@ public class Nivel extends Menu
     public void act() 
     {
 
-        if (ban==false)
+        if (banInsercion==false)
         {
             getWorld().addObject(p,0,0);
-            ban=true;
+            banInsercion=true;
         }
 
         if(System.currentTimeMillis()-seg>5000){

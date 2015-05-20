@@ -83,7 +83,7 @@ public class Boton extends Objeto
         coli = getOneIntersectingObject(Mira.class);
         if(coli != null){
             if(c==0)
-            seleccion.play();
+                seleccion.play();
             c=1;
         }
         else

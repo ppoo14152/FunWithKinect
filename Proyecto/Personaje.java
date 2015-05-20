@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**Esta clase permite tener un jugador el cual tendra coordenadas y salud
  * estas variables son publicas ya que heredara a otras clases.*/
- // x coordenada en el eje x del personaje.
- // y coordenada en el eje y del personaje.
- // salud variable que almacena la salud actual del personaje.
+// x coordenada en el eje x del personaje.
+// y coordenada en el eje y del personaje.
+// salud variable que almacena la salud actual del personaje.
 
 public class Personaje extends Actor
 { 

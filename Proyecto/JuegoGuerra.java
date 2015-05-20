@@ -6,7 +6,7 @@ import java.util.*;
  */
 // menu lista de botones que estan en el mundo.
 // arma arma del jugador tiene balas y granadas.
-// ban variable que permite anadir al mundo los elementos solo una vez.
+// banInsercion variable que permite anadir al mundo los elementos solo una vez.
 // tipo tipo de boton preisonado.
 // perder variable que indica que ha perdido.
 // seg variable que permite contar el tiempo en milisegundos.
@@ -17,14 +17,14 @@ public class JuegoGuerra extends Juego
 {
     private LinkedList<Boton> menu;
     private int tiempo;
-    private int n;
-    private int c;
+    private int nivel;
+    private int banNivel;
     private Arma arma;        
-    private boolean ban; 
+    
     private int conEnem;
     private int tipo;   
     private long seg, seg1,seg2,seg3,seg4;
-    private Actor banA;
+    private Actor banColision;
     private Label b;
     private int cantEnem;
     /**
@@ -37,10 +37,10 @@ public class JuegoGuerra extends Juego
         conEnem=0;
         menu=new LinkedList<Boton>(); 
         menu.add(new Boton(580,450,2));
-        ban=false;
-        c=0;
+       
+        banNivel=0;
         tipo=0;   
-        n=1;
+        nivel=1;
         cantEnem=1;
         tiempo=10;       
         seg=System.currentTimeMillis();
@@ -60,7 +60,7 @@ public class JuegoGuerra extends Juego
         int rem=0;
         if(System.currentTimeMillis()- seg4>5000){        
             x=Greenfoot.getRandomNumber(600);
-            if (ban==false){
+            if (banInsercion==false){
                 getWorld().addObject(p,0,0);
                 getWorld().addObject(j,0,0);
                 getWorld().addObject(m,0,0);
@@ -68,7 +68,7 @@ public class JuegoGuerra extends Juego
                 for(Boton b : menu){
                     getWorld().addObject(b,0,0);
                 }
-                ban=true;
+                banInsercion=true;
             }  
 
             if(System.currentTimeMillis()- seg3 > 1000 && tiempo>0){
@@ -96,8 +96,8 @@ public class JuegoGuerra extends Juego
 
             }
 
-            banA=arma.getCol();  
-            if(banA!=null )
+            banColision=arma.getCol();  
+            if(banColision!=null )
                 j.daña(); 
 
             if(m.getBan()== 1){
@@ -107,13 +107,13 @@ public class JuegoGuerra extends Juego
                         tipo=b.getTipo(); 
             }
 
-            if(tiempo==0 && n==2)
+            if(tiempo==0 && nivel==2)
                 ganar=true;
 
             perder=j.muerto();
             getWorld().addObject(b,100,420);
 
-            if(tiempo==0 && n!=2)
+            if(tiempo==0 && nivel!=2)
             {
                 getWorld().removeObjects(getWorld().getObjects(Enemigo.class));
                 getWorld().removeObjects(getWorld().getObjects(Municion.class));
@@ -123,17 +123,17 @@ public class JuegoGuerra extends Juego
                 getWorld().removeObjects(getWorld().getObjects(Salud.class));
                 getWorld().removeObjects(getWorld().getObjects(Granada.class));
                 getWorld().removeObjects(getWorld().getObjects(Bala.class));
-                ban=false;
-                c=0;
-                n=2;
+                banInsercion=false;
+                banNivel=0;
+                nivel=2;
                 seg4=System.currentTimeMillis();
                 tiempo=30;
             }
 
         }
-        else if(c==0){
-            c=1;
-            getWorld().addObject(new Nivel("Nivel"+n),0,0);
+        else if(banNivel==0){
+            banNivel=1;
+            getWorld().addObject(new Nivel("Nivel"+nivel),0,0);
         }
     }
 

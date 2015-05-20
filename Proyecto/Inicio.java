@@ -5,12 +5,12 @@ import java.util.LinkedList;
 // THUMNAIL_HEIGHT Esta variable guarda el valor de la altura del mundo.
 // THUMNAIL_WIDTH  Esta variable guarda el valor de la anchura del mundo.
 // leftHandUP      Bandera que se usa para detectar si nuestro jugador esta levantando las manos.
-// ban             Bandera usada al incertar un objeto, no permite que el objeto se incerte mas que una vez.
+// banInsercion             Bandera usada al incertar un objeto, no permite que el objeto se incerte mas que una vez.
 // mundo           Esta variable guarda el mundo en el que se encuentra el jugador.     
 // musica          Se encarga de almacenar la musica del juego 
 // calibra         Contiene la imagen de inicio que indica los pasos para poder jugar.
 //mira             Variable de tipo mira se usa en los menus.
-//ban              Bandera que controla la insercion de objetos en el mundo.
+//banInsercion              Bandera que controla la insercion de objetos en el mundo.
 //mundo            Contenedor del juego, aqui se insertan todos los objetos.
 //musica           Contiene los diferentes sonidos de ambiente que se reproducen en el juego.
 //puntuacion       Variable que contiene la puntuacion del jugador en el juego.
@@ -26,7 +26,7 @@ public class Inicio extends KinectWorld
     private long leftHandUp;   
     private Pantalla calibra;
     private Mira mira;
-    private boolean ban; 
+    private boolean banInsercion; 
     private KinectFun mundo;
     private GreenfootSound musica;
     private int puntuacion;
@@ -45,7 +45,7 @@ public class Inicio extends KinectWorld
         super(THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT, 1.0, false);
         puntuacion=0;
         banNom=false;
-        ban=false;       
+        banInsercion=false;       
         calibra=new Pantalla("Calibrar");
         setActOrder(Pantalla.class,Boton.class,Mira.class,Mono.class,Thumbnail.class );
        
@@ -79,9 +79,9 @@ public class Inicio extends KinectWorld
             anyLeftHandUp = anyLeftHandUp || (u.getJoint(Joint.LEFT_HAND).getY() < u.getJoint(Joint.HEAD).getY());
         }
 
-        if (anyLeftHandUp && ban==false )
+        if (anyLeftHandUp && banInsercion==false )
         {
-            ban=true;
+            banInsercion=true;
             removeObject(calibra);
             musica= new GreenfootSound("menuMusica.mp3");
             musica.setVolume(50);

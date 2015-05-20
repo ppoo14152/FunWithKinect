@@ -14,7 +14,7 @@ public class Obstaculo extends Objeto
     private GreenfootSound choque;
     private long seg;
     private long seg2;
-    private int v;
+    private int speed;
 
     /** Constructor de la clase, aqui se inicializan todas las variables.
     @param X contiene la posicion en el eje x en donde aparecera el objeto.
@@ -25,7 +25,7 @@ public class Obstaculo extends Objeto
     public Obstaculo(int X, int Y, String objeto, int velocidad)
     {
         super(X,Y);
-        v=velocidad;
+        speed=velocidad;
         choque=new GreenfootSound("pierdeForest.WAV");
         obstaculo=new  GreenfootImage(objeto+".png");
         seg=System.currentTimeMillis();
@@ -40,7 +40,7 @@ public class Obstaculo extends Objeto
     public void act() 
     {
         if( System.currentTimeMillis()-seg >50){
-            x-=v;
+            x-=speed;
             setLocation(x,y);
             seg=System.currentTimeMillis();}
         if(getOneIntersectingObject(Sombra.class)!=null ){

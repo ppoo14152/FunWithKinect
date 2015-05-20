@@ -5,7 +5,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 // x variable que contiene la coordenada en el eje x del objeto.
 // y variable que contiene la coordenada en el eje y del objeto.
 
-
 public class Objeto extends Actor
 {
     protected int x;

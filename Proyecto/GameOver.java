@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * clase GameOver, esta clase crea una pantalla de game over para todos los juegos
-  */
+ */
 
 public class GameOver extends Menu
 {
@@ -21,14 +21,14 @@ public class GameOver extends Menu
      */
     public void act() 
     {
-        if (ban==false)
+        if (banInsercion==false)
         {
             getWorld().addObject(p,0,0);
             for(Boton b : menu){               
                 getWorld().addObject(b,0,0);
             }
             getWorld().addObject(m,0,0);  
-            ban=true;
+            banInsercion=true;
         }
 
         if(m.getBan()== 1){

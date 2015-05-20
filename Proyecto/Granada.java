@@ -2,16 +2,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
  *Esta clase genera una granada en el juegoGuerra.*/
- // seg       Variable que permite contar en milisegundos
- // granada   Lista de imagenes de la granada
- // alto      Variable que representa el alto de la imagen
- // explosion Variable que indica si ha expotado
- // largo     Variable que indica el largo de la imagen
- // con       Contador para cambiar los sprites de la granada
- // banSonido Variable que permite reproducir el sonido una sola vez cuando ha explotado
- // explota   Sonido que simula explosion
- // seguro    Contiene el sonido de el seguro de la granada.
- // con2      Controla el cambio de disfraces y la eliminacion del objeto.
+// seg       Variable que permite contar en milisegundos
+// granada   Lista de imagenes de la granada
+// alto      Variable que representa el alto de la imagen
+// explosion Variable que indica si ha expotado
+// largo     Variable que indica el largo de la imagen
+// con       Contador para cambiar los sprites de la granada
+// banSonido Variable que permite reproducir el sonido una sola vez cuando ha explotado
+// explota   Sonido que simula explosion
+// seguro    Contiene el sonido de el seguro de la granada.
+// con2      Controla el cambio de disfraces y la eliminacion del objeto.
 
 public class Granada extends Objeto
 {
@@ -26,12 +26,12 @@ public class Granada extends Objeto
     private boolean banSonido;
     private GreenfootSound explota;
     private GreenfootSound seguro;
-   /**
-    * constructor de la granada solo recibe coordenada en x
-    * inicializa las variables y llama al constructor de la superclase para inicializar algunas otras
-    * @param X coordenada en x de la granada
-    */
-    
+    /**
+     * constructor de la granada solo recibe coordenada en x
+     * inicializa las variables y llama al constructor de la superclase para inicializar algunas otras
+     * @param X coordenada en x de la granada
+     */
+
     public Granada(int X){
         super(X,440);
         con=0;
@@ -57,6 +57,7 @@ public class Granada extends Objeto
         setLocation(x,y);
         seguro.play();
     }
+
     /**
      * Metodo act este metodo hace la animacion de la granada, cambia de sprites y 
      * genera sonido de explosion, aqui tambien se elimina a la instancia de granada
@@ -65,7 +66,7 @@ public class Granada extends Objeto
     {
         if( System.currentTimeMillis()- seg   >=250){
             if(con<=4){
-               
+
                 seg=System.currentTimeMillis();
                 granada.get(1).scale(largo,alto);
                 largo-=5;
@@ -75,20 +76,21 @@ public class Granada extends Objeto
             }
             else{
                 if(banSonido==false){
-                banSonido=true;
-                explota.play();
-                explosion=true;
-            }               
+                    banSonido=true;
+                    explota.play();
+                    explosion=true;
+                }               
                 setImage(granada.get(con2));      
                 con2++;
             }
             con++;
         }
-         
+
         if(con2==5)
-             getWorld().removeObject(this);
-           
+            getWorld().removeObject(this);
+
     }   
+
     /**
      * Metodo getExplosion este metodo regresa la variable de explosion 
      * @return explosion variable que indica cuando ha explotado la granada

@@ -5,7 +5,7 @@ import java.util.*;
  // puntos variable encargada de acumular los puntos del jugador.
  // objeto tipo Label nos permite visualizar los puntos en el juego.
  // objeto tipo Salud el cual nos permite visualizar la salud del jugador.
- // ban bandera que no permite insertar un objeto mas de una ves.
+ // banInsercion bandera que no permite insertar un objeto mas de una ves.
  // vida variable que indica la cantidad de salud que tiene el jugador.
  // pierde contiene el sonido perder, se reproduce si el jugador pierde.
  // daño contiene el sonido de daño el cual se reproduce si el jugador recibe algun daño.
@@ -15,7 +15,7 @@ public class Jugador extends Personaje
     private int puntos;
     private Label puntuacion;
     private Salud salud;
-    private boolean ban;
+    private boolean banInsercion;
     private int vida;
     private GreenfootSound pierde;
     private GreenfootSound daño;      
@@ -33,7 +33,7 @@ public class Jugador extends Personaje
         puntos=0;
         pierde= new GreenfootSound("pierde.mp3");
         salud=new Salud();
-        ban=false;
+        banInsercion=false;
         puntuacion=new Label(Integer.toString(puntos),50);   
         daño= new GreenfootSound("muereJugador.mp3");
     }
@@ -42,8 +42,8 @@ public class Jugador extends Personaje
      * El metodo act solo anade los puntos y la salud al mundo.
      */
     public void act(){
-        if(ban==false){
-            ban=true;
+        if(banInsercion==false){
+            banInsercion=true;
             getWorld().addObject(puntuacion,50,20);
             getWorld().addObject(salud,225,20);
         }
@@ -60,7 +60,7 @@ public class Jugador extends Personaje
         puntos+=cantidad;
         getWorld().removeObject(puntuacion);
         puntuacion=new Label(Integer.toString(puntos),50);
-        ban=false;
+        banInsercion=false;
     }
 
     /** 

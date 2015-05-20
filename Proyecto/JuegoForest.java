@@ -6,8 +6,8 @@ import java.util.*;
  */
 //ban variable que permite anadir al mundo los elementos una sola vez
 // perder variable que indica si ha perdido o no
-// c variable cntador permite cambiar la posicion de la pantalla para simular scroll
-// o variable que permite poner cada cierto tiempo algunos elementos en el mundo
+// scroll variable cntador permite cambiar la posicion de la pantalla para simular scroll
+// banObjetos variable que permite poner cada cierto tiempo algunos elementos en el mundo
 //seg variable que permite contar en milisegundos el tiempo
 // seg1 variable que permite contar el tiempo en milisegundos contador 2
 // forest variable tipo Mono que representa el jugador en pantalla
@@ -15,10 +15,10 @@ import java.util.*;
 
 public class JuegoForest extends Juego
 {
-    private boolean ban;
+
     private int tipo;
-    private int c;
-    private int o;
+    private int scroll;
+    private int banObjetos;
     private long seg;
     private long seg1;
     private Mono forest;
@@ -33,9 +33,9 @@ public class JuegoForest extends Juego
         forest= new Mono(240,420);
         sombra= new Sombra(50,420);
         menu.add(new Boton(580,450,2));
-        ban=false;
-        c=640;
-        o=0;
+
+        scroll=640;
+        banObjetos=0;
         seg=System.currentTimeMillis();
         seg1=System.currentTimeMillis();
 
@@ -48,7 +48,7 @@ public class JuegoForest extends Juego
     public void act() 
     {
         Random r=new Random();
-        if(ban==false){
+        if(banInsercion==false){
             getWorld().addObject(j,0,0);
             getWorld().addObject(p,0,0);
             getWorld().addObject(m,0,0);
@@ -57,18 +57,18 @@ public class JuegoForest extends Juego
             for(Boton b : menu){
                 getWorld().addObject(b,0,0);
             }
-            ban=true;
+            banInsercion=true;
 
         }
 
         if(  System.currentTimeMillis()- seg   >= 100){          
             seg=System.currentTimeMillis();
-            if(c==0)
-                c=640;
+            if(scroll==0)
+                scroll=640;
             else
-                c-=2;
-            p.Scroll(c,240);
-            if(o==25){
+                scroll-=2;
+            p.Scroll(scroll,240);
+            if(banObjetos==25){
                 if(  System.currentTimeMillis()- seg1   >= 5000){          
                     seg1=System.currentTimeMillis();
                     getWorld().addObject(new Monstruo(640,372),640,372);
@@ -79,9 +79,9 @@ public class JuegoForest extends Juego
                     else
                         getWorld().addObject(new Obstaculo(640,450,"bote",20),640,450);
                 }
-                o=0;}
+                banObjetos=0;}
             else
-                o++;
+                banObjetos++;
 
         }
 

@@ -21,14 +21,14 @@ public class Juegos extends Menu
      */
     public void act() 
     {
-        if (ban==false)
+        if (banInsercion==false)
         {
             getWorld().addObject(p,0,0);
             for(Boton b : menu){
                 getWorld().addObject(b,0,0);
             }
             getWorld().addObject(m,0,0);  
-            ban=true;
+            banInsercion=true;
         }
 
         if(m.getBan()== 1){

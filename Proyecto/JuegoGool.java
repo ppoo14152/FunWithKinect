@@ -6,11 +6,11 @@ import java.util.*;
  */
 
 // ban variable que sirve para añadir al mundo los objetos una sola vez.
-// ban2 variable que indica cuando se ha pateado el balon.
-// ban3 variable que indica que el balon esta en movimiento.
+// banPatear variable que indica cuando se ha pateado el balon.
+// banBalonMueve variable que indica que el balon esta en movimiento.
 // tipo variable para indicar el boton presionado.
-// pd variable que representa la coordenada en y del pie derecho.
-// pi variable que representa la coordenada en y del pie izquierdo.
+// pieDer variable que representa la coordenada en y del pie derecho.
+// pieIz variable que representa la coordenada en y del pie izquierdo.
 // perder variable que indica cuando se ha perdido.
 // port variable que genera la porteria.
 // balon variable que genera los balones.
@@ -21,16 +21,16 @@ public class JuegoGool extends Juego
     LinkedList<Boton> menu=new LinkedList<Boton>(); 
     private int tiempo;
     private long seg;
-    private boolean ban;
-    private boolean ban2;
-    private boolean ban3;
+
+    private boolean banPatear;
+    private boolean banBalonMueve;
     private int tipo;
-    private int pd;
-    private  int pi;   
+    private int pieDer;
+    private  int pieIz;   
     private Porteria port;
     private Balon balon;
     private Portero portero;
-    private Label b; 
+    private Label etiqueta; 
 
     /**
      * Constructor de la clase, inicializa las variables que necesita la clase, llama al constructor de la superclase
@@ -43,13 +43,13 @@ public class JuegoGool extends Juego
         port=new Porteria(340,200);
         balon=new Balon(340,420,10);
         portero= new Portero(340,210);
-        ban=false;
-        ban2=false;
-        ban3=false;
+
+        banPatear=false;
+        banBalonMueve=false;
         tipo=0;
         tiempo=30;
         seg=System.currentTimeMillis();       
-        b=new Label("Tiempo: "+Integer.toString(tiempo),40);
+        etiqueta=new Label("Tiempo: "+Integer.toString(tiempo),40);
     }
 
     /**
@@ -59,7 +59,7 @@ public class JuegoGool extends Juego
     public void act() 
     {  
 
-        if (ban==false){
+        if (banInsercion==false){
             getWorld().addObject(p,0,0);
             getWorld().addObject(j,0,0);
             getWorld().addObject(m,0,0);
@@ -69,13 +69,13 @@ public class JuegoGool extends Juego
             for(Boton b : menu){
                 getWorld().addObject(b,0,0);
             }
-            ban=true;
+            banInsercion=true;
         }                   
         if(System.currentTimeMillis()- seg>1000 && tiempo>0){
             seg=System.currentTimeMillis();
             tiempo--;
-            getWorld().removeObject(b);
-            b=new Label("Tiempo: "+Integer.toString(tiempo),40);
+            getWorld().removeObject(etiqueta);
+            etiqueta=new Label("Tiempo: "+Integer.toString(tiempo),40);
         }
         KinectWorld mundo =(KinectWorld)getWorld();
 
@@ -83,22 +83,22 @@ public class JuegoGool extends Juego
         for(UserData i : usuarios)
         {         
             Joint pie = i.getJoint(Joint.RIGHT_FOOT);
-            pd=pie.getY();
-            if(ban2==false){
+            pieDer=pie.getY();
+            if(banPatear==false){
                 pie = i.getJoint(Joint.LEFT_FOOT);
-                pi=pie.getY();
-                ban2=true;
+                pieIz=pie.getY();
+                banPatear=true;
             }
 
         } 
 
-        if(pi-pd>40 && ban3==false){
+        if(pieIz-pieDer>40 && banBalonMueve==false){
             balon.patada();
 
-            ban3=true;
+            banBalonMueve=true;
         }
-        else if(pi-pd<40)
-            ban3=false;
+        else if(pieIz-pieDer<40)
+            banBalonMueve=false;
         balon.setDireccion(m.getX(),m.getY()); 
         if(m.getBan()== 1){
             for(Boton b: menu)
@@ -111,7 +111,7 @@ public class JuegoGool extends Juego
             ganar=true;
 
         perder=j.muerto();
-        getWorld().addObject(b,100,420);
+        getWorld().addObject(etiqueta,100,420);
     }
 
     /**

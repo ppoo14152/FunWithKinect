@@ -12,7 +12,7 @@ public class Picos extends Objeto
 {
     private LinkedList <GreenfootImage> pico;
     private long seg;
-    private int c;
+    private int disfraz;
     GreenfootSound filo;
 
     /**Constructor de la clase aqui se inicializan todas las variables del objeto , utiliza el metodo super el cual 
@@ -20,7 +20,7 @@ public class Picos extends Objeto
      */
     public Picos(){
         super(260,288);
-        c=0;
+        disfraz=0;
         filo= new GreenfootSound("picos.mp3");
         pico= new LinkedList<GreenfootImage>();
         pico.add(new GreenfootImage("picos1.png"));
@@ -35,19 +35,19 @@ public class Picos extends Objeto
     {
         if(  System.currentTimeMillis()- seg   >= 2000){   
             seg=System.currentTimeMillis(); 
-            if(c==0){
+            if(disfraz==0){
                 filo.play();
-                c=1;
+                disfraz=1;
             }
             else
-                c=0;
-            setImage(pico.get(c));
+                disfraz=0;
+            setImage(pico.get(disfraz));
         }
     }   
 
     /** Metodo getPicos nos permite conocer el valor del disfraz usado en el momento de su ejecucion.
     @return retorna el valor de c.*/
     public int getPicos(){
-        return c;
+        return disfraz;
     }
 }

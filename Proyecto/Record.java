@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * clase record esta clsae genera la pantalla de los records
-   */
+ */
 public class Record extends Menu
 {
 
@@ -14,7 +14,7 @@ public class Record extends Menu
 
     public void act() 
     {
-        if (ban==false)
+        if (banInsercion==false)
         {
             getWorld().addObject(p,0,0);
 
@@ -22,7 +22,7 @@ public class Record extends Menu
                 getWorld().addObject(b,0,0);
             }
             getWorld().addObject(m,0,0);  
-            ban=true;
+            banInsercion=true;
 
         }
 
@@ -33,6 +33,7 @@ public class Record extends Menu
         }
 
     }
+
     public int botonP(){
         return tipo;
     }

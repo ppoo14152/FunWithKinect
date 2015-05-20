@@ -30,6 +30,6 @@ public class Label extends Actor
     /**Metodo act de la classe */
     public void act() 
     {
-     }  
+    }  
 
 }

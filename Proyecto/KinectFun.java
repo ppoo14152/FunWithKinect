@@ -12,11 +12,12 @@ abstract class KinectFun extends Actor
     protected Pantalla p;
     protected Mira m;
     protected LinkedList<Boton> menu=new LinkedList<Boton>(); 
-
+    protected boolean banInsercion;
     /**Constructor de la clase recibe una pantalla y una mira y la inicializa. */
     public KinectFun(Pantalla P, Mira M  ){
         p=P;
         m=M;
+        banInsercion=false;
     }
 
     /** Metodo nuevoNivel usado en juegoLaberinto crea una nueva pantalla y una mira y remueve los anteriores*/

@@ -6,7 +6,7 @@ import java.util.*;
 // seg     Se encarga de almacenar una referencia de tiempo para realizar los movimientos del personaje.
 // dir     Indica en que direccion se mueve el enemigo.
 // banDis  Indica si el jugador realizo un disparo.
-// banM    Indica si el jugador recogio municion.
+// banMunicion    Indica si el jugador recogio municion.
 // bala    Objeto que representa una bala enemiga, si la banDis es 1 se crea un objeto de este tipo.
 // disparo Almacena el sonido de disparo de el enemigo.
 // muere   Almacena el sonido de muere del enemigo.
@@ -17,7 +17,7 @@ public class Enemigo extends Objeto
     private long seg;
     private int dir;
     private int banDis;
-    private boolean baM;
+    private boolean banMunicion;
     private BalaEnemigo bala;
     private GreenfootSound disparo;
     private GreenfootSound muere;
@@ -34,7 +34,7 @@ public class Enemigo extends Objeto
         muere= new GreenfootSound("muereEnemigo.mp3");
         dir=0;
         banDis=0;
-        baM=false;
+        banMunicion=false;
         seg=System.currentTimeMillis();
         enemigo= new LinkedList<GreenfootImage>();
 
@@ -66,13 +66,13 @@ public class Enemigo extends Objeto
         if(getOneIntersectingObject(Bala.class)!=null ){
             setImage(enemigo.get(1));
             muere.play();
-            baM=true;  
+            banMunicion=true;  
 
         }
         if((getObjectsInRange(300,Granada.class).size()!=0)&& (((Inicio)getWorld()).explota()==true)){
             setImage(enemigo.get(1));
             muere.play();
-            baM=true;
+            banMunicion=true;
         }
         if(  System.currentTimeMillis()- seg   >= 500){          
             if(banDis == 3){
@@ -82,7 +82,7 @@ public class Enemigo extends Objeto
             else
                 banDis++;   
 
-            if(baM==true){
+            if(banMunicion==true){
                 ((Inicio)getWorld()).IncPun();
                 getWorld().removeObject(this);
             }

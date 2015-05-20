@@ -4,14 +4,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 Clase BalaEnemigo nos permite crear objetos BalaEnemigo usados en juegoGuerra.
  */
 // yf   Variable que guarda la posicion en y de la mira al momento de disparar. 
-// c    Variable que guarda la posicion en y de el alrma a el momento de disparar, se usa como un contador. 
+// Contador    Variable que guarda la posicion en y de el alrma a el momento de disparar, se usa como un contador. 
 // bala Variable que contiene la imagen de la bala.
 // coli Bandera encargada de detectar si el objeto golpea al jugador.
 
 public class BalaEnemigo extends Objeto
 {
     private int yf;
-    private int c;
+
     private GreenfootImage bala;    
     private Actor coli;
 
@@ -26,7 +26,7 @@ public class BalaEnemigo extends Objeto
         bala = new GreenfootImage("bala.png");
         setImage(bala);
         setRotation(180);
-        c=y;
+
         yf=ya;        
     }
 

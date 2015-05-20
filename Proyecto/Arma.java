@@ -2,31 +2,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /** Clase Arma, nos permite crear objetos Arma los cuales son usados en juegoGuerra.
  * */
- // ban      Bandera que indica si se disparo.
- // banCam   Bandera que indica si el jugador camino y reproduce el sonido camina.
- // granada  Objeto de tipo granada se inserta al juntar los brazos.
- // c        Variable que no permite que el objeto se incerte mas de una vez en el mundo.
- // x2       Variable que contiene la posicion en el eje x de el Arma.
- // banMuere Bandera que indica si el jugador recibio un impacto de bala enemiga.
- // balas    Variable que almacena el numero de balas que tiene el jugador.
- // bala     Objeto que se inserta en el mundo cada que se realiza un disparo.
- // mira     Objeto usado para apuntar a el enemigo y fijar la direccion de la bala.
- // arma     Variable que contiene los diferentes disfraces de objeto.
- // b        Objeto que muestra el numero de balas en pantalla.
- // seg      Variable que contiene una referencia de tiempo que marca las transiciones entre los distintos disfraces.
- // camina   Variable que contiene el sonido de camina el cual se reproduce cuando el jugador se mueve de un lado a otro.
- // segGra   Referencia de tiempo que controla el chequeo de granadas.
- // granadas Contiene el numero de granadas con las que cuenta el jugador.
- // banGra   Bandera que indica si se arrojo una granada.
- 
+// banRecarga      Bandera que indica si se disparo.
+// banCam   Bandera que indica si el jugador camino y reproduce el sonido camina.
+// granada  Objeto de tipo granada se inserta al juntar los brazos.
+// banInsercion       Variable que no permite que el objeto se incerte mas de una vez en el mundo.
+// x2       Variable que contiene la posicion en el eje x de el Arma.
+// banMuere Bandera que indica si el jugador recibio un impacto de bala enemiga.
+// balas    Variable que almacena el numero de balas que tiene el jugador.
+// bala     Objeto que se inserta en el mundo cada que se realiza un disparo.
+// mira     Objeto usado para apuntar a el enemigo y fijar la direccion de la bala.
+// arma     Variable que contiene los diferentes disfraces de objeto.
+// b        Objeto que muestra el numero de balas en pantalla.
+// seg      Variable que contiene una referencia de tiempo que marca las transiciones entre los distintos disfraces.
+// camina   Variable que contiene el sonido de camina el cual se reproduce cuando el jugador se mueve de un lado a otro.
+// segGra   Referencia de tiempo que controla el chequeo de granadas.
+// granadas Contiene el numero de granadas con las que cuenta el jugador.
+// banGra   Bandera que indica si se arrojo una granada.
+
 public class Arma extends Objeto
 {      
     private  Granada granada;
     private boolean banCam;
     private boolean banMuere;
-    private boolean ban;
+    private boolean banRecarga ;
     private boolean banGra;
-    private int c;
+    private boolean banInsercion;
     private int x2;    
     private int balas;
     private Bala bala;
@@ -44,7 +44,7 @@ public class Arma extends Objeto
      */
     public Arma(int X,int Y){
         super(X,Y);
-        ban=true;
+        banRecarga =true;
         banGra=false;
         granadas=5;
         segG=System.currentTimeMillis(); 
@@ -53,7 +53,7 @@ public class Arma extends Objeto
         x2=0;
         banMuere=false;
         seg=System.currentTimeMillis();     
-        c=0;         
+        banInsercion=false;         
         arma= new LinkedList <GreenfootImage>(); 
         arma.add(new GreenfootImage("pistola.png"));
         arma.add(new GreenfootImage("pistola2.png"));
@@ -67,9 +67,9 @@ public class Arma extends Objeto
     se detecta el daño y la municion.*/
     public void act(){
 
-        if(c==0){
+        if(banInsercion==false){
             getWorld().addObject(mira,0,0);
-            c=1;               
+            banInsercion=true;               
         }
         KinectWorld mundo =(KinectWorld)getWorld();
         UserData[] usuarios = mundo.getTrackedUsers();
@@ -93,17 +93,17 @@ public class Arma extends Objeto
             }else if(  System.currentTimeMillis()- segG   >= 500){ 
                 segG=System.currentTimeMillis(); 
                 banGra=false;
-                }
-            if (i.getJoint(Joint.LEFT_HAND).getY() > y && ban==false && balas > 0)
+            }
+            if (i.getJoint(Joint.LEFT_HAND).getY() > y && banRecarga ==false && balas > 0)
             {    
                 this.Disparo(x,300,y);
-                ban=true;
+                banRecarga =true;
                 getWorld().removeObject(b);
                 b=new Label(Integer.toString(balas),20);
 
             }    
-            else if(i.getJoint(Joint.LEFT_HAND).getY() < y && ban==true){
-                ban=false;}
+            else if(i.getJoint(Joint.LEFT_HAND).getY() < y && banRecarga ==true){
+                banRecarga =false;}
         }
         if(getOneIntersectingObject(BalaEnemigo.class)!=null){
             banMuere=true;

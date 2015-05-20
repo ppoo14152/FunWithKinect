@@ -2,18 +2,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.LinkedList;
 /**
  * Esta clas crea una ratonera para el juego laberinto, se crea una lisa de imagenes
-  y se ponen en pantalla*/
-  
- // ratonera lista de imagenes que representan la ratonera
- // sonido   este es un sonido que imita el clik de la ratonera
- // ban      bandera que controla la eliminacion del objeto.
- // seg      contiene una referencia de tiempo para el chequeo de coliciones.
+y se ponen en pantalla*/
+
+// ratonera lista de imagenes que representan la ratonera
+// sonido   este es un sonido que imita el clik de la ratonera
+// banElimina      bandera que controla la eliminacion del objeto.
+// seg      contiene una referencia de tiempo para el chequeo de coliciones.
 
 public class Ratonera extends Objeto
 {
     private LinkedList<GreenfootImage> ratonera;
     private GreenfootSound sonido;
-    private boolean ban;
+    private boolean banElimina;
     private long seg;
     /**
      * Constructor de la clase, crea la lista y carga las imagenes
@@ -21,7 +21,7 @@ public class Ratonera extends Objeto
      */
     public Ratonera(int tipo){
         super(0,0);
-        ban=false;
+        banElimina=false;
         sonido= new GreenfootSound("ratoneraClik.mp3");
         ratonera= new LinkedList<GreenfootImage>();
         ratonera.add(new GreenfootImage ("ratonera1.png"));
@@ -32,7 +32,7 @@ public class Ratonera extends Objeto
         seg=0;
         if(tipo==2)
             setRotation(90);
-       
+
     }
 
     /**
@@ -40,16 +40,16 @@ public class Ratonera extends Objeto
      */
     public void act() 
     {
-        if(getOneIntersectingObject(Mira.class)!=null && ban==false){
+        if(getOneIntersectingObject(Mira.class)!=null && banElimina==false){
             setImage(ratonera.get(1));
             sonido.play();
-            ban=true;
+            banElimina=true;
 
             seg=System.currentTimeMillis();
         }
-        if(ban==true &&  System.currentTimeMillis()-seg>200){
+        if(banElimina==true &&  System.currentTimeMillis()-seg>200){
             seg=System.currentTimeMillis();
             getWorld().removeObject(this);
+        }
     }
-}
 }

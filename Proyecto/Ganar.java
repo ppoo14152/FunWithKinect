@@ -23,7 +23,7 @@ public class Ganar extends Menu
      */
     public void act() 
     {
-        if (ban==false)
+        if (banInsercion==false)
         {
             getWorld().addObject(p,0,0);
             for(Boton b : menu){
@@ -32,7 +32,7 @@ public class Ganar extends Menu
             }
             getWorld().addObject(m,0,0);  
             getWorld().addObject(puntos,320,260);
-            ban=true;
+            banInsercion=true;
         }
 
         if(m.getBan()== 1){

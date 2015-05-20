@@ -1,7 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
-
 /**
  * clase principal, crea una pantalla de menu pricipal.
  * Principal no hace referencia a que sea la clase mas importante, solo es el menu principal.
@@ -26,7 +25,7 @@ public class Principal extends Menu
      */
     public void act() 
     {
-        if (ban==false)
+        if (banInsercion==false)
         {
             getWorld().addObject(p,0,0);
             for(Boton b : menu){
@@ -34,7 +33,7 @@ public class Principal extends Menu
             }
             getWorld().addObject(m,0,0);
             getWorld().addObject( new Mono(536,384) ,536,384);
-            ban=true;
+            banInsercion=true;
         }
 
         if(m.getBan()== 1){

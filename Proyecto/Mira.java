@@ -2,30 +2,30 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /** Clase Mira permite crear objetos de esta clase.*/
 // tipo     Variable que contiene el tipo de mira que se quiere crear.
-// c        Variable que indica la trancicion de los diferentes disfracez del puntero.
+// disfraz        Variable que indica la trancicion de los diferentes disfracez del puntero.
 // seg      Variable que contiene una referancia de tiempo en las tranciciones de la mira del  menu.
 // seg2     Variable que contiene una referancia de tiempo en los movimiento de la mira en el juegoLaberinto.
 // xg       Variable que contiene las coordenada en x de la mano derecha y fija la direccion de la mira en juegoLaberinto.
 // yg       Variable que contiene las coordenada en y de la mano derecha y fija la direccion de la mira en juegoLaberinto.
 // puntero  Variable que contiene los diferentes disfraces de el puntero.
 // colicion Variable que indica si la mira coliciono con un boton.
-// a        Variable que indica si la mira coliciono con un Pared y Enemigo.
-// a1       Variable que indica si la mira coliciono con un Picos.
-// a2       Variable que indica si la mira coliciono con un baraFuego.
-// a3       Variable que indica si la mira coliciono con una ratonera.
+// ColicionEne        Variable que indica si la mira coliciono con un Pared y Enemigo.
+// colicionPicos       Variable que indica si la mira coliciono con un Picos.
+// colicionFuego       Variable que indica si la mira coliciono con un baraFuego.
+// colicionRatonera       Variable que indica si la mira coliciono con una ratonera.
 // sel1     Contiene el sonido de seleccion.
 
 public class Mira extends Objeto
 {
     private int tipo;
-    private int c;
+    private int disfraz;
     private long seg;
     private long seg2;
     private int xg;
     private int yg;
     private LinkedList <GreenfootImage> puntero;
     private Actor colicion;
-    private Actor a,a1,a2,a3;
+    private Actor colicionEne,colicionPicos,colicionFuego,colicionRatonera;
     private GreenfootSound sel1;
 
     /**Constructor de la clase mira, inicializa todas las variables.
@@ -37,7 +37,7 @@ public class Mira extends Objeto
     {  
         super(X,Y);  
         tipo=Tipo;
-        c=0;
+        disfraz=0;
         sel1= new GreenfootSound("seleccionInicia.WAV") ;
         puntero = new LinkedList <GreenfootImage> ();
         seg=System.currentTimeMillis();
@@ -48,7 +48,7 @@ public class Mira extends Objeto
             puntero.add(new GreenfootImage("seleccion2.png"));
             puntero.add(new GreenfootImage("seleccion3.png"));
             puntero.add(new GreenfootImage("seleccion4.png"));
-            setImage(puntero.get(c));
+            setImage(puntero.get(disfraz));
             break;
             case 2:
             puntero.add(new GreenfootImage("miraArma.png")); 
@@ -88,19 +88,19 @@ public class Mira extends Objeto
 
             if(  System.currentTimeMillis()- seg   >=400){          
                 seg=System.currentTimeMillis();
-                if(c==4)                    
-                    c=0;
+                if(disfraz==4)                    
+                    disfraz=0;
 
                 else
-                    c++;
+                    disfraz++;
 
             }
 
         }
         else
-            c=0;
+            disfraz=0;
         if(tipo==1)
-            setImage(puntero.get(c));
+            setImage(puntero.get(disfraz));
         else 
             setImage(puntero.get(0));
         if  (tipo==3){
@@ -117,7 +117,7 @@ public class Mira extends Objeto
     @return 0 si no se preciono ningun boton y 1 si se preciono.
      */
     public int getBan(){
-        if(c==4 && (colicion!= null)){
+        if(disfraz==4 && (colicion!= null)){
             sel1.play();
             return 1;
         }    
@@ -129,9 +129,9 @@ public class Mira extends Objeto
     @return 0 si no se encuentra sobre un Enemigo y 1  si lo esta.*/
     public int SoldadoM()
     {
-        a = null;
-        a = getOneIntersectingObject(Enemigo.class);
-        if(a != null)
+        colicionEne = null;
+        colicionEne = getOneIntersectingObject(Enemigo.class);
+        if(colicionEne != null)
             return 1;
         else
             return 0;
@@ -140,15 +140,15 @@ public class Mira extends Objeto
     /** Metodo ratonMuere  detecta si el raton se encuentra sobre un algun objeto.
     @return 0 si no se encuentra  y 1  si lo esta.*/
     public int ratonMuere(){
-        a = null;
-        a1=null;
-        a2=null;
-        a3=null;
-        a = getOneIntersectingObject(Pared.class);
-        a1 = getOneIntersectingObject(Picos.class);
-        a2 = getOneIntersectingObject(BaraFuego.class);
-        a3=getOneIntersectingObject(Ratonera.class);
-        if(a!=null || a1 !=null  ||  a3!= null ||(a2!=null && ((Inicio)getWorld()).getPicos()==1) )
+        colicionEne = null;
+        colicionPicos=null;
+        colicionFuego=null;
+        colicionRatonera=null;
+        colicionEne = getOneIntersectingObject(Pared.class);
+        colicionPicos = getOneIntersectingObject(Picos.class);
+        colicionFuego = getOneIntersectingObject(BaraFuego.class);
+        colicionRatonera=getOneIntersectingObject(Ratonera.class);
+        if(colicionEne!=null || colicionPicos !=null  ||  colicionRatonera!= null ||(colicionFuego!=null && ((Inicio)getWorld()).getPicos()==1) )
             return 1;
         else
             return 0;

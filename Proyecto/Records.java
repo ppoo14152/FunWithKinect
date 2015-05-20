@@ -3,7 +3,7 @@ import java.util.*;
 import java.io.*;
 /**
  * Esta clase crea un archivo de texto si es que no existe con records del juego.
-   si existen ya los lee, tambien los sobreescribira.
+si existen ya los lee, tambien los sobreescribira.
  */
 
 //file      Variable que contiene el archivo que se va a leer o escribir.
@@ -56,7 +56,7 @@ public class Records extends Actor
         }catch(IOException e){}
 
     }
-    
+
     /**Metodo que lee el archivo y lo pasa a una variable que lo almacena.*/
     public void leeRecords(){
         Usuario usuario;
@@ -93,7 +93,7 @@ public class Records extends Actor
         }
 
     }
-    
+
     /**Metodo que agrega un usuario a la variable records. */
     public void addUsuario(Usuario us)
     {        
@@ -104,6 +104,7 @@ public class Records extends Actor
         this.escribeRecords();
 
     }
+
     /**Metodo que retorna la variable de records */
     public LinkedList<Usuario> creaTablaRecords()
     {
