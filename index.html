@@ -84,54 +84,67 @@
 <h3>
 <a id="linux" class="anchor" href="#linux" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux</h3>
 
-<p>Paquetes necesarios:</p>
+<h3>
+<a id="paquetes-necesarios" class="anchor" href="#paquetes-necesarios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Paquetes necesarios:</h3>
 
-<pre><code>  &gt;&gt; sudo apt-get install g++ libglut3-dev libboost-all-dev
-  &gt;&gt; sudo apt-get install libwxbase2.8-dev libwxgtk2.8-dev wx-common
-</code></pre>
+<ol>
+<li>sudo apt-get install g++ libglut3-dev libboost-all-dev</li>
+<li>sudo apt-get install libwxbase2.8-dev libwxgtk2.8-dev wx-common</li>
+</ol>
 
-<p>Instalar :
-           * <a href="http://www.greenfoot.org/doc/kinect/OpenNI-Linux32.tar.bz2">openNI</a>:</p>
+<p>Instalar :</p>
 
-<pre><code>           &gt;&gt; mkdir OpenNI
-           &gt;&gt; cd OpenNI
-           &gt;&gt; wget http://www.greenfoot.org/doc/kinect/OpenNI-Linux32.tar.bz2
-           &gt;&gt; tar -jxf OpenNI-Linux32.tar.bz2
-           &gt;&gt; sudo ./install.sh
-           &gt;&gt; cd ..
-</code></pre>
+<ul>
+<li>
+<a href="http://www.greenfoot.org/doc/kinect/OpenNI-Linux32.tar.bz2">openNI</a>:</li>
+<li>mkdir OpenNI</li>
+<li>cd OpenNI</li>
+<li>wget <a href="http://www.greenfoot.org/doc/kinect/OpenNI-Linux32.tar.bz2">http://www.greenfoot.org/doc/kinect/OpenNI-Linux32.tar.bz2</a>
+</li>
+<li>tar -jxf OpenNI-Linux32.tar.bz2</li>
+<li>sudo ./install.sh</li>
+<li>cd ..</li>
+</ul>
 
 <h3>
 <a id="instalar-" class="anchor" href="#instalar-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalar :</h3>
 
-<pre><code>   * [NITE]( http://www.greenfoot.org/doc/kinect/NITE-Linux32.tar.bz2):
+<ul>
+<li>
+<a href="http://www.greenfoot.org/doc/kinect/NITE-Linux32.tar.bz2">NITE</a>:</li>
+<li>mkdir NITE</li>
+<li>cd NITE</li>
+<li>wget <a href="http://www.greenfoot.org/doc/kinect/NITE-Linux32.tar.bz2">http://www.greenfoot.org/doc/kinect/NITE-Linux32.tar.bz2</a>
+</li>
+<li>tar -jxf NITE-Linux32.tar.bz2</li>
+<li>echo '0KOIk2JeIBYClPWVnMoRKn5cdY4=' | sudo ./install.sh</li>
+<li>cd ..</li>
+</ul>
 
-    &gt;&gt; mkdir NITE
-    &gt;&gt; cd NITE
-    &gt;&gt; wget http://www.greenfoot.org/doc/kinect/NITE-Linux32.tar.bz2
-    &gt;&gt; tar -jxf NITE-Linux32.tar.bz2
-    &gt;&gt; echo '0KOIk2JeIBYClPWVnMoRKn5cdY4=' | sudo ./install.sh
-    &gt;&gt; cd ..
-</code></pre>
+<h3>
+<a id="instalar--1" class="anchor" href="#instalar--1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalar :</h3>
 
-<p>Instalar :</p>
-
-<pre><code>   * [KinectDriver]( http://www.greenfoot.org/doc/kinect/SensorKinect-Linux32.tar.bz2):
-
-    &gt;&gt; mkdir Kinect
-    &gt;&gt; cd Kinect
-    &gt;&gt; wget http://www.greenfoot.org/doc/kinect/SensorKinect-Linux32.tar.bz2
-    &gt;&gt; tar -jxf SensorKinect-Linux32.tar.bz2
-    &gt;&gt; sudo ./install.sh
-    &gt;&gt; cd ..
-</code></pre>
+<ul>
+<li>
+<a href="http://www.greenfoot.org/doc/kinect/SensorKinect-Linux32.tar.bz2">KinectDriver</a>:</li>
+<li>mkdir Kinect</li>
+<li>cd Kinect</li>
+<li>wget <a href="http://www.greenfoot.org/doc/kinect/SensorKinect-Linux32.tar.bz2">http://www.greenfoot.org/doc/kinect/SensorKinect-Linux32.tar.bz2</a>
+</li>
+<li>tar -jxf SensorKinect-Linux32.tar.bz2</li>
+<li>sudo ./install.sh</li>
+<li>cd ..</li>
+</ul>
 
 <h3>
 <a id="mac-os-x" class="anchor" href="#mac-os-x" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mac OS X</h3>
 
-<p>Installar <a href="http://developer.apple.com/xcode/">XCode</a>:</p>
+<ul>
+<li>Installar <a href="http://developer.apple.com/xcode/">XCode</a>:</li>
+</ul>
 
-<p>Instalar macPort:</p>
+<h3>
+<a id="instalar-macport" class="anchor" href="#instalar-macport" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalar macPort:</h3>
 
 <ul>
 <li><a href="https://distfiles.macports.org/MacPorts/MacPorts-2.0.1-10.5-Leopard.dmg">Leopard</a></li>
@@ -139,20 +152,19 @@
 <li><a href="https://distfiles.macports.org/MacPorts/MacPorts-2.0.1-10.7-Lion.dmg">Lion</a></li>
 </ul>
 
-<p>Instalar librerias:</p>
+<h3>
+<a id="instalar-librerias" class="anchor" href="#instalar-librerias" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalar librerias:</h3>
 
-<pre><code>   En la terminal use:
-
-    &gt;&gt; sudo /opt/local/bin/port -v selfupdate
-    &gt;&gt; sudo /opt/local/bin/port install libtool
-    &gt;&gt; sudo /opt/local/bin/port install libusb-devel +universal
-    &gt;&gt; sudo /opt/local/bin/port install boost
-    &gt;&gt; sudo /opt/local/bin/port install wxWidgets-devel
-</code></pre>
+<h3>
+<a id="en-la-terminal-use" class="anchor" href="#en-la-terminal-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>En la terminal use:</h3>
 
 <ul>
-<li> Instalar <a href="http://www.greenfoot.org/doc/kinect/OpenNI-MacOSX.tar.bz2">openNI</a>
-</li>
+<li>sudo /opt/local/bin/port -v selfupdate</li>
+<li> sudo /opt/local/bin/port install libtool</li>
+<li> sudo /opt/local/bin/port install libusb-devel +universal</li>
+<li> sudo /opt/local/bin/port install boost</li>
+<li><p>sudo /opt/local/bin/port install wxWidgets-devel</p></li>
+<li><p>Instalar <a href="http://www.greenfoot.org/doc/kinect/OpenNI-MacOSX.tar.bz2">openNI</a></p></li>
 <li> Instalar <a href="http://www.greenfoot.org/doc/kinect/SensorKinect-MacOSX.tar.bz2">KinectDriver</a>
 </li>
 <li> Instalar <a href="http://www.greenfoot.org/doc/kinect/NITE-MacOSX.tar.bz2">NITE</a>
